@@ -8,9 +8,19 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+	<body>
+		<% if student_signed_in? %>
+			<%= link_to 'Salir', destroy_student_session_path, method: :delete %>
+		<% elsif company_signed_in? %>
+			<%= link_to 'Salir', destroy_company_session_path, method: :delete %>
+		<% else %>
+			<%= link_to 'Registrarse como estudiante', new_student_registration_path %>
+			<%= link_to 'Registrarse como empresa', new_company_registration_path %>
+			<%= link_to 'Ingresar como estudiante', new_student_session_path %>
+			<%= link_to 'Ingresar como empresa', new_company_session_path %>
+		<% end %>
+		<%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-  </body>
+	  </body>
 </html>

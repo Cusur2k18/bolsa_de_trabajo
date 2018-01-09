@@ -32,12 +32,12 @@ class DeviseCreateCompanies < ActiveRecord::Migration[5.1]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 	  
-	  # Defined fields
-	  t.string :company_name
-	  t.string :contact_first_name	
-	  t.string :contact_last_name
-	  t.string :contact_last_n_name
-	  t.boolean :is_validated
+		  # Defined fields
+	  	t.string :company_name
+		  t.string :contact_first_name	
+		  t.string :contact_last_name
+		  t.string :contact_last_n_name
+	  	t.boolean :is_validated
 
       t.timestamps null: false
     end
