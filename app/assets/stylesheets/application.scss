@@ -16,3 +16,20 @@
 /*Bootstrap installation*/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+div .dropdown {
+	display: inline;
+	float: right;
+	padding: 3px;
+	margin: 0px, 20px, 0px, 0px;
+}
+
+div .dropthebass {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+div .close-session {
+	float: right;
+	padding-right: 10px;
+}

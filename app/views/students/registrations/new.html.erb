@@ -1,17 +1,17 @@
 <h2>Registrarse</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+	<%= devise_error_messages! %>
 	<div class="field">
 		<%= f.label "Nombre(s)"%><br />	
 		<%= f.text_field :first_name %>
 	</div>
-	
+
 	<div class="field">
 		<%= f.label "Apellido paterno" %><br />	
 		<%= f.text_field :last_name %>
 	</div>
-	
+
 	<div class="field">
 		<%= f.label "Apellido materno"%><br />	
 		<%= f.text_field :last_m_name %>
@@ -23,30 +23,30 @@
 	</div>
 
 	<div class="field">
-					<%= f.hidden_field :state, :value => :desempleado %>
+		<%= f.hidden_field :state, :value => :desempleado %>
 	</div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+	<div class="field">
+		<%= f.label :email %><br />
+		<%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+	</div>
 
-  <div class="field">
-    <%= f.label "Contraseña"%>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> caracteres como minimo)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+	<div class="field">
+		<%= f.label "Contraseña"%>
+		<% if @minimum_password_length %>
+			<em>(<%= @minimum_password_length %> caracteres como minimo)</em>
+		<% end %><br />
+		<%= f.password_field :password, autocomplete: "off" %>
+	</div>
 
-  <div class="field">
-    <%= f.label "Confirmación de contraseña" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+	<div class="field">
+		<%= f.label "Confirmación de contraseña" %><br />
+		<%= f.password_field :password_confirmation, autocomplete: "off" %>
+	</div>
 
-  <div class="actions">
-    <%= f.submit "Registrarse" %>
-  </div>
+	<div class="actions">
+		<%= f.submit "Registrarse" %>
+	</div>
 <% end %>
 
 <%= render "students/shared/links" %>

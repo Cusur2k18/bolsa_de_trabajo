@@ -1,3 +1,6 @@
 <h2>Bienvenido a tu perfil <%= current_student.first_name %></h2>
-<div><a class="btn btn-primary" href="students/edit">Editar Perfil</a></div><br />
-<div><a class="btn btn-primary" href="students/<%=current_student.id%>">Verificar datos</a></div><br />
+<div class="container">
+	<%= link_to "Editar datos personales", edit_student_registration_path, class: 'btn btn-primary'%>
+	<%= link_to "Verificar mis datos", student_path(current_student.id), class: 'btn btn-primary'%>
+	<%= link_to "Agregar estudios", new_education_path, class: 'btn btn-success' %>
+</div>

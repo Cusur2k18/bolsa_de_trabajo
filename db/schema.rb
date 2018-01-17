@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180111220033) do
+ActiveRecord::Schema.define(version: 20180117025118) do
 
   create_table "companies", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -34,10 +34,15 @@ ActiveRecord::Schema.define(version: 20180111220033) do
     t.index ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true
   end
 
-  create_table "majors", force: :cascade do |t|
-    t.string "major_name"
+  create_table "educations", force: :cascade do |t|
+    t.string "university"
+    t.integer "education_level"
+    t.string "major"
+    t.date "admission_date"
+    t.date "graduation_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "student_id"
   end
 
   create_table "students", force: :cascade do |t|

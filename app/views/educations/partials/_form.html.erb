@@ -1,0 +1,11 @@
+<%= simple_form_for @education do |f| %>
+	<%= f.input :university, label: "Universidad" %>
+	<%= f.input :major, label: "Carrera" %>
+	<%= f.input :education_level, collection: Education.education_levels.keys,:selected => :Licenciatura, label: "Nivel educativo"%>
+	<%= f.input :admission_date, label: "Fecha de admisión" %>
+	<%= f.input :graduation_date, label: "Fecha de graduación" %>
+	<%= f.hidden_field :student_id, value: current_student.id %>
+	<%= f.button :submit,  "Enviar" %>
+	<%= link_to "Regresar a mi perfil", root_path, class: 'btn btn-info' %>
+<% end %>
+

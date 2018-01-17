@@ -1,2 +1,0 @@
-class Major < ApplicationRecord
-end

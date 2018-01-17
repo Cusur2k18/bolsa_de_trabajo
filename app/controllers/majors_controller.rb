@@ -1,2 +1,0 @@
-class MajorsController < ApplicationController
-end

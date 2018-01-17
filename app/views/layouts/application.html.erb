@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Bolsa De Trabajo</title>
-    <%= csrf_meta_tags %>
+<head>
+<title>Bolsa De Trabajo</title>
+<%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-	<body>
+<body>
+<div class="nav">
+	<div class="close-session">
 		<% if student_signed_in? %>
-			<%= link_to 'Salir', destroy_student_session_path, method: :delete %>
+			<%= link_to 'Salir', destroy_student_session_path, method: :delete, class: 'btn btn-danger'%>
+			</div>
 		<% elsif company_signed_in? %>
-			<%= link_to 'Salir', destroy_company_session_path, method: :delete %>
+			<%= link_to 'Salir', destroy_company_session_path, method: :delete, class: 'btn btn-danger'%>
+			</div>
 		<% else %>
-			<%= link_to 'Registrarse como estudiante', new_student_registration_path %>
-			<%= link_to 'Registrarse como empresa', new_company_registration_path %>
-			<%= link_to 'Ingresar como estudiante', new_student_session_path %>
-			<%= link_to 'Ingresar como empresa', new_company_session_path %>
-		<% end %>
-		<%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-	  </body>
+	<div class="dropdown">
+		<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Registrarse
+		</button>
+		<ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenuButton">
+			<li><%= link_to 'Estudiante', new_student_registration_path, class: 'dropdown-item' %></li>
+			<li><%= link_to 'Empresa', new_company_registration_path, class: 'dropdown-item' %></li>
+		</ul>
+	</div>
+
+	<div class="dropdown">
+		<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Ingresar
+		</button>
+		<ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenuButton">
+			<li><%= link_to 'Estudiante', new_student_session_path, class: 'dropdown-item' %></li>
+			<li><%= link_to 'Empresa', new_company_session_path, class: 'dropdown-item' %></li>
+		</ul>
+	</div>
+</div>
+<% end %>
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+
+	<%= yield %>
+</body>
 </html>
