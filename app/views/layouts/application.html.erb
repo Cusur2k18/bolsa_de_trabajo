@@ -9,39 +9,80 @@
 </head>
 
 <body>
-<div class="nav">
-	<div class="close-session">
-		<% if student_signed_in? %>
-			<%= link_to 'Salir', destroy_student_session_path, method: :delete, class: 'btn btn-danger'%>
-			</div>
-		<% elsif company_signed_in? %>
-			<%= link_to 'Salir', destroy_company_session_path, method: :delete, class: 'btn btn-danger'%>
-			</div>
-		<% else %>
-	<div class="dropdown">
-		<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			Registrarse
-		</button>
-		<ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenuButton">
-			<li><%= link_to 'Estudiante', new_student_registration_path, class: 'dropdown-item' %></li>
-			<li><%= link_to 'Empresa', new_company_registration_path, class: 'dropdown-item' %></li>
-		</ul>
-	</div>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header" id="bold-letters">
+			<%= link_to "Bolsa de trabajo", root_path, class: 'navbar-brand' %>
+		</div>
+		<% if student_signed_in? %> 
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
 
-	<div class="dropdown">
-		<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			Ingresar
-		</button>
-		<ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenuButton">
-			<li><%= link_to 'Estudiante', new_student_session_path, class: 'dropdown-item' %></li>
-			<li><%= link_to 'Empresa', new_company_session_path, class: 'dropdown-item' %></li>
-		</ul>
-	</div>
-</div>
-<% end %>
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
+				<a class="btn btn-secondary dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-user-circle" aria-hidden="true"> Mi Usuario</i>
+				</a>
+				<ul class="dropdown-menu pull-left" aria-labelledby="dropdownMenuButton">
+					<li class='dropdown-header header-nav header-nav-current-user css-truncate'> Ingresaste como
+					<strong><%= current_student.first_name %></strong>
+					</li>
+					<li role="separator" class="divider"></li>
+					<li><%= link_to 'Mi panel de control', authenticated_student_root_path, class: 'dropdown-item'%></li>
+					<li><%= link_to 'Salir', destroy_student_session_path, method: :delete, class: 'dropdown-item'%></li>
+					<li></li>
+				</ul>
+				</li>
+			</ul>
+		<% elsif company_signed_in? %> 
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+				<a class="btn btn-secondary dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-user-circle" aria-hidden="true"> Mi Usuario</i>
+				</a>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<li class='dropdown-header header-nav header-nav-current-user css-truncate'> Ingresaste como
+					<strong><%= current_company.company_name%></strong>
+					</li>
+					<li role="separator" class="divider"></li>
+					<li><%= link_to 'Mi panel de control', authenticated_company_root_path, class: 'dropdown-item'%></li>
+					<li><%= link_to 'Salir', destroy_company_session_path, method: :delete, class: 'dropdown-item'%></li>
+					<li></li>
 
-	<%= yield %>
+				</ul>
+				</li>
+			</ul>
+
+		<% else %> 
+
+			<ul class="nav navbar-nav navbar-right">
+
+				<li class="dropdown">
+				<a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-user-plus" aria="true"> Registrarse</i>
+				</a>
+				<ul class="dropdown-menu pull-right navbar-right" aria-labelledby="dropdownMenuButton">
+					<li><%= link_to 'Como estudiante', new_student_registration_path %></li>
+					<li role="separator" class="divider"></li>
+					<li><%= link_to 'Como empresa', new_company_registration_path %></li>
+				</ul>
+				</li>
+
+				<li class="dropdown">
+				<a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-sign-in" aria="true"> Iniciar sesión</i>
+				</a>
+				<ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenuButton">
+					<li><%= link_to 'Como estudiante', new_student_session_path %></li>
+					<li role="separator" class="divider"></li>
+					<li><%= link_to 'Como empresa', new_company_session_path %></li>
+				</ul>
+				</li>
+			</ul>
+		<% end %>
+	</div>
+</nav>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<%= yield %>
 </body>
 </html>
