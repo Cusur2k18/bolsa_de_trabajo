@@ -6,11 +6,12 @@
 
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic', media: 'all', 'data-turbolinks-track' => true %>
 </head>
 
 <body>
 <nav class="navbar navbar-default">
-	<div class="container-fluid">
+	<div class="container">
 		<div class="navbar-header" id="bold-letters">
 			<%= link_to "Bolsa de trabajo", root_path, class: 'navbar-brand' %>
 		</div>
@@ -84,5 +85,24 @@
 <p class="alert"><%= alert %></p>
 
 <%= yield %>
+<footer class="footer">
+	<div class="container">
+		<p class="left">
+		<%= image_tag "udg-logo.png", class: 'udg-logo'%>
+
+		CENTRO UNIVERSITARIO DEL SUR <br />
+		Av. Enrique Arreola Silva No. 833. Colonia Centro <br />
+		C.P. 49000, Ciudad Guzmán, Jalisco, México.<br />
+		Teléfono: +52 (341) 575 2222, Fax: 01 (341) 5752223. <br />
+		</p>
+		<br />
+	</div>
+	<br />
+	<div class="container">
+		<p class="center">
+		Derechos reservados ©1997 - 2018. Universidad de Guadalajara. Sitio desarrollado por <%= link_to 'CUSur CTA', "http://www.cusur.udg.mx/es/" %> | <%= link_to "Política de privacidad y manejo de datos", "http://www.udg.mx/info/politica-de-privacidad-y-manejo-de-datos" %>
+		</p>
+	</div>
+</footer>
 </body>
 </html>

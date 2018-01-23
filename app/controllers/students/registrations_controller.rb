@@ -48,7 +48,8 @@ class Students::RegistrationsController < Devise::RegistrationsController
 													 :last_name,
 													 :last_m_name,
 													 :udg_code,
-													 :state ])
+													 :state,
+													 :terms_of_service ])
 	end
 
 	# If you have extra params to permit, append them to the sanitizer.
