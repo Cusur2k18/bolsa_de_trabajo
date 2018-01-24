@@ -1,2 +1,47 @@
 es:
+    devise:
+        failure:
+            student:
+                invalid: 'Correo o contraseña inválidos.'
+            company:
+                invalid: 'Correo o contraseña inválidos.'
+
     hola: "Hola Mundo!"
+    students:
+        shared:
+            links:
+                forgot_your_password: "Recuperar contraseña"
+                sign_in: "Ingreasar"
+                sign_up: "Registrarse"
+        sessions:
+            new:
+                sign_in: "Ingresar"
+        registrations:
+            edit:
+                title: "Editar su empresa"
+                we_need_your_current_password_to_confirm_your_changes: "Ingresa tu contraseña para guardar cambios"
+                leave_blank_if_you_don_t_want_to_change_it: "Déja éste espacio en blanco si no quieres cambiar tu contraseña"
+                cancel_my_account: "Borrar mi cuenta"
+                unhappy: "¿No está conforme con el servicio?"
+                update: "Actualizar mis datos"
+            new:
+                sign_up: "Registrarse"
+    companies:
+        shared:
+            links:
+                forgot_your_password: "Recuperar contraseña"
+                sign_in: "Ingreasar"
+                sign_up: "Registrarse"
+        sessions:
+            new:
+                sign_in: "Ingresar"
+        registrations:
+            edit:
+                title: "Editar su empresa"
+                we_need_your_current_password_to_confirm_your_changes: "Ingresa tu contraseña para guardar cambios"
+                leave_blank_if_you_don_t_want_to_change_it: "Déja éste espacio en blanco si no quieres cambiar tu contraseña"
+                cancel_my_account: "Borrar mi cuenta"
+                unhappy: "¿No está conforme con el servicio?"
+                update: "Actualizar mis datos"
+            new:
+                sign_up: "Registrarse"

@@ -11,6 +11,8 @@ es:
 
                 devise:
                     failure:
+                        company:
+                            invalid: 'Correo o contraseña inválidos.'
                         already_authenticated: 'Ya está dentro del sistema.'
                         unauthenticated: 'Necesita ingresar o registrarse para continuar.'
                         unconfirmed: 'Debe confirmar su cuenta para continuar.'

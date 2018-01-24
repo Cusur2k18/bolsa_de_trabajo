@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # User defined gems.
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'devise'
+gem 'devise-i18n'
 gem 'simple_form'
 gem 'jquery-rails'
 gem "font-awesome-rails"

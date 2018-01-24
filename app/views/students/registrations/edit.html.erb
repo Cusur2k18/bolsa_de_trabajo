@@ -1,32 +1,35 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2><%= t(".title", resource: resource_class.model_name.human) %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 	<%= f.error_notification %>
-	<div class="form" id="devise_form">
-		<div class="form-inputs" >
+
+	<div id="devise_form">
+		<div class="form-inputs">
 			<%= f.input :email, required: true, autofocus: true %>
 
 			<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-				<p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+				<p>
+				<%= t(".currently_waiting_confirmation_for_email", email: resource.unconfirmed_email) %>
+				</p>
 			<% end %>
-			<%= f.input :first_name, label: "Nombre(s)" %>
-			<%= f.input :last_name, label: "Apellido paterno" %>
-			<%= f.input :last_m_name, label: "Apellido materno" %>
-			<%= f.input :udg_code, label: "Codigo de UDG" %>
-			<%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-			<%= f.input :password_confirmation, required: false %>
-			<%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+			<%= f.input :company_name, label: "Nombre de la compañía", autofocus: true, required: true %>
+			<%= f.input :contact_first_name, label: "Nombre(s) de la persona que registra la compañía", required: true   %>
+			<%= f.input :contact_last_name, label: "Apellido paterno de la persona que registra la compañía", required: true  %>
+			<%= f.input :contact_last_n_name, label: "Apellido materno de la persona que registra la  compañía ", required: true %>
+			<%= f.input :email, required: true, autofocus: true, label: "Correo electronico" %>
+			<%= f.input :password, required: true, hint: ("#{@minimum_password_length} caracteres como minimo" if @minimum_password_length), label: "Contraseña" %>
+			<%= f.input :password_confirmation, required: true, label: "Confirmar contraseña" %>
+			<%= f.hidden_field :is_validated, value: false %>
 		</div>
 
 		<div class="form-actions">
-			<%= f.button :submit, "Update" %>
+			<%= f.button :submit, t(".update") %>
 		</div>
 	<% end %>
 
-	<h3>Eliminar mi cuenta</h3>
+	<h3><%= t(".cancel_my_account") %></h3>
 
-	<p id='bold-letters'>¿Desea eliminar su cuenta? <br />
-	<%= link_to "Eliminar mi cuenta", registration_path(resource_name), data: { confirm: "¿Está seguro que desea eliminar su cuenta?" }, method: :delete, class: 'btn btn-danger' %></p>
-	<%= link_to "Regresar", :back, class: 'btn btn-info' %>
+	<p><%= t(".unhappy") %> <%= link_to t(".cancel_my_account"), registration_path(resource_name), data: { confirm: t(".are_you_sure") }, method: :delete %></p>
+
+	<%= link_to t("devise.shared.links.back"), :back %>
 </div>
-

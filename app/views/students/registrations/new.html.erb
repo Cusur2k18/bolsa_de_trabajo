@@ -1,23 +1,25 @@
-<h2>Registrarse como estudiante</h2>
+<h2><%= t(".sign_up") %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 	<%= f.error_notification %>
+
 	<div id="devise_form">
 		<div class="form-inputs">
 			<%= f.input :first_name, label: "Nombre(s)", required: true %>
 			<%= f.input :last_name, label: "Apellido paterno", required: true%>
 			<%= f.input :last_m_name, label: "Apellido materno", required: true %>
 			<%= f.input :udg_code, label: "Codigo de UDG", required: true %>
-			<%= f.input :email, required: true, autofocus: true %>
-			<%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-			<%= f.input :password_confirmation, required: true %>
+			<%= f.input :email, label: "Correo electronico", required: true, autofocus: true %>
+			<%= f.input :password, label: "Contraseña", required: true, hint: ("#{@minimum_password_length} caracteres como minimo" if @minimum_password_length) %>
+			<%= f.input :password_confirmation, label: "Confirmar Contraseña", required: true %>
 			<%= f.input :terms_of_service, as: :boolean, label: "He leído y accepto la política de privacidad y manejo de datos, además que estoy de acuerdo con que mis datos personales puedan ser transferidos a terceros"  %>
+
 		</div>
 		<div class="form-actions">
-			<%= f.button :submit, "Sign up" %>
+			<%= f.button :submit, t(".sign_up") %>
 		</div>
 	<% end %>
-
+	<br />
 	<%= render "students/shared/links" %>
-</div>
 
+</div>
