@@ -2,7 +2,7 @@
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 	<%= f.error_notification %>
-	<div id="devise_form">
+	<div class="centered_form">
 		<div class="form-inputs">
 			<%= f.input :email, label: "Correo electronico", required: true, autofocus: true %>
 
@@ -29,6 +29,7 @@
 	<h3><%= t(".cancel_my_account") %></h3>
 
 	<p><%= t(".unhappy") %> <%= link_to t(".cancel_my_account"), registration_path(resource_name), data: { confirm: t(".are_you_sure") }, method: :delete %></p>
-
+	<br />
 	<%= link_to t("devise.shared.links.back"), :back %>
 </div>
+<br />

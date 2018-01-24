@@ -31,3 +31,23 @@
 
 en:
     hello: "Hello world"
+    students:
+        sessions:
+            new:
+                sign_in: "Sign In"
+        registrations:
+            new:
+                sign_up: "Sign Up"
+            edit:
+                update: "Update"
+                title: "Edit your profile"
+    companies:
+        sessions:
+            new:
+                sign_in: "Sign In"
+        registrations:
+            new:
+                sign_up: "Sign Up"
+            edit:
+                update: "Update"
+                title: "Edit your profile"

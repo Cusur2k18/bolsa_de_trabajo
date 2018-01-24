@@ -1,18 +1,34 @@
 <h2>Verificación de datos</h2>
-<div>
-	<p>
+<div class="container list-group centered_form">
+	<p class="center list-group-item">
 	<strong>Nombres</strong><br />
 	<%= @student.first_name %><br />
+	</p>
+
+	<p class="center list-group-item">
 	<strong>Apellido paterno</strong><br />
 	<%= @student.last_name %><br />
+	</p>
+
+	<p class="center list-group-item">
 	<strong>Apellido materno</strong><br />
 	<%= @student.last_m_name %><br />
+	</p>
+
+	<p class="center list-group-item">
 	<strong>Código de alumno</strong><br />
 	<%= @student.udg_code %><br />
+	</p>
+
+	<p class="center list-group-item">
 	<strong>Estado de empleo</strong><br />
 	<%= @student.state  %><br />
+	</p>
+
+	<p class="center list-group-item">
 	<strong>Correo electrónico</strong><br />
 	<%= @student.email %>
-    </p>
+	</p>
+	<br />
 	<%= link_to "Regresar", root_path, class: 'btn btn-primary' %>
 </div>

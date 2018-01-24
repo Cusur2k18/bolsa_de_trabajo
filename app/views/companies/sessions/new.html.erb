@@ -1,17 +1,19 @@
 <h2><%= t(".sign_in") %></h2>
 
-<div id="devise_form">
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, label: "Correo electrónico", required: false, autofocus: true %>
-	<%= f.input :password, label: "Contraseña", required: false %>
-    <%= f.input :remember_me, label: "Mantener la sesion iniciada", as: :boolean if devise_mapping.rememberable? %>
-  </div>
+<div class="centered_form">
+	<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+		<div class="form-inputs">
+			<%= f.input :email, label: "Correo electrónico", required: false, autofocus: true %>
+			<%= f.input :password, label: "Contraseña", required: false %>
+			<%= f.input :remember_me, label: "Mantener la sesion iniciada", as: :boolean if devise_mapping.rememberable? %>
+		</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, t(".sign_in") %>
-  </div>
-<% end %>
-
-<%= render "companies/shared/links" %>
+		<div class="form-actions">
+			<%= f.button :submit, t(".sign_in") %>
+		</div>
+	<% end %>
+	<br />
+	<%= render "companies/shared/links" %>
 </div>
+<br />
+
