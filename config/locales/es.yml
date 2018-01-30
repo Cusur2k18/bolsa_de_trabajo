@@ -1,4 +1,10 @@
 es:
+    date:
+        order:
+            - :day
+            - :month
+            - :year
+        month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
     devise:
         failure:
             student:
