@@ -31,23 +31,73 @@
 
 en:
     hello: "Hello world"
+
+    navbar:
+        new: 
+            sign_up: "Sign up"
+            company: "As a company"
+            student: "As a graduate"
+        already_registered: 
+            sign_in: "Sign in"
+            company: "As a company"
+            student: "As a graduate"
+
+    benefits:
+        students: "Registered graduates benefits"
+        companies: "Registered companies benefits"
+
+    description:
+        title: "Project's description"
+        project: "El Centro Universitario del Sur como parte de la Red Universitaria de la Universidad de Guadalajara está comprometido con sus egresados para apoyarlos a entrar al sector productivo de una manera existosa, a través de vinculación con empresas líderes en sus ramas y de ésta forma contribuir con su desarollo profesional"
+
+    sign_in_or_sign_up: "Sign in or sign up"
+
+    link_text:
+        sign_in: "Sign in"
+        sign_up: "Sign up"
+
     students:
+        name: "Name(s)"
+        last_name: "Last name"
+        last_m_name: "Mother's maiden name"
+        udg_code: "UDG code"
+        password: "Password"
+        confirm_password: "Confirm password"
+
         sessions:
             new:
                 sign_in: "Sign In"
         registrations:
             new:
+                terms: "I have read and accept the terms of use and conditions of data management, I also accept that my personal data can be transferred to a third party"
                 sign_up: "Sign Up"
             edit:
                 update: "Update"
                 title: "Edit your profile"
     companies:
+        company_name: "Company's name"
+        person_f_name: "Name(s) of the person who is registering the company"
+        person_l_name: "Last name of the person who is registering the company"
+        person_lm_name: "Mother's maiden name of the person who is registering the company"
+        person_employment: "Employment of the person who is registering the company"
+        company_email: "Email"
+        company_password: "Password"
+        company_password_confirmation: "Confirm password"
+        password_length: "characters minimum"
         sessions:
             new:
-                sign_in: "Sign In"
+                email: "Email"
+                password: "Password"
+                remember_me: "Remember me"
+                sign_in: "Sign in as a company"
         registrations:
             new:
+                company: "Sign up as a company"
                 sign_up: "Sign Up"
             edit:
+                leave_blank_if_you_don_t_want_to_change_it: "Leave blank if you do not want to change it"
+                we_need_your_current_password_to_confirm_your_changes: "We need your current password to confirm your changes"
+                cancel_my_account: "Cancel my account"
+                unhappy: "Not satisfied with the service?"
                 update: "Update"
                 title: "Edit your profile"

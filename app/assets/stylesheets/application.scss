@@ -23,7 +23,7 @@
 	max-width: 40%;
 	max-height: 40%;
 	height: auto;
-
+	filter: grayscale(100%);
 }
 .centered_form {
 	margin: auto;
@@ -52,7 +52,13 @@
 	padding: 10px;
 	margin: 10px;
 }
-
+.button-sep{
+	margin: 3px;
+}
+.bold {
+	font-size: 14px;
+	font-weight: bold;
+}
 .footer {
 	font-family: 'Open Sans';
 	font-size: 12px;
@@ -61,12 +67,7 @@
 	height: 100%;
 	background-color: #ededed;
 }
-.description{
-	display: block;
-	width: 50%;
-	height: 50%;
-	text-align: center;
-}
+
 h2 {
 	text-align: center;
 	font-weight: bold;

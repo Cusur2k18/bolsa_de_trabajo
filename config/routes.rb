@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 														  passwords: 'companies/passwords',
 														  omniauth: 'companies/omniauth' }
 	# devise routes
+
+
 	resources :students, only: [:show], :controller => "students_dashboard"
 		scope '/students' do
 		get 'dashboard', to: 'students_dashboard#index', as: :student_dashboard

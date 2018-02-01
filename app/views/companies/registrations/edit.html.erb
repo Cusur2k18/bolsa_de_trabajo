@@ -4,7 +4,6 @@
 	<%= f.error_notification %>
 	<div class="centered_form">
 		<div class="form-inputs">
-			<%= f.input :email, label: "Correo electronico", required: true, autofocus: true %>
 
 			<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
 				<p>
@@ -12,10 +11,12 @@
 				</p>
 			<% end %>
 
-			<%= f.input :company_name, label: "Nombre de la compañía" %>
-			<%= f.input :contact_first_name, label: "Nombre(s) de la persona que registra la compañía" %>
-			<%= f.input :contact_last_name, label: "Apellido paterno de la persona que registra la compañía" %>
-			<%= f.input :contact_last_n_name, label: "Apellido materno de la persona que registra la compañía" %>
+			<%= f.input :company_name, label: t('companies.company_name'), autofocus: true, required: true %>
+			<%= f.input :contact_first_name, label: t('companies.person_f_name'), required: true   %>
+			<%= f.input :contact_last_name, label: t('companies.person_l_name'), required: true  %>
+			<%= f.input :contact_last_n_name, label: t('companies.person_lm_name'), required: true %>
+			<%= f.input :employment, label: t('companies.person_employment'), required: true %>
+			<%= f.input :email, required: true, autofocus: true, label: t('companies.company_email') %>
 			<%= f.input :password, autocomplete: "off", hint: t(".leave_blank_if_you_don_t_want_to_change_it"), required: false %>
 			<%= f.input :password_confirmation, required: false %>
 			<%= f.input :current_password, hint: t(".we_need_your_current_password_to_confirm_your_changes"), required: true %>

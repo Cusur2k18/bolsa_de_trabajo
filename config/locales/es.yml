@@ -1,10 +1,33 @@
 es:
+    navbar:
+        new: 
+            sign_up: "Registrarse"
+            company: "Como empresa"
+            student: "Como estudiante"
+        already_registered: 
+            sign_in: "Ingresar"
+            company: "Como empresa"
+            student: "Como estudiante"
+
+    benefits:
+        students: "Beneficios para estudiantes egresados"
+        companies: "Beneficios para empresas registradas"
+
+    description:
+        title: "Descripcion del proyecto"
+        project: "El Centro Universitario del Sur como parte de la Red Universitaria de la Universidad de Guadalajara está comprometido con sus egresados para apoyarlos a entrar al sector productivo de una manera existosa, a través de vinculación con empresas líderes en sus ramas y de ésta forma contribuir con su desarollo profesional"
+    
+    link_text:
+        sign_in: "Ingresar"
+        sign_up: "Registrarse"
+
     date:
         order:
             - :day
             - :month
             - :year
         month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
+
     devise:
         failure:
             student:
@@ -13,7 +36,14 @@ es:
                 invalid: 'Correo o contraseña inválidos.'
 
     hola: "Hola Mundo!"
+    sign_in_or_sign_up: "Registrarse o iniciar sesion"
     students:
+        name: "Nombre(s)"
+        last_name: "Apellido paterno"
+        last_m_name: "Apellido materno"
+        udg_code: "Codigo UDG"
+        password: "Contraseña"
+        confirm_password: "Confirmar contraseña"
         shared:
             links:
                 forgot_your_password: "Recuperar contraseña"
@@ -31,8 +61,20 @@ es:
                 unhappy: "¿No está conforme con el servicio?"
                 update: "Actualizar mis datos"
             new:
+                student: "Registrarse como estudiante"
+                terms: "He leído y accepto la política de privacidad y manejo de datos, además que estoy de acuerdo con que mis datos personales puedan ser transferidos a terceros"
                 sign_up: "Registrarse"
+
     companies:
+        company_name: "Nombre de la empresa a registrar"
+        person_f_name: "Nombre(s) de la persona que registra la empresa"
+        person_l_name: "Apellido paterno de la persona que registra la empresa"
+        person_lm_name: "Apellido materno de la persona que registra la empresa"
+        person_employment: "Puesto de la persona que registra la empresa"
+        company_email: "Correo electronico"
+        company_password: "Contraseña"
+        company_password_confirmation: "Confirmar contraseña"
+        password_length: "caracteres como minimo"
         shared:
             links:
                 forgot_your_password: "Recuperar contraseña"
@@ -40,7 +82,11 @@ es:
                 sign_up: "Registrarse"
         sessions:
             new:
+                email: "Correo electronico"
+                password: "Contraseña"
+                remember_me: "Mantener la sesion iniciada"
                 sign_in: "Ingresar"
+
         registrations:
             edit:
                 title: "Editar su empresa"
@@ -50,4 +96,5 @@ es:
                 unhappy: "¿No está conforme con el servicio?"
                 update: "Actualizar mis datos"
             new:
+                company: "Registrar empresa"
                 sign_up: "Registrarse"

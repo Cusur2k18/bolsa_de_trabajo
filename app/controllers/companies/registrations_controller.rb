@@ -47,7 +47,8 @@ class Companies::RegistrationsController < Devise::RegistrationsController
 													 :contact_first_name,
 													 :contact_last_name,
 													 :contact_last_n_name,
-													 :is_validated])
+													 :is_validated,
+													 :employment])
 	end
 
 	# If you have extra params to permit, append them to the sanitizer.
@@ -56,7 +57,8 @@ class Companies::RegistrationsController < Devise::RegistrationsController
 															:contact_first_name,
 															:contact_last_name,
 															:contact_last_n_name,
-															:is_validated])
+															:is_validated,
+															:employment])
 	end
 
 	# The path used after sign up.
