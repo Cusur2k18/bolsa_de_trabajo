@@ -69,6 +69,7 @@ en:
                 sign_in: "Sign In"
         registrations:
             new:
+                student: "Register as a student"
                 terms: "I have read and accept the terms of use and conditions of data management, I also accept that my personal data can be transferred to a third party"
                 sign_up: "Sign Up"
             edit:

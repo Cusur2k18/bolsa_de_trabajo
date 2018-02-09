@@ -54,7 +54,7 @@ es:
                 sign_in: "Ingresar"
         registrations:
             edit:
-                title: "Editar su empresa"
+                title: "Editar sus datos"
                 we_need_your_current_password_to_confirm_your_changes: "Ingresa tu contraseña para guardar cambios"
                 leave_blank_if_you_don_t_want_to_change_it: "Déja éste espacio en blanco si no quieres cambiar tu contraseña"
                 cancel_my_account: "Borrar mi cuenta"
