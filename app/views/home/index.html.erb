@@ -27,8 +27,7 @@
 
 			<div class="panel-footer center ">
 				<p class="bold"><%= t('sign_in_or_sign_up') %></p>
-				<%= link_to t('link_text.sign_up'), new_student_registration_path, class: 'btn btn-success button-sep'%>
-				<%= link_to t('link_text.sign_in'), new_student_session_path, class: 'btn btn-info button-sep'%>
+				<%= link_to t('link_text.sign_up'), students_sign_up_path, class: 'btn btn-success button-sep'%>
 			</div>
 		</div>
 	</div>
@@ -46,8 +45,7 @@
 
 			<div class="panel-footer center ">
 				<p class="bold"><%= t('sign_in_or_sign_up') %></p>
-				<%= link_to  t('link_text.sign_up'), new_company_registration_path, class: 'btn btn-success button-sep'%>
-				<%= link_to  t('link_text.sign_in'), new_company_session_path, class: 'btn btn-info button-sep'%>
+				<%= link_to  t('link_text.sign_up'), companies_sign_up_path, class: 'btn btn-success button-sep'%>
 			</div>
 		</div>
 	</div>

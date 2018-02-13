@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
 	# devise route
-	devise_for :users, :controllers => { :registrations =>  "registrations" }
+	devise_for :users
 
 	devise_scope :user do
-		get 'student/sign_up' => 'registrations#new_student'
-		post 'student/sign_up' => 'registrations#create_student'
+		get 'students/sign_up' => 'student_registrations#new'
+		post 'students/sign_up' => 'student_registrations#create'
 		
-		get 'company/sign_up' => 'registrations#new_company'
-		post 'company/sign_up' => 'registrations#create_company'
+		get 'companies/sign_up' => 'company_registrations#new'
+		post 'companies/sign_up' => 'company_registrations#create'
 
-		get 'admin/sign_up' => 'registrations#new_admin'
-		post 'admin/sign_up' => 'registrations#create_admin'
+		get 'login', to: 'devise/sessions#new'
+		delete 'logout', to: 'devise/sessions#destroy'
+
 	end
 
 	# all other routes

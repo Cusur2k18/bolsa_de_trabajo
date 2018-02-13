@@ -1,0 +1,26 @@
+<nav class="nav navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<%= link_to "Bolsa de trabajo", root_path, class: 'navbar-brand' %>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+				<%= link_to companies_dashboard_path do %>
+
+					<i class="fa fa-user"></i>
+					<%= t('navbar.already_registered.icon')%>
+					<%= current_user.roleable.company_name %>
+				<% end %>
+				</li>
+
+				<li>
+				<%= link_to logout_path, method: :delete do  %>
+					<i class="fa fa-sign-in"></i>
+					<%= t('navbar.already_registered.logout') %> 
+				<% end %> 
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>

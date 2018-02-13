@@ -1,0 +1,30 @@
+<nav class="nav navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<%= link_to "Bolsa de trabajo", root_path, class: 'navbar-brand' %>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+				<%= link_to new_user_session_path do  %>
+					<i class="fa fa-sign-in"></i>
+					<%= t('navbar.already_registered.sign_in') %> 
+				<% end %> 
+				</li>
+				<li>
+				<%= link_to students_sign_up_path do %>
+					<i class="fa fa-user-plus"></i>
+					<%= t('navbar.new.student') %>
+				<% end %>
+				</li>
+				<li>
+				<%= link_to companies_sign_up_path do  %>
+					<i class="fa fa-briefcase"></i>
+					<%= t('navbar.new.company') %>
+				<% end %>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+</nav>

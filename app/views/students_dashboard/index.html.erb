@@ -1,9 +1,9 @@
-<h2>Bienvenido a tu perfil <%= current_student.first_name %></h2>
+<h2>Bienvenido a tu perfil <%= @user.roleable.first_name %></h2>
 <div class="left">
 	<div class="list-group side_nav">
-		<%= link_to "Editar datos personales", edit_student_registration_path, class: 'list-group-item'  %>
-		<%= link_to "Agregar estudios", new_education_path, class: 'list-group-item'  %>
-		<%= link_to "Verificar mis datos", student_path(current_student.id), class: 'list-group-item' %>
+		<%= link_to "Editar datos personales", "google.com", class: 'list-group-item'  %>
+		<%= link_to "Agregar estudios", "google.com", class: 'list-group-item'  %>
+		<%= link_to "Verificar mis datos", "google.com", class: 'list-group-item' %>
 	</div>
 </div>
 <br>

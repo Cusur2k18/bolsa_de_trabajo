@@ -5,9 +5,10 @@ es:
             company: "Como empresa"
             student: "Como estudiante"
         already_registered: 
+            logout: "Salir"
+            icon: "Mi perfil"
+            dashboard: "Mi panel de control"
             sign_in: "Ingresar"
-            company: "Como empresa"
-            student: "Como estudiante"
 
     benefits:
         students: "Beneficios para estudiantes egresados"
