@@ -21,10 +21,12 @@
 		<% else %>
 			<%= render "layouts/partials/unauth_nav" %>
 		<% end %>
+		<div class="content">
 		<p class="notice"><%= notice %></p>
 		<p class="alert"><%= alert %></p>
 
 		<%= yield %>
+		</div>
 		<footer class="footer">
 			<div class="container">
 				<p class="left">
