@@ -1,6 +1,7 @@
 class StudentRegistrationsController < Devise::RegistrationsController
 
 	def new
+		@student = Student.new
 		super
 	end
 

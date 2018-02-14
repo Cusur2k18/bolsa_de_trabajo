@@ -1,4 +1,25 @@
 es:
+    activerecord:
+        errors:
+            models:
+                user:
+                    attributes:
+                        email:
+                            blank: "no se puede dejar vacio"
+                        password:
+                            blank: "no se puede dejar vacio"
+                        password_confirmation:
+                            confirmation: "no coincide"
+                student:
+                    attributes:
+                        last_m_name:
+                            blank: "no se puede dejar vacio"
+                        first_name:
+                            blank: "no se puede dejar vacio"
+                        last_name:
+                            blank: "no se puede dejar vacio"
+                        udg_code:
+                            blank: "no se puede dejar vacio"
     navbar:
         new: 
             sign_up: "Registrarse"
@@ -65,6 +86,7 @@ es:
                 student: "Registrarse como estudiante"
                 terms: "He leído y accepto la política de privacidad y manejo de datos, además que estoy de acuerdo con que mis datos personales puedan ser transferidos a terceros"
                 sign_up: "Registrarse"
+                back: "Regresar"
 
     companies:
         company_name: "Nombre de la empresa a registrar"

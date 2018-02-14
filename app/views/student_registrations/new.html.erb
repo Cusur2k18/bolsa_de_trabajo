@@ -1,52 +1,61 @@
 <h2><%= t('students.registrations.new.student') %></h2>
 
 <%= form_for(resource, as: resource_name, url: students_sign_up_path) do |f| %>
-	<%= devise_error_messages! %>
-
-	<div class="field">
-		<%= label_tag :first_name, t('students.name')%>
-		<%= text_field_tag :first_name %>
+	<div class="container">
+		<%= devise_error_messages! %>
 	</div>
+	<%= render "errors/errors", object: @student %>
 
-	<div class="field">
-		<%= label_tag :last_name, t('students.last_name')%>
-		<%= text_field_tag :last_name %>
+	<div class="container small-form">
+		<div class="centered_form">
+			<div class="form-group">
+				<%= label_tag :first_name, t('students.name')%><br />
+				<%= text_field_tag :first_name, "", class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= label_tag :last_name, t('students.last_name')%><br />
+				<%= text_field_tag :last_name,"",  class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= label_tag :last_m_name, t('students.last_m_name')  %><br />
+				<%= text_field_tag :last_m_name,"",  class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= label_tag :udg_code, t('students.udg_code') %><br />
+				<%= text_field_tag :udg_code, "", class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= hidden_field_tag :state, 'unemployed' %>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :email %><br />
+				<%= f.email_field :email, autocomplete: "email", class: 'form-control' %>
+			</div>
+
+
+			<div class="form-group">
+				<%= f.label :password %>
+				<% if @minimum_password_length %>
+					<em>(<%= @minimum_password_length %> characters minimum)</em>
+				<% end %><br />
+				<%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :password_confirmation %><br />
+				<%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+			</div>
+
+			<div class="actions">
+				<%= f.submit t('students.registrations.new.sign_up'), class: 'btn btn-success' %>
+				<%= link_to t('students.registrations.new.back'), root_path, class: 'btn btn-info' %>
+			</div>
+		</div>
 	</div>
-
-	<div class="field">
-		<%= label_tag :last_m_name, t('students.last_m_name')  %>
-		<%= text_field_tag :last_m_name %>
-	</div>
-
-	<div class="field">
-		<%= label_tag :udg_code, t('students.udg_code') %>
-		<%= text_field_tag :udg_code %>
-	</div>
-
-	<div class="hidden-field">
-		<%= hidden_field_tag :state, 'unemployed' %>
-	</div>
-
-	<div class="field">
-		<%= f.label :email %><br />
-		<%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-	</div>
-
-
-	<div class="field">
-		<%= f.label :password %>
-		<% if @minimum_password_length %>
-			<em>(<%= @minimum_password_length %> characters minimum)</em>
-		<% end %><br />
-		<%= f.password_field :password, autocomplete: "off" %>
-	</div>
-
-	<div class="field">
-		<%= f.label :password_confirmation %><br />
-		<%= f.password_field :password_confirmation, autocomplete: "off" %>
-	</div>
-
-	<div class="actions">
-		<%= f.submit "Sign up" %>
-	</div>
+	<br >
 <% end %>

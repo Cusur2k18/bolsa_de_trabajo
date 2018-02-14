@@ -2,59 +2,65 @@
 <h2><%= t('companies.registrations.new.company') %></h2>
 
 <%= form_for(resource, as: resource_name, url: companies_sign_up_path) do |f| %>
-	<div class="centered_form">
-		<%= devise_error_messages! %>
 
-		<div class="field">
-			<%= label_tag :company_name, t('companies.company_name')%><br />
-			<%= text_field_tag :company_name%>
-		</div>
+	<%= devise_error_messages! %>
+	<%= render "errors/errors", object: @company%>
+	<div class="container small-form">
+		<div class="centered_form">
 
-		<div class="field">
-			<%= label_tag :contact_first_name, t('companies.person_f_name')%><br />
-			<%= text_field_tag :contact_first_name %>
-		</div>
+			<div class="form-group">
+				<%= label_tag :company_name, t('companies.company_name')%><br />
+				<%= text_field_tag :company_name, "", class: 'form-control' %>
+			</div>
 
-		<div class="field">
-			<%= label_tag :contact_last_name, t('companies.person_l_name')  %><br />
-			<%= text_field_tag :contact_last_name %>
-		</div>
+			<div class="form-group">
+				<%= label_tag :contact_first_name, t('companies.person_f_name')%><br />
+				<%= text_field_tag :contact_first_name, "", class: 'form-control' %>
+			</div>
 
-		<div class="field">
-			<%= label_tag :contact_last_m_name, t('companies.person_lm_name')  %><br />
-			<%= text_field_tag :contact_last_m_name %>
-		</div>
+			<div class="form-group">
+				<%= label_tag :contact_last_name, t('companies.person_l_name')  %><br />
+				<%= text_field_tag :contact_last_name, "", class: 'form-control' %>
+			</div>
 
-		<div class="field">
-			<%= label_tag :contact_employement, t('companies.person_employment') %><br />
-			<%= text_field_tag :contact_employement %>
-		</div>
+			<div class="form-group">
+				<%= label_tag :contact_last_m_name, t('companies.person_lm_name')  %><br />
+				<%= text_field_tag :contact_last_m_name, "", class: 'form-control' %>
+			</div>
 
-		<div class="hidden-field">
-			<%= hidden_field_tag :is_validated, false %>
-		</div>
+			<div class="form-group">
+				<%= label_tag :contact_employement, t('companies.person_employment') %><br />
+				<%= text_field_tag :contact_employement, "", class: 'form-control' %>
+			</div>
 
-		<div class="field">
-			<%= f.label :email %><br />
-			<%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-		</div>
+			<div class="form-group">
+				<%= hidden_field_tag :is_validated, :value => false %>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :email %><br />
+				<%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+			</div>
 
 
-		<div class="field">
-			<%= f.label :password %>
-			<% if @minimum_password_length %>
-				<em>(<%= @minimum_password_length %> characters minimum)</em>
-			<% end %><br />
-			<%= f.password_field :password, autocomplete: "off" %>
-		</div>
+			<div class="form-group">
+				<%= f.label :password %>
+				<% if @minimum_password_length %>
+					<em>(<%= @minimum_password_length %> characters minimum)</em>
+				<% end %><br />
+				<%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+			</div>
 
-		<div class="field">
-			<%= f.label :password_confirmation %><br />
-			<%= f.password_field :password_confirmation, autocomplete: "off" %>
-		</div>
+			<div class="form-group">
+				<%= f.label :password_confirmation %><br />
+				<%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+			</div>
 
-		<div class="actions">
-			<%= f.submit "Sign up" %>
+			<div class="actions">
+				<%= f.submit "Sign up", class: 'btn btn-success' %>
+				<%= link_to t('students.registrations.new.back'), root_path, class: 'btn btn-info' %>
+			</div>
 		</div>
 	</div>
+	<br />
 <% end %>
