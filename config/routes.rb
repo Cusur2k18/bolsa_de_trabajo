@@ -19,7 +19,8 @@ Rails.application.routes.draw do
 	get 'student_dashboard', to: 'students_dashboard#index'
 	get 'companies_dashboard', to: 'companies_dashboard#index'
 
-	resources :students
-	resources :companies
-	resources :admins
+	resources :students, only: [ :edit, :update, :delete ]
+	resources :companies, only: [ :edit, :update, :delete ]
+	resources :admins, only: [ :edit, :update, :delete ]
+	resources :educations
 end

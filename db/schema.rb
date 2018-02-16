@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20180209024829) do
     t.string "major"
     t.date "admission_date"
     t.date "graduation_date"
+    t.integer "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -45,7 +46,7 @@ ActiveRecord::Schema.define(version: 20180209024829) do
     t.string "first_name"
     t.string "last_name"
     t.string "last_m_name"
-    t.string "state"
+    t.integer "state"
     t.string "udg_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

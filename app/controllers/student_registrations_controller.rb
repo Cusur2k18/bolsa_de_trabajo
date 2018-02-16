@@ -14,7 +14,6 @@ class StudentRegistrationsController < Devise::RegistrationsController
 		@student.last_name = params[:last_name]
 		@student.last_m_name = params[:last_m_name]
 		@student.udg_code = params[:udg_code]
-		@student.state = params[:state]
 
 		if @student.save
 			resource.roleable = @student

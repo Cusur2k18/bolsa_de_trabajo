@@ -10,6 +10,20 @@ es:
                             blank: "no se puede dejar vacio"
                         password_confirmation:
                             confirmation: "no coincide"
+                company:
+                    attributes:
+                        company_name:
+                            blank: "no se puede dejar vacio"
+                        contact_first_name:
+                            blank: "no se puede dejar vacio"
+                        contact_last_name:
+                            blank: "no se puede dejar vacio"
+                        contact_last_m_name:
+                            blank: "no se puede dejar vacio"
+                        contact_employement:
+                            blank: "no se puede dejar vacio"
+  
+
                 student:
                     attributes:
                         last_m_name:
@@ -23,9 +37,11 @@ es:
     navbar:
         new: 
             sign_up: "Registrarse"
-            company: "Como empresa"
-            student: "Como estudiante"
+            company: "Registre su empresa"
+            student: "Registrate como egresado "
         already_registered: 
+            student: "Usted ingreso como egresado"
+            company: "Usted ingreso como empresa"
             logout: "Salir"
             icon: "Mi perfil"
             dashboard: "Mi panel de control"
@@ -58,7 +74,7 @@ es:
                 invalid: 'Correo o contraseña inválidos.'
 
     hola: "Hola Mundo!"
-    sign_in_or_sign_up: "Registrarse o iniciar sesion"
+    sign_up: "Registrarse"
     students:
         name: "Nombre(s)"
         last_name: "Apellido paterno"

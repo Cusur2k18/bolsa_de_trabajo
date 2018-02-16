@@ -14,7 +14,6 @@ class CompanyRegistrationsController < Devise::RegistrationsController
 		@company.contact_last_name = params[ :contact_last_name ]
 		@company.contact_last_m_name = params[ :contact_last_m_name ]
 		@company.contact_employement = params[ :contact_employement ]	
-		@company.is_validated = params[ :is_validated ]
 
 		if @company .save
 			resource.roleable = @company

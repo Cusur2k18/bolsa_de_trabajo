@@ -1,5 +1,5 @@
-<h2>Verificación de datos</h2>
-<div class="container list-group centered_form">
+
+<div class="list-group dashboard_data">
 	<p class="center list-group-item">
 	<strong>Nombres</strong><br />
 	<%= @student.first_name %><br />
@@ -25,10 +25,4 @@
 	<%= @student.state  %><br />
 	</p>
 
-	<p class="center list-group-item">
-	<strong>Correo electrónico</strong><br />
-	<%= @student.email %>
-	</p>
-	<br />
-	<%= link_to "Regresar", root_path, class: 'btn btn-primary' %>
 </div>

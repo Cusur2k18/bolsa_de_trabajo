@@ -6,6 +6,8 @@ class CreateEducations < ActiveRecord::Migration[5.1]
 			t.string :major
 			t.date :admission_date
 			t.date :graduation_date
+			# foreign key
+			t.integer :student_id
 
 			t.timestamps
 		end

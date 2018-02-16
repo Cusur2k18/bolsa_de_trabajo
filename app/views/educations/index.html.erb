@@ -1,0 +1,30 @@
+<h2><%= t('educations.index.title') %> </h2>
+<div class="container">
+	<table border="1" cellpading="10">
+		<thead>
+			<tr>
+				<th><%= t('educations.index.university') %></th>
+				<th><%= t('educations.index.educative_level') %></th>
+				<th><%= t('educations.index.major') %></th>
+				<th><%= t('educations.index.admission_date') %></th>
+				<th><%= t('educations.index.graduation_date') %></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @educations.each do |edu| %>
+				<tr>
+					<td><%= edu.university %></td>
+					<td><%= edu.education_level %></td>
+					<td><%= edu.major %></td>
+					<td><%= edu.admission_date %></td>
+					<td><%= edu.graduation_date %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<br>
+	
+	<div>
+		<%= link_to t('educations.index.go_back'), student_dashboard_path, class: 'btn btn-info' %>
+	</div>
+</div>
