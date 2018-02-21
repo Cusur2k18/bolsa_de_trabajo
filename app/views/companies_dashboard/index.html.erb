@@ -1,10 +1,12 @@
-<% if current_user.roleable_type == "Company" and user_signed_in? %>
-	<h2>Bienvenido a su perfil <%= current_user.roleable.company_name %></h2>
-	<div class="left">
-		<div class="list-group side_nav">
-			<%= link_to "Editar datos de la empresa", "http://google.com", class: 'list-group-item'  %>
+<div class="container">
+	<% if current_user.roleable_type == "Company" and user_signed_in? %>
+		<h2>Bienvenido a su perfil <%= current_user.roleable.company_name %></h2>
+		<div class="left">
+			<div class="list-group side_nav">
+				<%= link_to "Editar datos de la empresa", "http://google.com", class: 'list-group-item'  %>
+			</div>
 		</div>
-	</div>
-<% else %>
-	<%= render "errors/permission_denied" %>
-<% end %>
+	<% else %>
+		<%= render "errors/permission_denied" %>
+	<% end %>
+</div>

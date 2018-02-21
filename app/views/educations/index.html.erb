@@ -1,29 +1,41 @@
 <h2><%= t('educations.index.title') %> </h2>
 <div class="container">
-	<table border="1" cellpading="10">
-		<thead>
-			<tr>
-				<th><%= t('educations.index.university') %></th>
-				<th><%= t('educations.index.educative_level') %></th>
-				<th><%= t('educations.index.major') %></th>
-				<th><%= t('educations.index.admission_date') %></th>
-				<th><%= t('educations.index.graduation_date') %></th>
-			</tr>
-		</thead>
-		<tbody>
-			<% @educations.each do |edu| %>
-				<tr>
-					<td><%= edu.university %></td>
-					<td><%= edu.education_level %></td>
-					<td><%= edu.major %></td>
-					<td><%= edu.admission_date %></td>
-					<td><%= edu.graduation_date %></td>
+	<% if @educations.empty? %>
+		<div class="alert alert-warning">
+			<p><%= t('educations.index.empty_title') %></p>
+			<p><%= link_to t('educations.index.empty_body'), new_education_path, class: 'btn btn-success'%></p>
+		</div>
+	<% else %>
+		<table class="table">
+			<thead>
+				<tr scope="col">
+					<th><%= t('educations.index.university') %></th>
+					<th><%= t('educations.index.educative_level') %></th>
+					<th><%= t('educations.index.major') %></th>
+					<th><%= t('educations.index.admission_date') %></th>
+					<th><%= t('educations.index.graduation_date') %></th>
+					<th><%= t('educations.index.actions.actions') %></th>
 				</tr>
-			<% end %>
-		</tbody>
-	</table>
-	<br>
-	
+			</thead>
+			<tbody>
+				<% @educations.each do |edu| %>
+					<tr>
+						<td scope="row"><%= edu.university %></td>
+						<td scope="row"><%= edu.education_level %></td>
+						<td scope="row"><%= edu.major %></td>
+						<td scope="row"><%= edu.admission_date %></td>
+						<td scope="row"><%= edu.graduation_date %></td>
+						<td scope="row">
+							<%= link_to t('edications.index.actions.edit'), edit_education_path(edu), class: 'btn btn-primary' %>
+							<%= link_to t('edications.index.actions.delete'), education_path(edu), method: :delete, class: 'btn btn-danger' %>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+		<br>
+	<% end %>
+
 	<div>
 		<%= link_to t('educations.index.go_back'), student_dashboard_path, class: 'btn btn-info' %>
 	</div>

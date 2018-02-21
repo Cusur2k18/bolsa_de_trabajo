@@ -4,6 +4,6 @@ class User < ApplicationRecord
 	devise :database_authenticatable, :registerable,
 		:recoverable, :rememberable, :trackable, :validatable
 	belongs_to :roleable, polymorphic: true
-
+	has_many :phone_numbers
 
 end

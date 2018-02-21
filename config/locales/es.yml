@@ -50,6 +50,16 @@ es:
     benefits:
         students: "Beneficios para estudiantes egresados"
         companies: "Beneficios para empresas registradas"
+        registered_students:
+            main_text: "Entre los beneficios que se brindan para los estudiantes estan: "
+            reason_1: "Completar su perfil profesional"
+            reason_2: "Encontrar empresas nacionales e internacionales facilmente"
+            reason_3: "Encuentra trabajo de manera facil y rapida"
+        registered_companies: 
+            main_text: "Los beneficios para las empresas registradas son: "
+            reason_1: "Encontrar candidatos para un puesto rapidamente"
+            reason_2: " "
+            reason_3: " "
 
     description:
         title: "Descripcion del proyecto"
@@ -75,6 +85,17 @@ es:
 
     hola: "Hola Mundo!"
     sign_up: "Registrarse"
+    student_dashboard:
+        edit_personal_data: "Editar datos personales"
+        edit_email_data: "Editar email y contraseña"
+        new_education: "Agregar carrera"
+        see_educations: "Ver carreras"
+        first_name: "Nombre(s)"
+        last_name: "Apellido paterno"
+        last_m_name: "Apellido materno"
+        udg_code: "Codigo UDG"
+        state: "Estado"
+
     students:
         name: "Nombre(s)"
         last_name: "Apellido paterno"
@@ -92,17 +113,43 @@ es:
                 sign_in: "Ingresar"
         registrations:
             edit:
+                first_name: "Nombre(s)"
+                last_name: "Apellido paterno"
+                last_m_name: "Apellido materno"
+                udg_code: "Codigo UDG"
+                state: "Estado"
                 title: "Editar sus datos"
                 we_need_your_current_password_to_confirm_your_changes: "Ingresa tu contraseña para guardar cambios"
                 leave_blank_if_you_don_t_want_to_change_it: "Déja éste espacio en blanco si no quieres cambiar tu contraseña"
                 cancel_my_account: "Borrar mi cuenta"
                 unhappy: "¿No está conforme con el servicio?"
                 update: "Actualizar mis datos"
+                go_back: "Regresar"
             new:
                 student: "Registrarse como estudiante"
                 terms: "He leído y accepto la política de privacidad y manejo de datos, además que estoy de acuerdo con que mis datos personales puedan ser transferidos a terceros"
                 sign_up: "Registrarse"
                 back: "Regresar"
+
+    educations:
+        index:
+            title: "Mis carreras"
+            university: "Universidad"
+            educative_level: "Nivel educativo"
+            major: "Nombre de la carrera"
+            admission_date: "Fecha de admision"
+            graduation_date: "Fecha de graduacion"
+            go_back: "Regresar"
+            empty_title: "No se ha agregado ninguna carrera todavia"
+            empty_body: "Agregar una carrera?"
+        new:
+            title: "Agregar una carrera"
+            university: "Universidad"
+            educative_level: "Nivel educativo"
+            major: "Nombre de la carrera"
+            admission_date: "Fecha de admision"
+            graduation_date: "Fecha de graduacion"
+            create: "Agregar carrera"
 
     companies:
         company_name: "Nombre de la empresa a registrar"
@@ -134,6 +181,7 @@ es:
                 cancel_my_account: "Borrar mi cuenta"
                 unhappy: "¿No está conforme con el servicio?"
                 update: "Actualizar mis datos"
+                go_back: "Regresar"
             new:
                 company: "Registrar empresa"
                 sign_up: "Registrarse"

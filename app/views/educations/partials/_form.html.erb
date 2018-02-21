@@ -1,8 +1,9 @@
 <%= simple_form_for @education do |edu| %>
-	<%= edu.input :university , label: t('label') %>
-	<%= edu.input :education_level , label: t('label') %>
-	<%= edu.input :major , label: t('label') %>
-	<%= edu.input :admission_date , label: t('label') %>
-	<%= edu.input :graduation_date , label: t('label') %>
-	<%= edu.button :submit, class: 'btn btn-success' %>
+	<%= edu.input :university , label: t('educations.new.university') %>
+	<%= edu.input :education_level , label: t('educations.new.educative_level') %>
+	<%= edu.input :major , label: t('educations.new.major') %>
+	<%= edu.input :admission_date , label: t('educations.new.admission_date') %>
+	<%= edu.input :graduation_date , label: t('educations.new.graduation_date') %>
+	<%= edu.button :submit, t('educations.new.create') , class: 'btn btn-success' %>
+	<%= link_to t('educations.index.go_back'), student_dashboard_path, class: 'btn btn-info' %>
 <% end %>
