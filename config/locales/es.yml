@@ -152,8 +152,37 @@ es:
             sign_in_omniauth: "Registrarse con #{OmniAuth::Utils.camelize(provider)}"
     hola: "Hola Mundo!"
     sign_up: "Registrarse"
+    addresses:
+        state: "Estado"
+        city: "Ciudad"
+        zip_code: "Codigo postal"
+        street_address: "Numero exterior"
+        apartment_address: "Numero interior"
+        go_back: "Regresar"
+        new:
+            address: "Agregar direccion"
+        index:
+            add_address: "Agregar direccion"
+            title: "Mi direccion"
+            state: "Estado"
+            city: "Ciudad"
+            zip_code: "Codigo postal"
+            street: "Calle"
+            street_address: "Numero exterior"
+            apartment_number: "Numero interior"
+            actions:
+                title: "Acciones"
+                edit: "Editar direccion"
+                delete: "Borrar direccion"
+            warnings:
+                no_address: "No haz agregado ninguna direccion"
+                can_not_add_more_addresses: "Solo puedes tener una direccion"
+                delete: "En verdad desea borrar su direccion?"
+
     companies_dashboard:
         index:
+            add_address: "Agregar direccion"
+            see_address: "Ver mi direccion"
             title: "Bienvenido a su empresa "
             edit_company_data: "Editar datos generales"
             edit_email_data: "Editar correo y contraseña"
@@ -165,6 +194,8 @@ es:
             contact_last_m_name: "Apellido materno de la persona que registro la empresa"
             employement: "Puesto de la persona que registro la empresa"
     student_dashboard:
+        add_address: "Agregar direccion"
+        see_address: "Ver mi direccion"
         edit_personal_data: "Editar datos personales"
         edit_email_data: "Editar email y contraseña"
         new_education: "Agregar carrera"

@@ -28,9 +28,6 @@
 			<% end %>
 		</table>
 	<% end %>
-	<% if current_user.roleable_type == "Student" %>
-		<%= link_to t('phone_numbers.index.actions.go_back'), student_dashboard_path, class: 'btn btn-info' %>
-	<% else %>
-		<%= link_to t('phone_numbers.index.actions.go_back'), companies_dashboard_path, class: 'btn btn-info' %>
-	<% end %>
+
+	<%= render "shared/links" %>
 </div>

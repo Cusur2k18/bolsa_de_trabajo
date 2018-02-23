@@ -1,0 +1,38 @@
+<h2><%= t('addresses.index.title') %></h2>
+<div class="container">
+	<% if @address.nil?  %>
+		<div class="alert alert-warning">
+			<p><%= t('addresses.index.warnings.no_address') %></p>
+			<p><%= link_to t('addresses.index.add_address'), new_address_path, class: 'btn btn-success' %></p>
+		</div>
+	<% else %>
+		<table class="table">
+			<thead>
+				<tr scope="col">
+					<th><%= t('addresses.index.state') %></th>
+					<th><%= t('addresses.index.city') %></th>
+					<th><%= t('addresses.index.street') %></th>
+					<th><%= t('addresses.index.zip_code') %></th>
+					<th><%= t('addresses.index.street_address') %></th>
+					<th><%= t('addresses.index.apartment_number') %></th>
+					<th><%= t('addresses.index.actions.title') %></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td scope="row"><%= @address.state %></td>
+					<td scope="row"><%= @address.city %></td>
+					<td scope="row"><%= @address.street %></td>
+					<td scope="row"><%= @address.zip_code %></td>
+					<td scope="row"><%= @address.street_address %></td>
+					<td scope="row"><%= @address.apartment_number %></td>
+					<td scope="row">
+						<%= link_to t('addresses.index.actions.edit'), edit_address_path(@address), class: 'btn btn-info' %>
+						<%= link_to t('addresses.index.actions.delete'), address_path(@address),method: :delete, class: 'btn btn-danger', data: { confirm: I18n.t("addresses.index.warnings.delete") } %> 
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	<% end %>
+	<%= render "shared/links" %>
+</div>

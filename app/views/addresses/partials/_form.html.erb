@@ -1,0 +1,10 @@
+<%= simple_form_for @address do |addr| %>
+	<%= addr.input :state, label: t('addresses.state') %>
+	<%= addr.input :city, label: t('addresses.city') %>
+	<%= addr.input :street, label: t('addresses.street') %>
+	<%= addr.input :zip_code, label: t('addresses.zip_code') %>
+	<%= addr.input :street_address, label: t('addresses.street_address') %>
+	<%= addr.input :apartment_number, label: t('addresses.apartment_address') %>
+	<%= addr.button :submit %>
+	<%= link_to t('address.go_back'), addresses_path, class: 'btn btn-info' %>
+<% end %>

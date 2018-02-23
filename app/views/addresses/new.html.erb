@@ -1,0 +1,19 @@
+<h2><%= t('addresses.new.address') %></h2>
+<div class="container">
+	<% if current_user.address.nil? %>
+		<%= render "errors/errors", object: @address %>
+		<%= render "addresses/partials/form" %>
+	<% else %>
+		<div class="alert alert-warning">
+			<p class="center"><%= t('addresses.index.warnings.can_not_add_more_addresses') %></p>
+			<p class="center">
+			<%= link_to t('addresses.index.actions.edit'), addresses_path, class: 'btn btn-success' %>
+			<% if current_user.roleable_type == "Student" %>
+				<%= link_to t('addresses.go_back'), student_dashboard_path, class: 'btn btn-info' %>
+			<% else %>
+				<%= link_to t('addresses.go_back'), companies_dashboard_path, class: 'btn btn-info' %>
+				</p>
+			<% end %>
+		</div>
+	<% end %>
+</div>
