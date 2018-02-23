@@ -3,9 +3,37 @@ es:
         submit:
             create: "Agregar %{model}"
             update: "Guardar cambios"
+            sign_up: "Registrarse"
     activerecord:
+        attributes:
+            education:
+                university: "Universidad"
+                education_level: "Nivel educativo"
+                major: "Carrera"
+            student:
+                first_name: "Nombre(s)"
+                last_name: "Apellido paterno"
+                last_m_name: "Apellido materno"
+                udg_code: "Codigo UDG"
+            phone_number:
+                description: "Tipo de telefono"
+                phone_number: "Numero telefonico"
+            company:
+                company_name: "Nombre de la empresa"
+                contact_first_name: "Nombre de la persona que registra la empresa"
+                contact_last_name: "Apellido paterno de la persona que registra la empresa"
+                contact_last_m_name: "Apellido materno de la persona que registra la empresa"
+                contact_employement: "Puesto de la persona que registra la empresa"
         errors:
             models:
+                education:
+                    attributes:
+                        university:
+                            blank: "no se puede dejar en blanco"
+                        education_level:
+                            blank: "no se puede dejar en blanco"
+                        major:
+                            blank: "no se puede dejar en blanco"
                 user:
                     attributes:
                         email:
@@ -74,7 +102,7 @@ es:
     phone_numbers:
         new:
             add_phone_number: "Agregar numero telefonico"
-        description: "Tipo de numero"
+        description: "Tipo de telefono"
         phone_number: "Numero de telefono"
         index:
             title: "Mis numeros telefonicos"
@@ -112,8 +140,30 @@ es:
             company:
                 invalid: 'Correo o contraseña inválidos.'
 
+    users:
+        sign_up: "Registrarse"
+        log_in: "Ingresar"
+        shared:
+            log_in: "Ingresar"
+            sign_up: "Registrarse"
+            forgot_your_password: "¿Olvidaste tu contraseña?"
+            did_not_receive_confirmation_instructions?: "¿No recibiste confirmacion para confirmar tu cuenta?"
+            did_not_receive_unlock_instructions?: "No recibiste instrucciones para desbloquear tu cuenta?"
+            sign_in_omniauth: "Registrarse con #{OmniAuth::Utils.camelize(provider)}"
     hola: "Hola Mundo!"
     sign_up: "Registrarse"
+    companies_dashboard:
+        index:
+            title: "Bienvenido a su empresa "
+            edit_company_data: "Editar datos generales"
+            edit_email_data: "Editar correo y contraseña"
+            new_phone_number: "Agregar numeros telefonicos"
+            see_phone_numbers: "Ver numeros telefonicos registrados"
+            company_name: "Nombre de la empresa"
+            contact_first_name: "Nombre de la persona que registro la empresa"
+            contact_last_name: "Apellido paterno de la persona que registro la empresa"
+            contact_last_m_name: "Apellido materno de la persona que registro la empresa"
+            employement: "Puesto de la persona que registro la empresa"
     student_dashboard:
         edit_personal_data: "Editar datos personales"
         edit_email_data: "Editar email y contraseña"
@@ -134,6 +184,7 @@ es:
         udg_code: "Codigo UDG"
         password: "Contraseña"
         confirm_password: "Confirmar contraseña"
+        password_length: " caracteres como minimo"
         shared:
             links:
                 forgot_your_password: "Recuperar contraseña"
@@ -183,6 +234,7 @@ es:
             create: "Agregar carrera"
 
     companies:
+
         company_name: "Nombre de la empresa a registrar"
         person_f_name: "Nombre(s) de la persona que registra la empresa"
         person_l_name: "Apellido paterno de la persona que registra la empresa"
@@ -191,7 +243,7 @@ es:
         company_email: "Correo electronico"
         company_password: "Contraseña"
         company_password_confirmation: "Confirmar contraseña"
-        password_length: "caracteres como minimo"
+        password_length: " caracteres como minimo"
         shared:
             links:
                 forgot_your_password: "Recuperar contraseña"

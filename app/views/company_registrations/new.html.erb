@@ -43,7 +43,7 @@
 			<div class="form-group">
 				<%= f.label :password %>
 				<% if @minimum_password_length %>
-					<em>(<%= @minimum_password_length %> characters minimum)</em>
+					<em>(<%= @minimum_password_length %><%= t('companies.password_length') %>)</em>
 				<% end %><br />
 				<%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
 			</div>
@@ -54,7 +54,7 @@
 			</div>
 
 			<div class="actions">
-				<%= f.submit "Sign up", class: 'btn btn-success' %>
+				<%= f.submit t("students.registrations.new.sign_up"), class: 'btn btn-success' %>
 				<%= link_to t('students.registrations.new.back'), root_path, class: 'btn btn-info' %>
 			</div>
 		</div>

@@ -38,7 +38,7 @@
 			<div class="form-group">
 				<%= f.label :password %>
 				<% if @minimum_password_length %>
-					<em>(<%= @minimum_password_length %> characters minimum)</em>
+					<em>(<%= @minimum_password_length %> <%= t('students.password_length')%> )</em>
 				<% end %><br />
 				<%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
 			</div>

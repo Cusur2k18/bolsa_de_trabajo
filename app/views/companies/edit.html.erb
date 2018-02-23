@@ -1,0 +1,13 @@
+<h2><%= t('companies.registrations.edit.title') %></h2>
+<div class="container">
+	<%= simple_form_for @company do |comp| %>
+		<%= comp.input :company_name , label: t('companies.registrations.edit.company_name') %>
+		<%= comp.input :contact_first_name , label: t('companies.registrations.edit.first_name') %>
+		<%= comp.input :contact_last_name , label: t('companies.registrations.edit.last_name') %>
+		<%= comp.input :contact_last_m_name , label: t('companies.registrations.edit.last_m_name') %>
+		<%= comp.input :contact_employement , label: t('companies.registrations.edit.contact_employement') %>
+		<%= comp.button :submit %>
+
+		<%= link_to t('companies.registrations.edit.go_back'), companies_dashboard_path, class: 'btn btn-info' %>
+	<% end %>
+</div>

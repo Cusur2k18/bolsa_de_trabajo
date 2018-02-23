@@ -11,7 +11,7 @@
 				<%= link_to t('student_dashboard.see_educations'), educations_path, class: 'list-group-item' %>
 			</div>
 		</div>
-		<%= render "students/partials/show_personal_data" %>
+		<%= render "students_dashboard/partials/show_personal_data" %>
 	</div>
 <% else %>
 	<%= render "errors/permission_denied" %>
