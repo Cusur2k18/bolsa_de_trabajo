@@ -1,0 +1,32 @@
+<h2><%= t('phone_numbers.index.title') %></h2>
+<div class="container">
+	<% if @phone_numbers.empty? %>
+		<div class="alert alert-warning">
+			<p><%= t('phone_numbers.index.warnings.no_phone_numbers_body') %></p>
+			<p><%= link_to t('phone_numbers.index.actions.create'), new_phone_number_path, class: 'btn btn-success' %></p>
+		</div>
+	<% else %>
+		<table class="table">
+			<thead>
+				<tr scope="col">
+					<th><%= t('phone_numbers.index.phone_numbers') %></th>
+					<th><%= t('phone_numbers.index.description') %></th>
+					<th><%= t('phone_numbers.index.actions.title') %></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @phone_numbers.each do |phones| %>
+					<tr>
+						<td scope="row"><%= phones.phone_number %></td>
+						<td scope="row"><%= phones.description %></td>
+						<td scope="row">
+							<%= link_to t('phone_numbers.index.actions.edit'), edit_phone_number_path(phones), class: 'btn btn-info' %>
+							<%= link_to t('phone_numbers.index.actions.delete'), phone_number_path(phones), method: :delete, class: 'btn btn-danger', data: { confirm: I18n.t("phone_numbers.index.warnings.delete") } %>
+						</td>
+					</tr>
+				</tbody>
+			<% end %>
+		</table>
+	<% end %>
+	<%= link_to t('phone_numbers.index.actions.go_back'), student_dashboard_path, class: 'btn btn-info' %>
+</div>

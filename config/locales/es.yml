@@ -1,4 +1,8 @@
 es:
+    helpers:
+        submit:
+            create: "Agregar %{model}"
+            update: "Guardar cambios"
     activerecord:
         errors:
             models:
@@ -24,6 +28,12 @@ es:
                             blank: "no se puede dejar vacio"
   
 
+                phone_number:
+                    attributes:
+                        description:
+                            blank: "no se puede dejar vacio"
+                        phone_number:
+                            blank: "no se puede dejar vacio"
                 student:
                     attributes:
                         last_m_name:
@@ -61,6 +71,25 @@ es:
             reason_2: " "
             reason_3: " "
 
+    phone_numbers:
+        new:
+            add_phone_number: "Agregar numero telefonico"
+        description: "Tipo de numero"
+        phone_number: "Numero de telefono"
+        index:
+            title: "Mis numeros telefonicos"
+            phone_numbers: "Numero telefonico"
+            description: "Descripcion"
+            actions:
+                title: "Acciones"
+                edit: "Editar"
+                delete: "Borrar"
+                go_back: "Regresar"
+                create: "Agregar numero telefonico?"
+            warnings:
+                no_phone_numbers_body: "No existe ningun numero telefonico"
+                delete: "En verdad quiere borrar este numero telefonico?"
+
     description:
         title: "Descripcion del proyecto"
         project: "El Centro Universitario del Sur como parte de la Red Universitaria de la Universidad de Guadalajara está comprometido con sus egresados para apoyarlos a entrar al sector productivo de una manera existosa, a través de vinculación con empresas líderes en sus ramas y de ésta forma contribuir con su desarollo profesional"
@@ -95,6 +124,8 @@ es:
         last_m_name: "Apellido materno"
         udg_code: "Codigo UDG"
         state: "Estado"
+        new_phone_number: "Agregar numero telefonico"
+        see_phone_numbers: "Ver numeros telefonicos"
 
     students:
         name: "Nombre(s)"
