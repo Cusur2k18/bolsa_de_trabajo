@@ -14,6 +14,26 @@ class StudentRegistrationsController < Devise::RegistrationsController
 		@student.last_name = params[:last_name]
 		@student.last_m_name = params[:last_m_name]
 		@student.udg_code = params[:udg_code]
+		@student.born_date = params[:born_date]
+
+		#assigning the enum data
+		if params[:genre] == "masculino"
+			@student.genre = 0
+		else
+			@student.genre = 1
+		end
+
+		if params[:civil_status] == "soltero"
+			@student.civil_status = 0
+		elsif params[:civil_status] == "casado"
+			@student.civil_status = 1
+		elsif params[:civil_status ] == "viudo"
+			@student.civil_status = 2
+		else 
+			@student.civil_status =3
+		end
+
+
 
 		if @student.save
 			resource.roleable = @student

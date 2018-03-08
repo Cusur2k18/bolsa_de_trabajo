@@ -33,6 +33,25 @@
 				<%= text_field_tag :contact_employement, "", class: 'form-control' %>
 			</div>
 
+			<div class="form-group">
+				<%= label_tag :website, t('companies.website') %><br />
+				<%= text_field_tag :website, "", class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= label_tag :rfc, t('companies.rfc') %><br />
+				<%= text_field_tag :rfc, "", class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= label_tag :foundation_date, t('companies.foundation_date') %><br />
+				<%= date_field_tag :foundation_date, "", class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= label_tag :category, t('companies.type') %><br />
+				<%= select_tag :category,  options_for_select(Company.categories.keys), class: 'form-control' %>
+			</div>
 
 			<div class="form-group">
 				<%= f.label :email %><br />

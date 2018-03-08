@@ -28,6 +28,22 @@
 				<%= text_field_tag :udg_code, "", class: 'form-control' %>
 			</div>
 
+			<div class="form-group">
+				<%= label_tag :born_date, t('students.born_date') %><br />
+				<%= date_field_tag :born_date, "", class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= label_tag :genre, t('students.genre') %><br />
+				<%= select_tag :genre, options_for_select(Student.genres.keys), class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= label_tag :civil_status, t('students.civil_status') %><br />
+				<%= select_tag :civil_status, options_for_select(Student.civil_statuses.keys), class: 'form-control' %>
+			</div>
+
+			
 
 			<div class="form-group">
 				<%= f.label :email %><br />

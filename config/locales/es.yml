@@ -15,6 +15,9 @@ es:
                 last_name: "Apellido paterno"
                 last_m_name: "Apellido materno"
                 udg_code: "Codigo UDG"
+                born_date: "Fecha de nacimiento"
+                civil_status: "Estado civil"
+                genre: "Sexo"
             phone_number:
                 description: "Tipo de telefono"
                 phone_number: "Numero telefonico"
@@ -24,6 +27,9 @@ es:
                 contact_last_name: "Apellido paterno de la persona que registra la empresa"
                 contact_last_m_name: "Apellido materno de la persona que registra la empresa"
                 contact_employement: "Puesto de la persona que registra la empresa"
+                website: "Sitio web"
+                foundation_date: "Fecha de apertura"
+                rfc: "RFC"
         errors:
             models:
                 education:
@@ -54,7 +60,13 @@ es:
                             blank: "no se puede dejar vacio"
                         contact_employement:
                             blank: "no se puede dejar vacio"
-  
+                        website:
+                            blank: "no se puede dejar vacio"
+                        foundation_date:
+                            blank: "no se puede dejar vacio"
+                        rfc:
+                            blank: "no se puede dejar vacio"
+
 
                 phone_number:
                     attributes:
@@ -72,6 +84,13 @@ es:
                             blank: "no se puede dejar vacio"
                         udg_code:
                             blank: "no se puede dejar vacio"
+                        genre:
+                            blank: "no se puede dejar vacio"
+                        born_date:
+                            blank: "no se puede dejar vacio"
+                        civil_status:
+                            blank: "no se puede dejar vacio"
+
     navbar:
         new: 
             sign_up: "Registrarse"
@@ -271,8 +290,12 @@ es:
         person_l_name: "Apellido paterno de la persona que registra la empresa"
         person_lm_name: "Apellido materno de la persona que registra la empresa"
         person_employment: "Puesto de la persona que registra la empresa"
+        rfc: "RFC"
         company_email: "Correo electronico"
         company_password: "Contraseña"
+        website: "Sitio web"
+        foundation_date: "Fecha de apertura"
+        type: "Tipo empresa"
         company_password_confirmation: "Confirmar contraseña"
         password_length: " caracteres como minimo"
         shared:

@@ -14,6 +14,17 @@ class CompanyRegistrationsController < Devise::RegistrationsController
 		@company.contact_last_name = params[ :contact_last_name ]
 		@company.contact_last_m_name = params[ :contact_last_m_name ]
 		@company.contact_employement = params[ :contact_employement ]	
+		@company.website = params[ :website ]
+		@company.foundation_date = params[ :foundation_date ]
+		@company.rfc = params[ :rfc ]
+
+		# we company type value, since enum is an int and we get a string...
+		if params[ :category ] == "matriz"
+			@company.category = 0
+		else
+			@company.category = 1
+		end
+
 
 		if @company .save
 			resource.roleable = @company
