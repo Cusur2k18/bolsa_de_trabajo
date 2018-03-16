@@ -2,8 +2,11 @@
 <h2><%= t('companies.registrations.new.company') %></h2>
 
 <%= form_for(resource, as: resource_name, url: companies_sign_up_path) do |f| %>
-
-	<%= devise_error_messages! %>
+	<% if !devise_error_messages!.empty? %>
+		<div class="container alert alert-warning">
+			<%= devise_error_messages! %>
+		</div>
+	<% end %>
 	<%= render "errors/errors", object: @company%>
 	<div class="container small-form">
 		<div class="centered_form">

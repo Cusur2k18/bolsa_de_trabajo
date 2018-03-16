@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180308013117) do
+ActiveRecord::Schema.define(version: 20180313231249) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "state"
@@ -61,6 +61,34 @@ ActiveRecord::Schema.define(version: 20180308013117) do
     t.boolean "has_degree"
   end
 
+  create_table "job_applications", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "job_id"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string "category"
+    t.time "workday_schedule_start"
+    t.time "workday_schedule_end"
+    t.string "contract_type"
+    t.integer "workday_type"
+    t.integer "salary"
+    t.string "name"
+    t.string "age_requierement"
+    t.integer "gender"
+    t.string "schooling_level"
+    t.string "work_experience"
+    t.string "specialized_knowledge"
+    t.string "aptitudes"
+    t.integer "job_duration"
+    t.integer "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "phone_numbers", force: :cascade do |t|
     t.string "phone_number"
     t.string "description"
@@ -99,18 +127,7 @@ ActiveRecord::Schema.define(version: 20180308013117) do
     t.integer "roleable_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "vacancies", force: :cascade do |t|
-    t.string "name"
-    t.string "category"
-    t.integer "schedule"
-    t.string "contract_type"
-    t.time "shift_start"
-    t.time "shift_end"
-    t.string "payment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["roleable_id"], name: "index_users_on_roleable_id", unique: true
   end
 
 end

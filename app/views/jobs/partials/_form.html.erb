@@ -1,0 +1,18 @@
+<%= simple_form_for @job do |jb| %>
+	<%= jb.input :name , label: t('companies.jobs.name') %>
+	<%= jb.input :category , label: t('companies.jobs.category') %>
+	<%= jb.input :workday_type, collection: Job.workday_types, include_blank: false, label: t('companies.jobs.workday_type') %>
+
+	<%= jb.input :contract_type , label: t('companies.jobs.contract_type') %>
+	<%= jb.input :workday_schedule_start , label: t('companies.jobs.workday_schedule_start') %>
+	<%= jb.input :workday_schedule_end, label: t('companies.jobs.workday_schedule_end') %>
+	<%= jb.input :salary , label: t('companies.jobs.salary') %>
+	<%= jb.input :age_requierement , label: t('companies.jobs.age_requirement') %>
+	<%= jb.input :gender, collection: Job.genres, include_blank: false, label: t('companies.jobs.gender') %>
+	<%= jb.input :schooling_level , label: t('companies.jobs.schooling_level') %>
+	<%= jb.input :work_experience , label: t('companies.jobs.work_experience') %>
+	<%= jb.input :specialized_knowledge , label: t('companies.jobs.specialized_knowledge') %>
+	<%= jb.input :aptitudes , label: t('companies.jobs.aptitudes') %>
+	<%= jb.input :job_duration , label: t('companies.jobs.job_duration') %>
+	<%= jb.button :submit %>
+<% end %>

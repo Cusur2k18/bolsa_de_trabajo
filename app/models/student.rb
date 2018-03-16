@@ -2,7 +2,8 @@ class Student < ApplicationRecord
 
 	has_one :user, as: :roleable
 	has_many :educations, dependent: :destroy
-	
+	has_many :job_applications
+
 	enum state: [ :desempleado, :proceso, :contratado ]
 	enum civil_status: [ :soltero, :casado, :viudo, :divorciado ]
 	enum genre: [ :masculino, :femenino ]
@@ -17,5 +18,5 @@ class Student < ApplicationRecord
 			self.state ||= Student.states.key(0)
 		end
 	end
-	
+
 end

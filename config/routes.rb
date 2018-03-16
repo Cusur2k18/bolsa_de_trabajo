@@ -27,4 +27,5 @@ Rails.application.routes.draw do
 	resources :educations
 	resources :phone_numbers
 	resources :addresses
+	resources :jobs
 end

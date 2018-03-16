@@ -1,4 +1,7 @@
 es:
+    warnings:
+        un_authorized_access: "Acceso no autorizado"
+        something_went_wrong: "Algo fallo y no se pudo proceder con la operacion"
     helpers:
         submit:
             create: "Agregar %{model}"
@@ -212,6 +215,9 @@ es:
             contact_last_name: "Apellido paterno de la persona que registro la empresa"
             contact_last_m_name: "Apellido materno de la persona que registro la empresa"
             employement: "Puesto de la persona que registro la empresa"
+            new_job: "Agregar vacante"
+            my_list_of_jobs: "Lista de vacantes"
+
     student_dashboard:
         add_address: "Agregar direccion"
         see_address: "Ver mi direccion"
@@ -284,6 +290,21 @@ es:
             create: "Agregar carrera"
 
     companies:
+        jobs:
+            name: "Nombre de la vacante"
+            category: "Categoria"
+            workday_type: "Tipo de jornada"
+            contract_type: "Tipo de contrato"
+            workday_schedule_start: "Hora de inicio jornada"
+            workday_schedule_end: "Hora de fin de jornada"
+            salary: "Salario"
+            age_requirement: "Edad minima"
+            gender: "Genero"
+            schooling_level: "Nivel educativo"
+            work_experience: "Experiencia laboral"
+            specialized_knowledge: "Conocimientos especiales"
+            aptitudes: "Aptitudes"
+            job_duration: "Duracion del trabajo (dias)"
 
         company_name: "Nombre de la empresa a registrar"
         person_f_name: "Nombre(s) de la persona que registra la empresa"
