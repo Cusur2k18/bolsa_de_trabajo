@@ -33,6 +33,17 @@ es:
                 website: "Sitio web"
                 foundation_date: "Fecha de apertura"
                 rfc: "RFC"
+            job:
+                category: "Categoria"
+                contract_type: "Tipo de contrato"
+                salary: "Salario"
+                name: "Nombre de la vacante"
+                age_requierement: "Edad minima"
+                schooling_level: "Nivel educativo"
+                work_experience: "Experiencia laboral"
+                specialized_knowledge: "Conocimientos especiales"
+                aptitudes: "Aptitudes"
+                job_duration: "Duracion del puesto"
         errors:
             models:
                 education:
@@ -71,6 +82,29 @@ es:
                             blank: "no se puede dejar vacio"
 
 
+                job:
+                    attributes:
+                        category:
+                            blank: "no se puede dejar vacio"
+                        contract_type:
+                            blank: "no se puede dejar vacio"
+                        salary:
+                            blank: "no se puede dejar vacio"
+                        name:
+                            blank: "no se puede dejar vacio"
+                        age_requierement:
+                            blank: "no se puede dejar vacio"
+                        schooling_level:
+                            blank: "no se puede dejar vacio"
+                        work_experience:
+                            blank: "no se puede dejar vacio"
+                        specialized_knowledge:
+                            blank: "no se puede dejar vacio"
+                        aptitudes:
+                            blank: "no se puede dejar vacio"
+                        job_duration:
+                            blank: "no se puede dejar vacio"
+                            
                 phone_number:
                     attributes:
                         description:

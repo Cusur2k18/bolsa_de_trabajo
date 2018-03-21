@@ -2,5 +2,5 @@
 	<%= phone.input :description, label: t('phone_numbers.description') %>
 	<%= phone.input :phone_number, label: t('phone_numbers.phone_number')  %>
 	<%= phone.button :submit %>
-	<%= link_to t('educations.index.go_back'), student_dashboard_path, class: 'btn btn-info' %>
+	<%= render "shared/links" %>
 <% end %>

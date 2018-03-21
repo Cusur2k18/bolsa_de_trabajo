@@ -1,0 +1,38 @@
+<h2>Vacantes actuales</h2>
+<div class="container">
+	<%= link_to "Agregar una vacante", new_job_path, class: 'btn btn-success' %>
+	<% if !@jobs.empty? %>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nombre de la vacante</th>
+					<th>Estado</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @jobs.each do |jb| %>
+					<tr>
+						<td scope="row"><%= jb.name %></td>
+						<td scope="row">
+							<% if jb.job_applications.empty? %>
+								Libre
+							<% else %>
+								Applicaciones pendientes
+							<% end %>
+						</td>
+						<td scope="row">
+							<%= link_to "Editar", edit_job_path(jb), class: 'btn btn-info' %>
+							<%= link_to "Borrar", job_path(jb), method: :delete, class: 'btn btn-danger', data: { confirm: "Esta seguro de que quiere borrar esta entrada?" } %> 
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	<% else %>
+		<div class="alert alert-warning">
+			<p>No se ha agregado ningun ninguna vacante aun</p>
+			<p><%= link_to "Agregar una vacante", new_jobs_path, class: 'btn btn-success' %></p>
+		</div>
+	<% end %>
+</div>
