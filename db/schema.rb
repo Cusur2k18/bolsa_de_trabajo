@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313231249) do
+ActiveRecord::Schema.define(version: 20180412234136) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "state"
@@ -59,6 +59,21 @@ ActiveRecord::Schema.define(version: 20180313231249) do
     t.datetime "updated_at", null: false
     t.boolean "is_finished"
     t.boolean "has_degree"
+  end
+
+  create_table "former_jobs", force: :cascade do |t|
+    t.string "enterprise_name"
+    t.string "phone_number"
+    t.string "address"
+    t.string "boss_name"
+    t.string "job_title"
+    t.integer "first_paycheck"
+    t.integer "last_paycheck"
+    t.integer "is_current_job"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "activities"
+    t.integer "student_id"
   end
 
   create_table "job_applications", force: :cascade do |t|
@@ -127,7 +142,7 @@ ActiveRecord::Schema.define(version: 20180313231249) do
     t.integer "roleable_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["roleable_id"], name: "index_users_on_roleable_id", unique: true
+    t.index ["roleable_id"], name: "index_users_on_roleable_id"
   end
 
 end

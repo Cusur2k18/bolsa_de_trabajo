@@ -1,0 +1,42 @@
+<h2>Lista de trabajos</h2>
+<div class="container">
+	<% if @former_jobs.empty? %> 
+		<div class="alert alert-warning">
+			<p>No se ha agregado ningun trabajo actual o trabajo previo.</p>
+			<p><%= link_to "Agregar experiencia laboral", new_former_job_path, class: 'btn btn-success' %></p>
+		</div>
+	<% else %>
+		<%= link_to "Agregar experiencia laboral", new_former_job_path, class: 'btn btn-success' %>
+		<table class="table">
+			<thead>
+				<tr>
+					<td>Nombre del trabajo </td>
+					<td>Empresa </td>
+					<td>Nombre del empleador</td>
+					<td>Puesto</td>
+					<td>Primera paga</td>
+					<td>Ultima paga</td>
+					<td>¿Empleo actual?</td>
+					<td>Acciones</td>
+				</tr>
+			</thead>
+			<tbody>
+				<% @former_jobs.each do |fj| %>
+					<tr>
+						<td scope="row"><%= fj.job_title %></td>
+						<td scope="row"><%= fj.enterprise_name %></td>
+						<td scope="row"><%= fj.boss_name %></td>
+						<td scope="row"><%= fj.job_title %></td>
+						<td scope="row">$ <%= fj.first_paycheck %></td>
+						<td scope="row">$ <%= fj.last_paycheck %></td>
+						<td scope="row"><%= fj.is_current_job %></td>
+						<td scope="row">
+							<%= link_to "Editar trabajo", edit_former_job_path(fj), class: 'btn btn-info' %>
+							<%= link_to "Borrar trabajo", former_job_path(fj), method: :delete, class: 'btn btn-danger', data: { confirm: "Esta seguro de que quiere borrar esta entrada?" } %> 
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	<% end %>
+</div>

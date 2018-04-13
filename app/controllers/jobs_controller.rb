@@ -52,6 +52,15 @@ class JobsController < ApplicationController
 	end
 
 	def destroy
+		@job = Job.find(params[:id])
+		if is_owner(@job)
+			@job.delete
+			flash[:notice] = "Se ha borrado la vacante correctamente"
+			redirect_to jobs_path
+		else
+			flash[:alert] = "No puedes borrar una vacante que no es tuya"
+			redirect_to jobs_path
+		end
 	end
 
 	private

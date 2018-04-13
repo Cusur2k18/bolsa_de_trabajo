@@ -1,0 +1,12 @@
+<div class="container">
+	<% if current_user.roleable_type == "Admin" and user_signed_in? %>
+		<h2>Bienvenido al panel administrativo<%= current_user.roleable.admin%></h2>
+		<div class="left">
+			<div class="list-group side_nav">
+				
+			</div>
+		</div>
+	<% else %>
+		<%= render "errors/permission_denied" %>
+	<% end %>
+</div>

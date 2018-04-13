@@ -14,6 +14,9 @@
 
 				<%= link_to t('student_dashboard.new_education'), new_education_path, class: 'list-group-item' %>
 				<%= link_to t('student_dashboard.see_educations'), educations_path, class: 'list-group-item' %>
+
+				<%= link_to "Agregar experiencia laboral", new_former_job_path, class: 'list-group-item' %>
+				<%= link_to "Ver trabajos anteriores", former_jobs_path, class: 'list-group-item' %>
 			</div>
 		</div>
 		<%= render "students_dashboard/partials/show_personal_data" %>
