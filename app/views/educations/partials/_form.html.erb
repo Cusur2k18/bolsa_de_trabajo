@@ -2,8 +2,10 @@
 	<%= edu.input :university , label: t('educations.new.university') %>
 	<%= edu.input :education_level , label: t('educations.new.educative_level') %>
 	<%= edu.input :major , label: t('educations.new.major') %>
-	<%= edu.input :admission_date , label: t('educations.new.admission_date') %>
-	<%= edu.input :graduation_date , label: t('educations.new.graduation_date') %>
+	<%= edu.input :admission_date , label: "Calendario de admisión" %>
+	<%= edu.input :graduation_date , label: "Calendario de graduación" %>
+	<%= edu.input :professional_license_type, as: :radio_buttons, collection: Education.professional_license_types.keys, label: "¿Cuenta con cedula estatal y federal?" %>
+	<%= edu.input :certification_date, label: "Fecha de titulacion" %>
 	<%= edu.button :submit, t('educations.new.create') , class: 'btn btn-success' %>
-	<%= link_to t('educations.index.go_back'), student_dashboard_path, class: 'btn btn-info' %>
+	<%= link_to t('educations.index.go_back'), :back, class: 'btn btn-info' %>
 <% end %>

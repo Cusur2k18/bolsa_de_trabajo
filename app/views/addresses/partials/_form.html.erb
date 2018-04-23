@@ -5,6 +5,6 @@
 	<%= addr.input :zip_code, label: t('addresses.zip_code') %>
 	<%= addr.input :street_address, label: t('addresses.street_address') %>
 	<%= addr.input :apartment_number, label: t('addresses.apartment_address') %>
-	<%= addr.button :submit %>
-	<%= link_to t('address.go_back'), addresses_path, class: 'btn btn-info' %>
+	<%= addr.button :submit, class: 'btn btn-success' %>
+	<%= link_to "Regresar", :back, class: 'btn btn-info' %>
 <% end %>

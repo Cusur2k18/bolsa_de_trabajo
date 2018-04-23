@@ -8,6 +8,14 @@ es:
             update: "Guardar cambios"
             sign_up: "Registrarse"
     activerecord:
+        models:
+            address:
+                one: "direccion"
+                other: "direcciones"
+
+            job:
+                one: "trabajo"
+                other: "trabajos"
         attributes:
             education:
                 university: "Universidad"
@@ -34,7 +42,7 @@ es:
                 foundation_date: "Fecha de apertura"
                 rfc: "RFC"
             job:
-                category: "Categoria"
+                category: "Area"
                 contract_type: "Tipo de contrato"
                 salary: "Salario"
                 name: "Nombre de la vacante"
@@ -57,6 +65,7 @@ es:
                 user:
                     attributes:
                         email:
+                            taken: "Este email ya esta registrado, ingresa otra direccion"
                             blank: "no se puede dejar vacio"
                         password:
                             blank: "no se puede dejar vacio"
@@ -107,9 +116,9 @@ es:
                             
                 phone_number:
                     attributes:
-                        description:
+                        home_phone_number:
                             blank: "no se puede dejar vacio"
-                        phone_number:
+                        cell_phone_number:
                             blank: "no se puede dejar vacio"
                 student:
                     attributes:
@@ -162,8 +171,8 @@ es:
         phone_number: "Numero de telefono"
         index:
             title: "Mis numeros telefonicos"
-            phone_numbers: "Numero telefonico"
-            description: "Descripcion"
+            phone_numbers: "Numero de celular"
+            description: "Numero de casa"
             actions:
                 title: "Acciones"
                 edit: "Editar"
@@ -215,6 +224,7 @@ es:
         street_address: "Numero exterior"
         apartment_address: "Numero interior"
         go_back: "Regresar"
+        street: "Calle"
         new:
             address: "Agregar direccion"
         index:
@@ -326,7 +336,7 @@ es:
     companies:
         jobs:
             name: "Nombre de la vacante"
-            category: "Categoria"
+            category: "Area"
             workday_type: "Tipo de jornada"
             contract_type: "Tipo de contrato"
             workday_schedule_start: "Hora de inicio jornada"

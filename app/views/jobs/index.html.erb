@@ -32,7 +32,7 @@
 	<% else %>
 		<div class="alert alert-warning">
 			<p>No se ha agregado ningun ninguna vacante aun</p>
-			<p><%= link_to "Agregar una vacante", new_jobs_path, class: 'btn btn-success' %></p>
+			<p><%= link_to "Agregar una vacante", :back, class: 'btn btn-success' %></p>
 		</div>
 	<% end %>
 </div>

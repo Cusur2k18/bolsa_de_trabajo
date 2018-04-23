@@ -14,6 +14,7 @@
 					<th><%= t('educations.index.major') %></th>
 					<th><%= t('educations.index.admission_date') %></th>
 					<th><%= t('educations.index.graduation_date') %></th>
+					<th>¿Cuenta con cédula estatal y federal?</th>
 					<th><%= t('educations.index.actions.actions') %></th>
 				</tr>
 			</thead>
@@ -25,6 +26,7 @@
 						<td scope="row"><%= edu.major %></td>
 						<td scope="row"><%= edu.admission_date %></td>
 						<td scope="row"><%= edu.graduation_date %></td>
+						<td scope="row"><%= edu.professional_license_type %></td>
 						<td scope="row">
 							<%= link_to t('edications.index.actions.edit'), edit_education_path(edu), class: 'btn btn-primary' %>
 							<%= link_to t('edications.index.actions.delete'), education_path(edu), method: :delete, class: 'btn btn-danger' %>
@@ -37,6 +39,6 @@
 	<% end %>
 
 	<div>
-		<%= link_to t('educations.index.go_back'), student_dashboard_path, class: 'btn btn-info' %>
+		<%= link_to t('educations.index.go_back'), :back, class: 'btn btn-info' %>
 	</div>
 </div>

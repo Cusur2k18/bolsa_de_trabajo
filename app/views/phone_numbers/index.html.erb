@@ -17,8 +17,8 @@
 			<tbody>
 				<% @phone_numbers.each do |phones| %>
 					<tr>
-						<td scope="row"><%= phones.phone_number %></td>
-						<td scope="row"><%= phones.description %></td>
+						<td scope="row"><%= phones.cell_phone_number %></td>
+						<td scope="row"><%= phones.home_phone_number %></td>
 						<td scope="row">
 							<%= link_to t('phone_numbers.index.actions.edit'), edit_phone_number_path(phones), class: 'btn btn-info' %>
 							<%= link_to t('phone_numbers.index.actions.delete'), phone_number_path(phones), method: :delete, class: 'btn btn-danger', data: { confirm: I18n.t("phone_numbers.index.warnings.delete") } %>
@@ -29,5 +29,5 @@
 		</table>
 	<% end %>
 
-	<%= render "shared/links" %>
+	<%= link_to "Regresar", :back, class: 'btn btn-info'%>
 </div>

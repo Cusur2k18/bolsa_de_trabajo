@@ -78,7 +78,7 @@ class EducationsController < ApplicationController
 	private
 
 	def educations_params
-		params.require(:education).permit(:university, :education_level, :major, :admission_date, :graduation_date )
+		params.require(:education).permit(:university, :education_level, :major, :admission_date, :graduation_date, :professional_license_type, :certification_date )
 	end
 
 	def is_student 

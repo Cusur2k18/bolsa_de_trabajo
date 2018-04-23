@@ -14,5 +14,6 @@
 	<%= jb.input :specialized_knowledge , label: t('companies.jobs.specialized_knowledge') %>
 	<%= jb.input :aptitudes , label: t('companies.jobs.aptitudes') %>
 	<%= jb.input :job_duration , label: t('companies.jobs.job_duration') %>
-	<%= jb.button :submit %>
+	<%= jb.button :submit, class: 'btn btn-success'%>
+	<%= link_to "Regresar", :back, class: 'btn btn-info' %>
 <% end %>

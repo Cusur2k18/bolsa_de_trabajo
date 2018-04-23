@@ -53,6 +53,6 @@ class PhoneNumbersController < ApplicationController
 	private
 
 	def phone_numbers_params
-		params.require(:phone_number).permit(:description, :phone_number)
+		params.require(:phone_number).permit(:cell_phone_number, :home_phone_number)
 	end
 end

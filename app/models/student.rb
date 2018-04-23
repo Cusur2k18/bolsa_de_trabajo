@@ -5,7 +5,7 @@ class Student < ApplicationRecord
 	has_many :job_applications
 	has_many :former_jobs
 
-	enum state: [ :desempleado, :proceso, :contratado ]
+	enum state: [ :desempleado, :proceso, :contratado_por_bolsa_de_trabajo, :contratado_externamente ]
 	enum civil_status: [ :soltero, :casado, :viudo, :divorciado ]
 	enum genre: [ :masculino, :femenino ]
 
