@@ -4,12 +4,15 @@ class Student < ApplicationRecord
 	has_many :educations, dependent: :destroy
 	has_many :job_applications
 	has_many :former_jobs
+	has_many :academic_awards
 
+	enum academic_level: [ :licenciatura, :maestria, :doctorado ]
 	enum state: [ :desempleado, :proceso, :contratado_por_bolsa_de_trabajo, :contratado_externamente ]
 	enum civil_status: [ :soltero, :casado, :viudo, :divorciado ]
 	enum genre: [ :masculino, :femenino ]
 
-	validates_presence_of :first_name, :last_name, :last_m_name,  :udg_code, :civil_status, :genre, :born_date
+	validates_presence_of :first_name, :last_name, :last_m_name,  :udg_code, :civil_status, :genre, :born_date, :academic_level
+	validates :terms_of_service, acceptance: { accept: 'yes' }
 
 	#sets default state to students since all new students will be unemployed
 	before_save :set_default_state, on: :create

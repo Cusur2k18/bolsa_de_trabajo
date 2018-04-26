@@ -29,4 +29,5 @@ Rails.application.routes.draw do
 	resources :addresses
 	resources :jobs
 	resources :former_jobs
+	resources :academic_awards
 end

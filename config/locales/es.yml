@@ -29,6 +29,7 @@ es:
                 born_date: "Fecha de nacimiento"
                 civil_status: "Estado civil"
                 genre: "Sexo"
+                terms_of_service: ""
             phone_number:
                 description: "Tipo de telefono"
                 phone_number: "Numero telefonico"
@@ -122,6 +123,8 @@ es:
                             blank: "no se puede dejar vacio"
                 student:
                     attributes:
+                        terms_of_service:
+                            accepted: "Debes acceptar los términos de confidencialidad y uso de datos"
                         last_m_name:
                             blank: "no se puede dejar vacio"
                         first_name:

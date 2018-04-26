@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180417232547) do
+ActiveRecord::Schema.define(version: 20180426215257) do
+
+  create_table "academic_awards", force: :cascade do |t|
+    t.string "name"
+    t.string "field"
+    t.string "description"
+    t.string "issuing_organism"
+    t.date "award_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "student_id"
+  end
 
   create_table "addresses", force: :cascade do |t|
     t.string "state"
@@ -106,6 +117,15 @@ ActiveRecord::Schema.define(version: 20180417232547) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "languages", force: :cascade do |t|
+    t.string "name"
+    t.string "language_level"
+    t.string "has_certificate"
+    t.string "issuing_organism"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "phone_numbers", force: :cascade do |t|
     t.string "cell_phone_number"
     t.string "home_phone_number"
@@ -125,6 +145,7 @@ ActiveRecord::Schema.define(version: 20180417232547) do
     t.integer "genre"
     t.integer "civil_status"
     t.date "born_date"
+    t.integer "academic_level"
   end
 
   create_table "users", force: :cascade do |t|

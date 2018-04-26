@@ -15,6 +15,8 @@ class StudentRegistrationsController < Devise::RegistrationsController
 		@student.last_m_name = params[:last_m_name]
 		@student.udg_code = params[:udg_code]
 		@student.born_date = params[:born_date]
+		@student.academic_level = params[:academic_level]
+		@student.terms_of_service = params[:terms_of_service]
 
 		#assigning the enum data
 		if params[:genre] == "masculino"

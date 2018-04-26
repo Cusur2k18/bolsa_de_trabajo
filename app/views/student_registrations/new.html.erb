@@ -1,4 +1,4 @@
-<h2><%= t('students.registrations.new.student') %></h2>
+<h2>Registrarse como egresado</h2>
 
 <%= form_for(resource, as: resource_name, url: students_sign_up_path) do |f| %>
 	<% if !devise_error_messages!.empty? %>
@@ -31,7 +31,7 @@
 			</div>
 
 			<div class="form-group">
-				<%= label_tag :born_date, t('students.born_date') %><br />
+				<%= label_tag :born_date, "Fecha de nacimiento" %><br />
 				<%= date_field_tag :born_date, "", class: 'form-control' %>
 			</div>
 
@@ -45,6 +45,10 @@
 				<%= select_tag :civil_status, options_for_select(Student.civil_statuses.keys), class: 'form-control' %>
 			</div>
 
+			<div class="form-group">
+				<%= label_tag :academic_level, "Nivel academico"%> <br/ >
+				<%= select_tag :academic_level, options_for_select(Student.academic_levels.keys), class: 'form-control' %>
+			</div>
 
 
 			<div class="form-group">
@@ -64,6 +68,17 @@
 			<div class="form-group">
 				<%= f.label :password_confirmation %><br />
 				<%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+			</div>
+
+
+			<div class="form-group">
+				<%= label_tag :terms_of_service, "¿Aceptas los términos de confidencialidad y uso de datos personales de la Universidad de Guadalajara, además que tus datos puedan ser transferidos a terceros?." %>
+				<%= hidden_field_tag :terms_of_service, 'false' %>
+				<p>
+				<%= check_box_tag :terms_of_service, 'yes', false %>
+				  Sí acepto los términos de confidencialidad y uso de datos.
+				</p>
+
 			</div>
 
 			<div class="actions">
