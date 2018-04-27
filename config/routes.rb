@@ -30,4 +30,5 @@ Rails.application.routes.draw do
 	resources :jobs
 	resources :former_jobs
 	resources :academic_awards
+	resources :languages
 end

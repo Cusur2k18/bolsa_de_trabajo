@@ -5,6 +5,7 @@ class Student < ApplicationRecord
 	has_many :job_applications
 	has_many :former_jobs
 	has_many :academic_awards
+	has_many :languages
 
 	enum academic_level: [ :licenciatura, :maestria, :doctorado ]
 	enum state: [ :desempleado, :proceso, :contratado_por_bolsa_de_trabajo, :contratado_externamente ]
