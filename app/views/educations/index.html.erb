@@ -1,5 +1,7 @@
-<h2><%= t('educations.index.title') %> </h2>
+<h2>Mis carreras</h2>
 <div class="container">
+
+	<%= render "students_dashboard/partials/dashboard-nav" %>
 	<% if @educations.empty? %>
 		<div class="alert alert-warning">
 			<p><%= t('educations.index.empty_title') %></p>

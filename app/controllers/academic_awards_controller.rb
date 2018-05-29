@@ -10,7 +10,6 @@ class AcademicAwardsController < ApplicationController
 	end
 
 	def create
-
 		@award = AcademicAward.new(academic_awards_params)
 		@user = current_user.roleable	
 		@user.academic_awards << @award
@@ -47,7 +46,7 @@ class AcademicAwardsController < ApplicationController
 
 		else
 			flash[:alert] = "No puedes acceder a una entrada que no es de tu propiedad"
-			redirect_to :back
+			redirect_to root_path
 
 		end
 	end
@@ -67,7 +66,7 @@ class AcademicAwardsController < ApplicationController
 			end
 		else
 			flash[:alert] = "No puedes acceder a una entrada que no es de tu propiedad"
-			redirect_to :back
+			redirect_to root_path
 
 		end
 

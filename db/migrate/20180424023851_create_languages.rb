@@ -4,7 +4,7 @@ class CreateLanguages < ActiveRecord::Migration[5.1]
 
 			t.string :name
 			t.string :language_level
-			t.string :has_certificate
+			t.integer :has_certificate
 			t.string :issuing_organism
 			t.timestamps
 		end

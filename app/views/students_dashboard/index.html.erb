@@ -1,27 +1,7 @@
 <% if current_user.roleable_type == "Student" and user_signed_in? %>
 	<h2>Bienvenido a tu perfil <%= @user.roleable.first_name %></h2>
 	<div class="container">
-		<div class="left">
-			<div class="list-group side_nav">
-				<%= link_to t('student_dashboard.add_address'), new_address_path, class: 'list-group-item' %>
-				<%= link_to t('student_dashboard.see_address'), addresses_path, class: 'list-group-item' %>
-
-				<%= link_to t('student_dashboard.edit_personal_data'), edit_student_path(current_user.roleable.id), class: 'list-group-item'  %>
-				<%= link_to t('student_dashboard.edit_email_data'), edit_user_registration_path(current_user.id), class: 'list-group-item'  %>
-
-				<%= link_to t('student_dashboard.new_phone_number'), new_phone_number_path, class: 'list-group-item' %>
-				<%= link_to t('student_dashboard.see_phone_numbers'), phone_numbers_path, class: 'list-group-item' %>
-
-				<%= link_to t('student_dashboard.new_education'), new_education_path, class: 'list-group-item' %>
-				<%= link_to t('student_dashboard.see_educations'), educations_path, class: 'list-group-item' %>
-
-				<%= link_to "Agregar experiencia laboral", new_former_job_path, class: 'list-group-item' %>
-				<%= link_to "Ver trabajos anteriores", former_jobs_path, class: 'list-group-item' %>
-
-				<%= link_to "Agregar curso o premio", new_academic_award_path, class: 'list-group-item' %>
-				<%= link_to "Ver todos mis cursos o premios", academic_awards_path, class: 'list-group-item' %>
-			</div>
-		</div>
+		<%= render "students_dashboard/partials/dashboard-nav" %>
 		<%= render "students_dashboard/partials/show_personal_data" %>
 	</div>
 <% else %>

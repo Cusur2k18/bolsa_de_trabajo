@@ -16,7 +16,15 @@ es:
             job:
                 one: "trabajo"
                 other: "trabajos"
+            academic_award:
+                one: "premio o curso"
+                other: "premios o cursos"
         attributes:
+            academic_award:
+                name: "Nombre"
+                field: "Campo de estudios"
+                description: "Descripcion"
+                issuing_organism: "Organizacion que lo expide"
             education:
                 university: "Universidad"
                 education_level: "Nivel educativo"
@@ -55,14 +63,24 @@ es:
                 job_duration: "Duracion del puesto"
         errors:
             models:
+                academic_award:
+                    attributes:
+                        name:
+                            blank: "No se puede dejar vacio"
+                        field:
+                            blank: "no se puede dejar vacio"
+                        description:
+                            blank: "no se puede dejar vacio"
+                        issuing_organism:
+                            blank: "no se puede dejar vacio"
                 education:
                     attributes:
                         university:
-                            blank: "no se puede dejar en blanco"
+                            blank: "no se puede dejar vacio"
                         education_level:
-                            blank: "no se puede dejar en blanco"
+                            blank: "no se puede dejar vacio"
                         major:
-                            blank: "no se puede dejar en blanco"
+                            blank: "no se puede dejar vacio"
                 user:
                     attributes:
                         email:

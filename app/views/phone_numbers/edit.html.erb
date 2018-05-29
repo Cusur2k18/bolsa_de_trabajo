@@ -1,5 +1,9 @@
-<h2><%= t('phone_number.edit.edit_phone_number') %></h2>
+<h2>Numero telefonico</h2>
 <div class="container">
+	<% if current_user.roleable_type == "Student" %>
+		<%= render "students_dashboard/partials/dashboard-nav" %>
+	<% else %>
+	<% end %>
 	<%= render "errors/errors", object: @phone_number %>
 	<%= render "phone_numbers/partials/form" %>
 </div>

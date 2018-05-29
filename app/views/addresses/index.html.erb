@@ -1,5 +1,10 @@
 <h2><%= t('addresses.index.title') %></h2>
 <div class="container">
+
+	<% if current_user.roleable_type == "Student" %>
+		<%= render "students_dashboard/partials/dashboard-nav" %>
+	<% else %>
+	<% end %>
 	<% if @address.nil?  %>
 		<div class="alert alert-warning">
 			<p><%= t('addresses.index.warnings.no_address') %></p>

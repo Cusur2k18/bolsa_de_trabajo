@@ -1,9 +1,13 @@
-<h2><%= t('addresses.new.address') %></h2>
+<h2>Direccion</h2>
 <div class="container render-form">
-	<% if current_user.roleable_type == "Student" and current_user.address.nil? %>
-		<div class="alert alert-info">
-			<p>Por favor ingresar la dirección en la que se le pueda localizar más fácilmente.</p>
-		</div>
+
+	<% if current_user.roleable_type == "Student" %>
+		<%= render "students_dashboard/partials/dashboard-nav" %>
+		<% if current_user.address.nil? %>
+			<div class="alert alert-info">
+				<p>Por favor ingresar la dirección en la que se le pueda localizar más fácilmente.</p>
+			</div>
+		<% end %>
 	<% end %>
 	<% if current_user.address.nil? %>
 		<%= render "errors/errors", object: @address %>

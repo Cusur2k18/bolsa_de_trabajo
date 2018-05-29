@@ -1,5 +1,9 @@
 <h2><%= t('phone_numbers.index.title') %></h2>
 <div class="container">
+	<% if current_user.roleable_type == "Student" %>
+		<%= render "students_dashboard/partials/dashboard-nav" %>
+	<% else %>
+	<% end %>
 	<% if @phone_numbers.empty? %>
 		<div class="alert alert-warning">
 			<p><%= t('phone_numbers.index.warnings.no_phone_numbers_body') %></p>

@@ -1,5 +1,6 @@
 <h2> <%= t('students.registrations.edit.title') %> </h2>
 <div class="container">
+	<%= render "students_dashboard/partials/dashboard-nav" %>
 	<%= simple_form_for @student do |stu| %>
 		<%= stu.input :first_name, label: t('students.registrations.edit.first_name')  %>
 		<%= stu.input :last_name, label: t('students.registrations.edit.last_name')  %>

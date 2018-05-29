@@ -1,5 +1,10 @@
 <h2><%= t('addresses.edit.edit_address') %></h2>
 <div class="container">
+
+	<% if current_user.roleable_type == "Student" %>
+		<%= render "students_dashboard/partials/dashboard-nav" %>
+	<% else %>
+	<% end %>
 	<%= render "errors/errors", object: @address %>
 	<%= render "addresses/partials/form" %>
 </div>

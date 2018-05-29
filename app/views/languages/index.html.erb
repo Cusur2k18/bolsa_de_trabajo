@@ -1,0 +1,40 @@
+<h2>Lista de idiomas</h2>
+<div class="container">
+	<%= render "students_dashboard/partials/dashboard-nav" %>
+	<% if @languages.empty? %>
+		<div class="alert alert-warning">
+			<p>No has agregado ningun idioma a tu experiencia academica</p>
+			<p><%= link_to "¿Desea agregar una entrada?", new_language_path, class: 'btn btn-success' %></p>
+		</div>
+	<% else %>
+		<table class="table">
+			<tr>
+				<th>Idioma</th>
+				<th>Nivel</th>
+				<th>¿Se tiene certificado?</th>
+				<th>Organización que lo expide</th>
+				<th>Acciones</th>
+			</tr>
+			<tbody>
+				<tr>
+					<% @languages.each do | lg | %>
+						<td scope="row"><%= lg.name %></td>
+						<td scope="row"><%= lg.language_level %></td>
+						<td scope="row"><%= lg.has_certificate %></td>
+						<td scope="row">
+							<% if lg.issuing_organism.empty? %>
+								Ninguno
+							<% else %>
+								<%= lg.issuing_organism %>
+							<% end %>
+						</td>
+						<td scope="row">
+							<%= link_to "Editar", edit_language_path(lg), class: 'btn btn-info' %>
+							<%= link_to "Borrar", language_path(lg), method: :delete, class: 'btn btn-warning', data: { confirm: '¿En verdad quiere borrar la entrada?' } %> 
+						</td>
+					<% end %>
+				</tr>
+			</tbody>
+		</table>
+	<% end %>
+</div>
