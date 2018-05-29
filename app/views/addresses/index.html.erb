@@ -12,6 +12,7 @@
 		</div>
 	<% else %>
 
+
 		<table class="table">
 			<thead>
 				<tr scope="col">
@@ -40,5 +41,6 @@
 			</tbody>
 		</table>
 	<% end %>
+	<%= link_to t('addresses.index.add_address'), new_address_path, class: 'btn btn-success' %>
 	<%= link_to "Regresar", :back, class: 'btn btn-info' %>
 </div>

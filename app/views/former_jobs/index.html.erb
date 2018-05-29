@@ -7,7 +7,6 @@
 			<p><%= link_to "Agregar experiencia laboral", new_former_job_path, class: 'btn btn-success' %></p>
 		</div>
 	<% else %>
-		<%= link_to "Agregar experiencia laboral", new_former_job_path, class: 'btn btn-success' %>
 		<table class="table">
 			<thead>
 				<tr>
@@ -39,6 +38,7 @@
 				<% end %>
 			</tbody>
 		</table>
+		<%= link_to "Agregar experiencia laboral", new_former_job_path, class: 'btn btn-success' %>
 	<% end %>
 	<%= link_to "Regresar", :back, class: 'btn btn-info' %>
 </div>
