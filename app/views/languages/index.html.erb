@@ -1,5 +1,6 @@
 <h2>Lista de idiomas</h2>
 <div class="container">
+	<%= render "students_dashboard/partials/dashboard-nav" %>
 	<% if @languages.empty? %>
 		<div class="alert alert-warning">
 			<p>No has agregado ningun idioma a tu experiencia academica</p>
@@ -26,7 +27,7 @@
 							<% else %>
 								<%= lg.issuing_organism %>
 							<% end %>
-							</td>
+						</td>
 						<td scope="row">
 							<%= link_to "Editar", edit_language_path(lg), class: 'btn btn-info' %>
 							<%= link_to "Borrar", language_path(lg), method: :delete, class: 'btn btn-warning', data: { confirm: '¿En verdad quiere borrar la entrada?' } %> 

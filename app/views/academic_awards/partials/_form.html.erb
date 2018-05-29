@@ -1,8 +1,8 @@
 <%= simple_form_for @award do |aw| %>
-	<%= aw.input :name, label: "Nombre del curso o premio" %>
-	<%= aw.input :field, label: "Campo de estudios del curso o premio" %>
-	<%= aw.input :description, label: "Breve descripción del curso o premio" %>
-	<%= aw.input :issuing_organism, label: "Organización que da el curso o premio" %>
+	<%= aw.input :name, label: "Nombre del premio" %>
+	<%= aw.input :field, label: "Campo de estudios del premio" %>
+	<%= aw.input :description, label: "Breve descripción del premio" %>
+	<%= aw.input :issuing_organism, label: "Organización que da el premio" %>
 	<%= aw.input :award_date, label: "Fecha de entrega"%>
 	<%= aw.button :submit, class: 'btn btn-success' %>
 	<%= link_to "Regresar", :back, class: 'btn btn-info' %>

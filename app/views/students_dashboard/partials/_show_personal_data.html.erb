@@ -1,28 +1,19 @@
+<form class="dashboard-data">
+	<div class="form-group">
+		<label class="dashboard-item-title"> Nombre(s) </label>
+		<input type="text" class="form-control" placeholder="<%= @student.first_name %>" readonly disabled>
 
-<div class="list-group dashboard_data">
-	<p class="center list-group-item">
-	<strong><%= t('student_dashboard.first_name') %></strong><br />
-	<%= @student.first_name %><br />
-	</p>
 
-	<p class="center list-group-item">
-	<strong><%= t('student_dashboard.last_name') %></strong><br />
-	<%= @student.last_name %><br />
-	</p>
+		<label class="dashboard-item-title">Apellido paterno</label>
+		<input type="text" class="form-control" placeholder="<%= @student.last_name%>" readonly disabled>
 
-	<p class="center list-group-item">
-	<strong><%= t('student_dashboard.last_m_name') %></strong><br />
-	<%= @student.last_m_name %><br />
-	</p>
+		<label class="dashboard-item-title">Apellido materno </label>
+		<input type="text" class="form-control" placeholder="<%= @student.last_m_name%>" readonly disabled>
 
-	<p class="center list-group-item">
-	<strong><%= t('student_dashboard.udg_code') %></strong><br />
-	<%= @student.udg_code %><br />
-	</p>
+		<label class="dashboard-item-title"> Código UDG </label>
+		<input type="text" class="form-control" placeholder="<%= @student.udg_code%>" readonly disabled>
 
-	<p class="center list-group-item">
-	<strong><%= t('student_dashboard.state') %></strong><br />
-	<%= @student.state  %><br />
-	</p>
-
-</div>
+		<label class="dashboard-item-title"> Estado de empleo </label>
+		<input type="text" class="form-control" placeholder="<%= @student.state%>" readonly disabled>
+	</div>
+</form>
