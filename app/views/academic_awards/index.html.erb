@@ -1,4 +1,4 @@
-<h2>Lista de premios</h2>
+<h2>Lista de premios o distinciones</h2>
 <div class="container">
 	<%= render "students_dashboard/partials/dashboard-nav" %>
 	<% if @awards.empty? %>
@@ -11,7 +11,6 @@
 			<thead>
 				<tr scope="col">
 					<th>Nombre del premio o curso</th>
-					<th>Campo de estudios</th>
 					<th>Descripcion</th>
 					<th>Organizacion que lo expide</th>
 					<th>Fecha de entrega</th>
@@ -22,7 +21,6 @@
 				<tr>
 					<% @awards.each do |aw| %>
 						<td scope="row"><%= aw.name %></td>
-						<td scope="row"><%= aw.field %></td>
 						<td scope="row"><%= aw.description %></td>
 						<td scope="row"><%= aw.issuing_organism %></td>
 						<td scope="row"><%= aw.award_date %></td>

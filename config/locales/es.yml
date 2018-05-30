@@ -12,13 +12,24 @@ es:
             address:
                 one: "direccion"
                 other: "direcciones"
-
+            course:
+                one: "curso"
+                other: "cursos"
             job:
                 one: "trabajo"
                 other: "trabajos"
             academic_award:
-                one: "premio o curso"
-                other: "premios o cursos"
+                one: "premio o distincion"
+                other: "premios o distinciones"
+            former_job:
+                one: "experiencia laboral"
+                other: "experiencia laboral"
+            phone_number:
+                one: "numero telefonico"
+                other: "numeros telefonicos"
+            language:
+                one: "idioma"
+                other: "idiomas"
         attributes:
             academic_award:
                 name: "Nombre"
@@ -61,8 +72,21 @@ es:
                 specialized_knowledge: "Conocimientos especiales"
                 aptitudes: "Aptitudes"
                 job_duration: "Duracion del puesto"
+            course:
+                name: "Nombre"
+                description: "Descripcion"
+                issuing_organism: "Organismo expide el curso"
+                
         errors:
             models:
+                course:
+                    attributes:
+                        name:
+                            blank: "no se puede dejar en blanco"
+                        description:
+                            blank: "no se puede dejar en blanco"
+                        issuing_organism:
+                            blank: "no se puede dejar en blanco"
                 academic_award:
                     attributes:
                         name:
@@ -232,7 +256,7 @@ es:
         shared:
             log_in: "Ingresar"
             sign_up: "Registrarse"
-            forgot_your_password: "¿Olvidaste tu contraseña?"
+            forgot_your_password?: "¿Olvidaste tu contraseña?"
             did_not_receive_confirmation_instructions?: "¿No recibiste confirmacion para confirmar tu cuenta?"
             did_not_receive_unlock_instructions?: "No recibiste instrucciones para desbloquear tu cuenta?"
             sign_in_omniauth: "Registrarse con #{OmniAuth::Utils.camelize(provider)}"
