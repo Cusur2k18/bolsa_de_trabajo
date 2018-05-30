@@ -9,13 +9,13 @@ class AddressesController < ApplicationController
 	end
 
 	def create
-		@address = Address.new(addresses_params)
-		@user = current_user
-		@user.address = @address
+		@address = current_user.build_address(addresses_params)
 		if @address.save
+			flash[:notice] = "Se ha actualizado la entrada correctamente"
 			redirect_to addresses_path
 		else
-			render :new
+			flash[:alert] = "Algo salio mal a la hora de actualizar la entrada, verifique los datos ingresados"
+			redirect_to new_address_path 
 		end
 	end
 
@@ -31,10 +31,16 @@ class AddressesController < ApplicationController
 	def update
 		@address = Address.find(params[:id])
 		if current_user.id == @address.user_id
-			@address.update_attributes(addresses_params)
-			redirect_to addresses_path
+			if @address.update_attributes(addresses_params)
+				flash[:notice] = "Se ha actualizado la entrada correctamente"
+				redirect_to addresses_path
+			else
+				flash[:alert] = "Algo salio mal a la hora de actualizar la entrada, verifique los datos ingresados"
+				render :edit
+			end
 		else
-			redirect_to addresses_path
+			flash[:alert] = "No puedes acceder a una entrada que no es de tu propiedad"
+			redirect_to root_path
 		end
 	end
 

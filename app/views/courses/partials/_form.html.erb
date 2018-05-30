@@ -1,0 +1,9 @@
+<%= simple_form_for @course do |cs| %>
+	<%= cs.input :name, label: "Nombre del curso" %>
+	<%= cs.input :description, label: "Descripcion del curso" %>
+	<%= cs.input :issuing_organism, label: "Organizacion que otorgo el curso" %>
+	<%= cs.input :start_date, label: "Fecha de inicio" %>
+	<%= cs.input :end_date, label: "Fecha de fin" %>
+	<%= cs.button :submit, class: 'btn btn-success' %> 
+	<%= link_to "Regresar", courses_path, class: 'btn btn-info' %>
+<% end %>

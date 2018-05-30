@@ -1,0 +1,41 @@
+<h2>Lista de cursos</h2>
+<div class="container">
+	<%= render "students_dashboard/partials/dashboard-nav" %>
+	<% if @courses.empty? %>
+		<div class="alert alert-warning">
+			<p>No has agregado ningun curso</p>
+			<p><%= link_to "Agregar curso", new_course_path, class: 'btn btn-success' %> </p>
+		</div>
+	<% else %>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nombre del curso</th>
+					<th>Descripcion</th>
+					<th>Organismo que lo expide</th>
+					<th>Fecha de inicio</th>
+					<th>Fecha de finalizacion</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<% @courses.each do |cs| %>
+						<td scope="row"><%= cs.name %></td>
+						<td scope="row"><%= cs.description %></td>
+						<td scope="row"><%= cs.issuing_organism %></td>
+						<td scope="row"><%= cs.start_date %></td>
+						<td scope="row"><%= cs.end_date %></td>
+						<td scope="row">
+							<%= link_to "Editar", edit_course_path(cs), class: 'btn btn-info' %>
+							<%= link_to "Borrar", course_path(cs), method: :delete, class: 'btn btn-danger', data: { confirm: '¿En verdad quiere borrar la entrada?' } %>
+						</td>
+
+					<% end %>
+				</tr>
+			</tbody>
+		</table>
+		<%= link_to "Agregar curso", new_course_path, class: 'btn btn-success' %>
+	<% end %>
+	<%= link_to "Regresar", :back, class: 'btn btn-info' %>
+</div>

@@ -33,7 +33,7 @@ class AcademicAwardsController < ApplicationController
 
 		else
 			flash[:alert] = "No puedes acceder a una entrada que no es de tu propiedad"
-			redirect_to :back
+			redirect_to root_path 
 
 		end
 	end
