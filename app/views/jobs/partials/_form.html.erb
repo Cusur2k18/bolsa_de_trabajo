@@ -14,6 +14,9 @@
 	<%= jb.input :specialized_knowledge , label: t('companies.jobs.specialized_knowledge') %>
 	<%= jb.input :aptitudes , label: t('companies.jobs.aptitudes') %>
 	<%= jb.input :job_duration , label: t('companies.jobs.job_duration') %>
+	<%= jb.fields_for :work_types do |wt| %>
+		<%= wt.label :wortype, "Area de trabajo" %>
+	<% end %>
 	<%= jb.button :submit, class: 'btn btn-success'%>
 	<%= link_to "Regresar", :back, class: 'btn btn-info' %>
 <% end %>

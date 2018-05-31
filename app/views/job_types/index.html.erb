@@ -1,0 +1,30 @@
+<h2>Areas de vacantes</h2>
+<div class="container">
+	<% if @job_types.empty? %>
+		<div class="alert alert-warning">
+			<p>No se ha agregado ninguna clasificacion de vacante</p>
+			<p><%= link_to "Agregar area de vacante", new_job_type_path, class: 'btn btn-success' %></p>
+		</div>
+	<% else %>
+		<table class="table">
+			<thead>
+				<tr scope="col">
+					<td>Nombre</td>
+					<td>Acciones</td>
+				</tr>
+			</thead>
+			<tbody>
+				<% @job_types.each do |jt| %>
+					<tr>
+						<td scope="row"><%= jt.area %></td>
+						<td scope="row">
+							<%= link_to "Editar", edit_job_type_path(jt), class: 'btn btn-primary' %>
+							<%= link_to "Borrar", job_type_path(jt), method: :delete, class: 'btn btn-danger', data: { confirm: "En verdad quiere borrar la entrada?" } %>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	<% end %>
+</div>
+

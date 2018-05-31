@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 	resources :companies, only: [ :edit, :update, :delete ]
 	resources :admins, only: [ :edit, :update, :delete ]
 	
+	resources :job_types
 	resources :educations
 	resources :phone_numbers
 	resources :addresses
