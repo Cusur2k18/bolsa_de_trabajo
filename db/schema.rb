@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180531204807) do
+ActiveRecord::Schema.define(version: 20180604211832) do
 
   create_table "academic_awards", force: :cascade do |t|
     t.string "name"
@@ -121,7 +121,6 @@ ActiveRecord::Schema.define(version: 20180531204807) do
   end
 
   create_table "jobs", force: :cascade do |t|
-    t.string "category"
     t.time "workday_schedule_start"
     t.time "workday_schedule_end"
     t.string "contract_type"

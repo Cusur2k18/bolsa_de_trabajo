@@ -1,6 +1,5 @@
 <h2>Vacantes actuales</h2>
 <div class="container">
-	<%= link_to "Agregar una vacante", new_job_path, class: 'btn btn-success' %>
 	<% if !@jobs.empty? %>
 		<table class="table">
 			<thead>
@@ -29,10 +28,12 @@
 				<% end %>
 			</tbody>
 		</table>
+		<%= link_to "Agregar una vacante", new_job_path, class: 'btn btn-success' %>
 	<% else %>
 		<div class="alert alert-warning">
 			<p>No se ha agregado ningun ninguna vacante aun</p>
-			<p><%= link_to "Agregar una vacante", :back, class: 'btn btn-success' %></p>
+			<p><%= link_to "Agregar una vacante", new_job_path , class: 'btn btn-success' %></p>
 		</div>
 	<% end %>
+	<%= link_to "Regresar", companies_dashboard_path, class: 'btn btn-info' %>
 </div>

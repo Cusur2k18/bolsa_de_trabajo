@@ -54,6 +54,7 @@ class JobsController < ApplicationController
 	def destroy
 		@job = Job.find(params[:id])
 		if is_owner(@job)
+			@job.job_types.clear
 			@job.delete
 			flash[:notice] = "Se ha borrado la vacante correctamente"
 			redirect_to jobs_path
@@ -74,7 +75,7 @@ class JobsController < ApplicationController
 	end
 
 	def is_owner(job)
-		if job.company_id == current_user.id
+		if job.company_id == current_user.roleable.id
 			true
 		else
 			false
@@ -82,6 +83,6 @@ class JobsController < ApplicationController
 	end
 
 	def jobs_params
-		params.require(:job).permit(:category, :workday_schedule_start, :workday_schedule_end, :contract_type, :salary, :name, :age_requierement, :gender, :schooling_level, :work_experience, :specialized_knowledge, :aptitudes, :job_duration, :workday_type, job_type_ids: [])
+		params.require(:job).permit( :workday_schedule_start, :workday_schedule_end, :contract_type, :salary, :name, :age_requierement, :gender, :schooling_level, :work_experience, :specialized_knowledge, :aptitudes, :job_duration, :workday_type, job_type_ids: [])
 	end
 end

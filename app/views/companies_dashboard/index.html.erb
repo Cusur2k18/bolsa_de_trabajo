@@ -1,21 +1,7 @@
 <div class="container">
 	<% if current_user.roleable_type == "Company" and user_signed_in? %>
 		<h2><%= t('companies_dashboard.index.title') %><%= current_user.roleable.company_name %></h2>
-		<div class="left">
-			<div class="list-group side_nav">
-				<%= link_to t('companies_dashboard.index.add_address'), new_address_path, class: 'list-group-item' %>
-				<%= link_to t('companies_dashboard.index.see_address'), addresses_path, class: 'list-group-item' %>
-
-				<%= link_to t('companies_dashboard.index.edit_company_data'), edit_company_path(current_user.roleable.id), class: 'list-group-item'  %>
-				<%= link_to t('companies_dashboard.index.edit_email_data'), edit_user_registration_path(current_user.id), class: 'list-group-item' %>
-
-				<%= link_to t('companies_dashboard.index.new_phone_number'), new_phone_number_path, class: 'list-group-item' %>
-				<%= link_to t('companies_dashboard.index.see_phone_numbers'), phone_numbers_path, class: 'list-group-item' %>
-
-				<%= link_to t('companies_dashboard.index.new_job'), new_job_path, class: 'list-group-item' %>
-				<%= link_to t('companies_dashboard.index.my_list_of_jobs'), jobs_path, class: 'list-group-item' %>
-			</div>
-		</div>
+		<%= render "companies_dashboard/partials/dashboard-nav" %>
 		<%= render "companies_dashboard/partials/show_company_data" %>
 	<% else %>
 		<%= render "errors/permission_denied" %>
