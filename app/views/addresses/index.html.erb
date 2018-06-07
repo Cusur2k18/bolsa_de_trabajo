@@ -4,6 +4,7 @@
 	<% if current_user.roleable_type == "Student" %>
 		<%= render "students_dashboard/partials/dashboard-nav" %>
 	<% else %>
+		<%= render "companies_dashboard/partials/dashboard-nav" %>
 	<% end %>
 	<% if @address.nil?  %>
 		<div class="alert alert-warning">

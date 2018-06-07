@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 	root "home#index"
 	get 'student_dashboard', to: 'students_dashboard#index'
 	get 'companies_dashboard', to: 'companies_dashboard#index'
+	get 'admin_dashboard', to: 'admins_dashboard#index'
+	get 'see_jobs', to: 'see_jobs#index'
 
 	# users routes
 	resources :students, only: [ :edit, :update, :delete ]

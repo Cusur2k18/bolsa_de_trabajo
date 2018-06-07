@@ -5,7 +5,10 @@
 
 		<% if current_user.roleable_type == "Student" %>
 			<%= render partial: "students_dashboard/partials/dashboard-nav" %>
+		<% elsif current_user.roleable_type == "Company" %>
+			<%= render "companies_dashboard/partials/dashboard-nav" %>
 		<% else %>
+			<%= render "admins_dashboard/partials/dashboard-nav" %>
 		<% end %>
 		<div class="form-inputs">
 			<%= f.input :email, required: true, autofocus: true %>

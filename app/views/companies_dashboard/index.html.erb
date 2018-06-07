@@ -1,6 +1,6 @@
 <div class="container">
 	<% if current_user.roleable_type == "Company" and user_signed_in? %>
-		<h2><%= t('companies_dashboard.index.title') %><%= current_user.roleable.company_name %></h2>
+		<h2>Bienvenido a la empresa <%= @company.company_name %>, <%= current_user.roleable.company_name %></h2>
 		<%= render "companies_dashboard/partials/dashboard-nav" %>
 		<%= render "companies_dashboard/partials/show_company_data" %>
 	<% else %>

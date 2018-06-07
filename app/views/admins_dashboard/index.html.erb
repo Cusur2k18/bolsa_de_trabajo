@@ -1,12 +1,9 @@
-<div class="container">
-	<% if current_user.roleable_type == "Admin" and user_signed_in? %>
-		<h2>Bienvenido al panel administrativo<%= current_user.roleable.admin%></h2>
-		<div class="left">
-			<div class="list-group side_nav">
-				
-			</div>
-		</div>
-	<% else %>
-		<%= render "errors/permission_denied" %>
-	<% end %>
-</div>
+<% if current_user.roleable_type == "Admin" and user_signed_in? %>
+	<h2>Bienvenido al panel administrativo <%= current_user.roleable.name %></h2>
+	<div class="container">
+		<%= render "admins_dashboard/partials/dashboard-nav" %>
+		<%= render "admins_dashboard/partials/show_personal_data" %>
+	</div>
+<% else %>
+	<%= render "errors/permission_denied" %>
+<% end %>

@@ -1,0 +1,44 @@
+<h2>Trabajos disponibles</h2>
+<div class="container">
+	<%= render "students_dashboard/partials/dashboard-nav" %>
+	<table class="table">
+		<thead>
+			<tr scope+"col">
+				<th>Nombre de la empresa</th>
+				<th>Nombre de la vacante</th>
+				<th>Salario</th>
+				<th>Edad minima</th>
+				<th>Turno</th>
+				<th>Escolaridad minima</th>
+				<th>Acciones</th>
+				<th>Filtrar
+					<select id="filter"> 
+						<option value="cualquiera">Cualquiera</option>
+						<% job = JobType.all %>
+						<% job.each do |jf| %>
+							<option value="<%= jf.area %>"><%= jf.area %></option>
+						<% end %>
+					</select>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @jobs.each do |jb| %>
+				<% jb.job_types.each do |a| %>
+					<% @htmlClass = @htmlClass + " " + a.area %>
+				<% end %>
+				<tr class="<%= @htmlClass %>">
+					<td scope="row"><%= jb.company.company_name %></td>
+					<td scope="row"><%= jb.name %></td>
+					<td scope="row"><%= jb.salary %></td>
+					<td scope="row"><%= jb.age_requierement %></td>
+					<td scope="row"><%= jb.workday_type %></td>
+					<td scope="row"><%= jb.schooling_level %></td>
+					<td scope="row"></td>
+					<td scope="row"></td>
+				</tr>
+				<% @htmlClass = "myTr" %>
+			<% end %>
+		</tbody>
+	</table>
+</div>

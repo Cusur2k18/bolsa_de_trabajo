@@ -1,0 +1,12 @@
+<h2>Administrador</h2>
+<div class="container">
+	<%= render "admins_dashboard/partials/dashboard-nav" %>
+	<%= render "errors/errors", object: @admin %>
+	<%= simple_form_for @admin do |ad| %>
+		<%= ad.input :name, label: "Nombre(s)" %>
+		<%= ad.input :last_name, label: "Apellido paterno" %>
+		<%= ad.input :last_m_name, label: "Apellido materno" %>
+		<%= ad.button :submit, label: "Actualizar datos", class: 'btn btn-success' %>
+		<%= link_to "Regresar", admin_dashboard_path, class: 'btn btn-info' %>
+	<% end %>
+</div>

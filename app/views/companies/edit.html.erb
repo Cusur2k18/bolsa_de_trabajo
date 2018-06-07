@@ -1,5 +1,7 @@
 <h2><%= t('companies.registrations.edit.title') %></h2>
+
 <div class="container">
+	<%= render "companies_dashboard/partials/dashboard-nav" %>
 	<%= simple_form_for @company do |comp| %>
 		<%= comp.input :company_name , label: t('companies.registrations.edit.company_name') %>
 		<%= comp.input :contact_first_name , label: t('companies.registrations.edit.first_name') %>

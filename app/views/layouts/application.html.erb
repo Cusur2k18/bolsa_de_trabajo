@@ -17,6 +17,7 @@
 			<% elsif current_user.roleable_type == "Company" %>
 				<%= render "layouts/partials/auth_c_nav" %>
 			<% else %>
+				<%= render "layouts/partials/auth_ad_nav" %>
 			<% end %>
 		<% else %>
 			<%= render "layouts/partials/unauth_nav" %>

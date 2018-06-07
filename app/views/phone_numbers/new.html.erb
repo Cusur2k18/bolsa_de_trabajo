@@ -3,6 +3,7 @@
 	<% if current_user.roleable_type == "Student" %>
 		<%= render "students_dashboard/partials/dashboard-nav" %>
 	<% else %>
+		<%= render "companies_dashboard/partials/dashboard-nav" %>
 	<% end %>
 	<%= render "errors/errors", object: @phone_number %>
 	<%= render "phone_numbers/partials/form" %>
