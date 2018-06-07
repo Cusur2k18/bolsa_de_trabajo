@@ -87,6 +87,31 @@
 	height: 100%;
 	background-color: #ededed;
 }
+.navbar-default {
+	background: #AF2724;
+}
+
+div.navbar-header > a.navbar-brand {
+	color: white;
+	font-weight: bold;
+}
+
+div.navbar-header > a.navbar-brand:hover {
+	color: #dbdbdb;
+}
+
+div#navbar > ul > li > p  {
+	color: white;
+}
+
+div#navbar > ul > li > a:hover {
+	color: #dbdbdb;
+}
+
+div#navbar > ul > li > a {
+	color: white;
+}
+
 
 h2 {
 	text-align: center;
