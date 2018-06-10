@@ -16,7 +16,7 @@ class AdminRegistrationsController < ApplicationController
 			@user.save
 
 			flash[:notice] = "Se ha registrado el nuevo administrador, para utilizaro da click en salir e ingresa con el nuevo usuario"
-			redirect_to admin_dashboard_path 
+			redirect_to root_path
 
 		else
 			flash[:notice] = "Algo salio mal al registrar el nuevo administrador"

@@ -1,6 +1,5 @@
 class StudentRegistrationsController < Devise::RegistrationsController
 
-	prepend_before_filter :require_no_authentication, [:new]
 	def new
 		@student = Student.new
 		super
