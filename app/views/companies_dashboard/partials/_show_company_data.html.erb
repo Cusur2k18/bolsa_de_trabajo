@@ -1,28 +1,18 @@
-<div class="list-group dashboard_data">
-
-	<p class="center list-group-item">
-	<strong><%= t('companies_dashboard.index.company_name') %> </strong><br >
-	<%= @company.company_name %>
-	</p>
-
-	<p class="center list-group-item">
-	<strong><%= t('companies_dashboard.index.contact_first_name') %> </strong><br >
-	<%= @company.contact_first_name%>
-	</p>
-
-	<p class="center list-group-item">
-	<strong><%= t('companies_dashboard.index.contact_last_name') %> </strong><br >
-	<%= @company.contact_last_name %>
-	</p>
-
-	<p class="center list-group-item">
-	<strong><%= t('companies_dashboard.index.contact_last_m_name') %> </strong><br >
-	<%= @company.contact_last_m_name%>
-	</p>
+<form class="dashboard-data">
+	<div class="form-group">
+		<label class="dashboard-item-title"> Nombre de la empresa </label>
+		<input type="text" class="form-control" placeholder="<%= @company.company_name %>" readonly disabled>
 	
-	<p class="center list-group-item">
-	<strong><%= t('companies_dashboard.index.employement') %> </strong><br >
-	<%= @company.contact_employement %>
-	</p>
-	
-</div>
+		<label class="dashboard-item-title">Nombre de la persona que registra la empresa</label>
+		<input type="text" class="form-control" placeholder="<%= @company.contact_first_name%>" readonly disabled>
+
+		<label class="dashboard-item-title">Apellido paterno de la persona que registra la empresa</label>
+		<input type="text" class="form-control" placeholder="<%= @company.contact_last_name %>" readonly disabled>
+
+		<label class="dashboard-item-title"> Apellido materno de la persona que registra la empresa</label>
+		<input type="text" class="form-control" placeholder="<%= @company.contact_last_m_name%>" readonly disabled>
+
+		<label class="dashboard-item-title">Puesto de la persona que registra la empresa</label>
+		<input type="text" class="form-control" placeholder="<%= @company.contact_employement %>" readonly disabled>
+	</div>
+</form>

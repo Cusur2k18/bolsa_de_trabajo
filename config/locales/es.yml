@@ -9,6 +9,9 @@ es:
             sign_up: "Registrarse"
     activerecord:
         models:
+            job_type:
+                one: "area de vacante"
+                other: "areas de vacante"
             address:
                 one: "direccion"
                 other: "direcciones"
@@ -79,6 +82,10 @@ es:
                 
         errors:
             models:
+                job_type:
+                    attributes:
+                        area:
+                            blank: "no se puede dejar en blanco"
                 course:
                     attributes:
                         name:

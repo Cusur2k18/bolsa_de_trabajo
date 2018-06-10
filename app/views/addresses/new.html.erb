@@ -8,6 +8,8 @@
 				<p>Por favor ingresar la dirección en la que se le pueda localizar más fácilmente.</p>
 			</div>
 		<% end %>
+	<% else %>
+		<%= render "companies_dashboard/partials/dashboard-nav" %>
 	<% end %>
 	<% if current_user.address.nil? %>
 		<%= render "errors/errors", object: @address %>
@@ -24,6 +26,6 @@
 				</p>
 			<% end %>
 		</div>
-	
-<% end %>
+
+	<% end %>
 </div>

@@ -1,0 +1,48 @@
+<h2>Registrar administrador</h2>
+<%= form_for User.new, url: admins_sign_up_path do |f| %>
+	<%= render "errors/errors", object: @admin%>
+	<div class="container small-form">
+		<div class="centered_form">
+			<div class="form-group">
+				<%= label_tag :first_name, "Nombre" %><br />
+				<%= text_field_tag :first_name, "", class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= label_tag :last_name, "Apellido paterno" %><br />
+				<%= text_field_tag :last_name,"",  class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= label_tag :last_m_name, "Apellido materno"  %><br />
+				<%= text_field_tag :last_m_name,"",  class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :email %><br />
+				<%= f.email_field :email, autocomplete: "email", class: 'form-control' %>
+			</div>
+
+
+			<div class="form-group">
+				<%= f.label :password %>
+				<% if @minimum_password_length %>
+					<em>(<%= @minimum_password_length %> <%= t('students.password_length')%> )</em>
+				<% end %><br />
+				<%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :password_confirmation %><br />
+				<%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+			</div>
+
+			<div class="actions">
+				<%= f.submit "Registrar", class: 'btn btn-success' %>
+				<%= link_to "Regresar", admin_dashboard_path, class: 'btn btn-info' %>
+			</div>
+		</div>
+	</div>
+	<br >
+<% end %>
+

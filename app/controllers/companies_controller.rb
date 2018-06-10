@@ -1,4 +1,12 @@
 class CompaniesController < ApplicationController
+	def index
+		if is_admin
+			@companies = Company.all
+		else
+			flash[:notice] = "No puedes acceder a esta pagina"
+			redirect_to root_path
+		end
+	end
 	
 	def edit
 		if current_user.roleable.id == Company.find(params[:id]).id
@@ -16,6 +24,13 @@ class CompaniesController < ApplicationController
 
 
 	private
+	def is_admin
+		if current_user.roleable_type == "Admin"
+			true
+		else
+			false
+		end
+	end
 
 	def companies_params
 		params.require(:company).permit(:company_name, :contact_first_name, :contact_last_name, :contact_last_m_name, :contact_employement )

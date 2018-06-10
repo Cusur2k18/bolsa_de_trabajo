@@ -1,4 +1,13 @@
 class StudentsController < ApplicationController
+	def index
+		if is_admin
+			@students = Student.all
+		else
+			flash[:notice] = "No tienes permisos para entrar a esta pagina"
+			redirect_to root_path
+		end
+	end
+
 	def edit
 		# validates if the user wanting to edit the data is the user that is signed in 
 		if is_logged_user == Student.find(params[:id]).id
@@ -18,6 +27,13 @@ class StudentsController < ApplicationController
 	end
 
 	private
+	def is_admin
+		if current_user.roleable_type == "Admin"
+			true
+		else
+			false
+		end
+	end
 
 	def is_logged_user
 		current_user.roleable.id

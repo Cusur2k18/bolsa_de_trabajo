@@ -1,0 +1,36 @@
+<h2>Lista de egresados registrados</h2>
+<div class="container">
+	<%= render "admins_dashboard/partials/dashboard-nav" %>
+	<% if @students.empty? %>
+		<p>No hay ningun egresado registrado</p>
+	<% else %>
+		<table class="table">
+			<thead>
+				<tr scope="column">
+					<th>Nombres(s)</th>
+					<th>Apellido paterno</th>
+					<th>Apellido materno</th>
+					<th>Estado</th>
+					<th>Codigo de alumno</th>
+					<th>Correo electronico</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @students.each do |st| %>
+					<tr>
+						<td scope="row"><%= st.first_name %></td>
+						<td scope="row"><%= st.last_name %></td>
+						<td scope="row"><%= st.last_m_name %></td>
+						<td scope="row"><%= st.udg_code %></td>
+						<td scope="row"><%= st.state %></td>
+						<td scope="row"><%= st.user.email %></td>
+						<td scope="row"><td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	<% end %>
+	<%= link_to "Regresar", admin_dashboard_path, class: 'btn btn-info' %>
+</div>
+

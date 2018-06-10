@@ -1,0 +1,31 @@
+<nav class="nav navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<%= link_to "Bolsa de trabajo CUSur", root_path, class: 'navbar-brand' %>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+				<p class="navbar-text">
+				<i class="fa fa-briefcase"></i>
+				Usted ingreso como administrador
+				</p>
+				</li>
+				<li>
+				<%= link_to admin_dashboard_path do %>
+					<i class="fa fa-user"></i>
+					Panel de control
+					<%= current_user.roleable.name %>
+				<% end %>
+				</li>
+
+				<li>
+				<%= link_to logout_path, method: :delete do  %>
+					<i class="fa fa-sign-in"></i>
+					<%= t('navbar.already_registered.logout') %> 
+				<% end %> 
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>

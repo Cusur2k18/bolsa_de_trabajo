@@ -31,7 +31,7 @@
 						<td scope="row"><%= edu.professional_license_type %></td>
 						<td scope="row">
 							<%= link_to "Editar", edit_education_path(edu), class: 'btn btn-primary' %>
-							<%= link_to "Borrar", education_path(edu), method: :delete, class: 'btn btn-danger' %>
+							<%= link_to "Borrar", education_path(edu), method: :delete, class: 'btn btn-danger' , data: { confirm: "En verdad quiere borrar la entrada?" } %>
 						</td>
 					</tr>
 				<% end %>

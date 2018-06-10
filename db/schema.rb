@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180530191450) do
+ActiveRecord::Schema.define(version: 20180604211832) do
 
   create_table "academic_awards", force: :cascade do |t|
     t.string "name"
@@ -107,8 +107,20 @@ ActiveRecord::Schema.define(version: 20180530191450) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "job_types", force: :cascade do |t|
+    t.string "area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "job_types_jobs", id: false, force: :cascade do |t|
+    t.integer "job_id", null: false
+    t.integer "job_type_id", null: false
+    t.index ["job_id", "job_type_id"], name: "index_job_types_jobs_on_job_id_and_job_type_id"
+    t.index ["job_type_id", "job_id"], name: "index_job_types_jobs_on_job_type_id_and_job_id"
+  end
+
   create_table "jobs", force: :cascade do |t|
-    t.string "category"
     t.time "workday_schedule_start"
     t.time "workday_schedule_end"
     t.string "contract_type"
@@ -177,6 +189,13 @@ ActiveRecord::Schema.define(version: 20180530191450) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["roleable_id"], name: "index_users_on_roleable_id"
+  end
+
+  create_table "work_types", force: :cascade do |t|
+    t.integer "working_area"
+    t.integer "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

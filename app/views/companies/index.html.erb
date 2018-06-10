@@ -1,0 +1,35 @@
+<h2>Empresas registradas</h2>
+<div class="container">
+	<%= render "admins_dashboard/partials/dashboard-nav" %>
+	<% if @companies.empty? %>
+		<p>No hay ninguna empresa registrada</p>
+	<% else %>
+		<table class="table">
+			<thead>
+				<tr scope="column">
+					<th>Nombre de la empresa</th>
+					<th>Nombre(s) del encargado</th>
+					<th>Apellido paterno del encargado</th>
+					<th>Apellido materno del encargado</th>
+					<th>Puesto del encargado</th>
+					<th>Correo electronico</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @companies.each do |cm| %>
+					<tr>
+						<td scope="row"><%= cm.company_name %></td>
+						<td scope="row"><%= cm.contact_first_name %></td>
+						<td scope="row"><%= cm.contact_last_name %></td>
+						<td scope="row"><%= cm.contact_last_m_name %></td>
+						<td scope="row"><%= cm.contact_employement %></td>
+						<td scope="row"><%= cm.user.email %></td>
+						<td scope="row"></td>
+					</tr>
+				<% end%>
+			</tbody>
+		</table>
+	<% end %>
+	<%= link_to "Regresar", admin_dashboard_path, class: 'btn btn-info' %>
+</div>
