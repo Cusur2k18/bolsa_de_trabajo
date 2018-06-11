@@ -3,6 +3,7 @@
 	<div class="container">
 		<%= render "students_dashboard/partials/dashboard-nav" %>
 		<%= render "students_dashboard/partials/show_personal_data" %>
+		<%= link_to "Descargar mi curriculum en PDF", student_path(@student.id, format: "pdf"), class: 'btn btn-info', target: :_blank %>
 	</div>
 <% else %>
 	<%= render "errors/permission_denied" %>

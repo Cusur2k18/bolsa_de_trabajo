@@ -17,6 +17,19 @@ class StudentsController < ApplicationController
 		end
 	end
 
+	def show
+		@student = Student.find(params[:id])
+		respond_to do | format |
+			format.html
+			format.pdf do
+				pdf = StudentPdf.new(@student)
+				send_data pdf.render,	filename: "curriculum_#{@student.first_name}.pdf",
+					type: "application/pdf",
+					disposition: "inline"
+			end
+		end
+	end
+
 	def update
 		@student = Student.find(params[:id])
 		@student.update_attributes(student_params)

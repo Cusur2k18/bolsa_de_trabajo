@@ -25,8 +25,8 @@ Rails.application.routes.draw do
 	get 'see_jobs', to: 'see_jobs#index'
 
 	# users routes
-	resources :students, only: [ :index, :edit, :update, :delete ]
-	resources :companies, only: [ :index, :edit, :update, :delete ]
+	resources :students
+	resources :companies
 	resources :admins, only: [ :index, :edit, :update, :delete ]
 	
 	resources :job_types
