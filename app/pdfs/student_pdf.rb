@@ -5,9 +5,22 @@ class StudentPdf < Prawn::Document
 		text "#{@student.first_name} #{@student.last_name} #{@student.last_m_name}", size: 20, style: :bold
 		stroke_horizontal_rule
 		personal_data
-		school
-		previous_jobs
+		if !@student.educations.nil?
+			school
+		end
+		if !@student.former_jobs.nil?
+			previous_jobs
+		end
 		awards_courses
+		if !@student.academic_awards.nil?
+			awards
+		end
+		if !@student.courses.nil?
+			courses
+		end
+		if !@student.languages.nil?
+			languages
+		end
 	end
 
 	def personal_data
@@ -16,8 +29,12 @@ class StudentPdf < Prawn::Document
 		stroke_horizontal_rule
 		move_down 10
 		text "Correo electronico: #{@student.user.email}"
-		address
-		phone_numbers
+		if !@student.user.address.nil?
+			address
+		end
+		if !@student.user.phone_numbers.nil?
+			phone_numbers
+		end
 	end
 
 	def school
@@ -49,9 +66,6 @@ class StudentPdf < Prawn::Document
 		move_down 20
 		text "Premios, cursos, idiomas ", size: 15, style: :bold
 		stroke_horizontal_rule
-		awards
-		courses
-		languages
 	end
 
 

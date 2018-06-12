@@ -7,7 +7,7 @@ class CompaniesController < ApplicationController
 			redirect_to root_path
 		end
 	end
-	
+
 	def edit
 		if current_user.roleable.id == Company.find(params[:id]).id
 			@company = Company.find(params[:id])
@@ -22,6 +22,20 @@ class CompaniesController < ApplicationController
 		redirect_to companies_dashboard_path
 	end
 
+	def show
+		@company = Company.find(params[:id])
+		respond_to do |format|
+			format.html do
+				redirect_to root_path
+			end
+			format.pdf do
+				pdf = CompanyPdf.new(@company)
+				send_data pdf.render,	filename: "informacion_#{@company.company_name}.pdf",
+					type: "application/pdf",
+					disposition: "inline"
+			end
+		end
+	end
 
 	private
 	def is_admin
