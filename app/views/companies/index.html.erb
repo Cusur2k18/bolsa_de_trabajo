@@ -25,7 +25,7 @@
 						<td scope="row"><%= cm.contact_last_m_name %></td>
 						<td scope="row"><%= cm.contact_employement %></td>
 						<td scope="row"><%= cm.user.email %></td>
-						<td scope="row"></td>
+						<td scope="row"><%= link_to "Descargar información en PDF", company_path(cm, format: "pdf"), class: 'btn btn-info', target: :_blank %></td>
 					</tr>
 				<% end%>
 			</tbody>

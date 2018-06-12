@@ -23,6 +23,21 @@ class StudentsController < ApplicationController
 		redirect_to student_dashboard_path
 	end
 
+	def show
+		@student = Student.find(params[:id])
+		respond_to do |format|
+			format.html do
+				redirect_to root_path
+			end
+			format.pdf do
+				pdf = StudentPdf.new(@student)
+				send_data pdf.render,	filename: "curriculum_#{@student.first_name}.pdf",
+					type: "application/pdf",
+					disposition: "inline"
+			end
+		end
+	end
+
 	def delete
 	end
 

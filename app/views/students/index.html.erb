@@ -25,7 +25,7 @@
 						<td scope="row"><%= st.udg_code %></td>
 						<td scope="row"><%= st.state %></td>
 						<td scope="row"><%= st.user.email %></td>
-						<td scope="row"><td>
+						<td scope="row"><%= link_to "Descargar Curriculum en PDF", student_path(st, format: "pdf"), class: 'btn btn-info', target: :_blank%><td>
 					</tr>
 				<% end %>
 			</tbody>
