@@ -16,6 +16,20 @@ class CompaniesController < ApplicationController
 		end
 	end
 
+	def validate
+		@company = Company.find(params[:id])
+		@company.is_validated = true
+		@company.save
+		redirect_to companies_path
+	end
+	
+	def unvalidate
+		@company = Company.find(params[:id])
+		@company.is_validated = false
+		@company.save
+		redirect_to companies_path
+	end
+
 	def update
 		@company = Company.find(params[:id])
 		@company.update_attributes(companies_params)

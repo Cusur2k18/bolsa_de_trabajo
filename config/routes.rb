@@ -26,7 +26,12 @@ Rails.application.routes.draw do
 
 	# users routes
 	resources :students
-	resources :companies
+	resources :companies do
+		member do
+			post :validate
+			post :unvalidate
+		end
+	end
 	resources :admins, only: [ :index, :edit, :update, :delete ]
 	
 	resources :job_types

@@ -1,6 +1,6 @@
 <div class="container">
 	<% if current_user.roleable_type == "Company" and user_signed_in? %>
-		<h2>Bienvenido a la empresa <%= @company.company_name %>, <%= current_user.roleable.company_name %></h2>
+		<h2>Bienvenido a la empresa <%= @company.company_name %>, <%= current_user.roleable.contact_first_name %></h2>
 		<%= render "companies_dashboard/partials/dashboard-nav" %>
 		<%= render "companies_dashboard/partials/show_company_data" %>
 		<%= link_to "Descargar información en PDF", company_path(@company.id, format: "pdf"), class: 'btn btn-info', target: :_blank %>

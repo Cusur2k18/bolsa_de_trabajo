@@ -13,6 +13,7 @@
 					<th>Apellido materno del encargado</th>
 					<th>Puesto del encargado</th>
 					<th>Correo electronico</th>
+					<th>¿Está validada?</th>
 					<th>Acciones</th>
 				</tr>
 			</thead>
@@ -25,7 +26,19 @@
 						<td scope="row"><%= cm.contact_last_m_name %></td>
 						<td scope="row"><%= cm.contact_employement %></td>
 						<td scope="row"><%= cm.user.email %></td>
-						<td scope="row"><%= link_to "Descargar información en PDF", company_path(cm, format: "pdf"), class: 'btn btn-info', target: :_blank %></td>
+						<td scope="row">
+							<% if cm.is_validated %>
+								Empresa validada <br>
+								<%= link_to "Click para desvalidar", unvalidate_company_path(cm), { method: :post } %> 
+							<% else %>
+								Empresa no validada <br>
+								<%= link_to "Click para validar", validate_company_path(cm), { method: :post } %>
+							<% end %>
+						</td>
+						<td scope="row">
+							<%= link_to "Descargar información en PDF", company_path(cm, format: "pdf"), class: 'btn btn-info', target: :_blank %>
+
+						</td>
 					</tr>
 				<% end%>
 			</tbody>
