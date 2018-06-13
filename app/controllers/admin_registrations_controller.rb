@@ -1,7 +1,17 @@
 class AdminRegistrationsController < ApplicationController
 	def new
-		@admin = Admin.new
-		@user = User.new
+		if Admin.all.empty?
+			@admin = Admin.new
+			@user = User.new
+		else 
+			if is_admin
+				@admin = Admin.new
+				@user = User.new
+			else
+				flash[:warning] = "No tienes los permisos necesarios para acceder a esta ruta"
+				redirect_to root_path
+			end
+		end
 	end
 
 	def create
