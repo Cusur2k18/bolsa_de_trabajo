@@ -8,7 +8,7 @@ class AdminRegistrationsController < ApplicationController
 				@admin = Admin.new
 				@user = User.new
 			else
-				flash[:warning] = "No tienes los permisos necesarios para acceder a esta ruta"
+				flash[:notice] = "No tienes los permisos necesarios para acceder a esta ruta"
 				redirect_to root_path
 			end
 		end

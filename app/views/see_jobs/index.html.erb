@@ -25,7 +25,8 @@
 		<tbody>
 			<% @jobs.each do |jb| %>
 				<% jb.job_types.each do |a| %>
-					<% @htmlClass = @htmlClass + " " + a.area %>
+					<% @area = a.area.split(" ").join %>
+					<% @htmlClass = @htmlClass + " " + @area %>
 				<% end %>
 				<tr class="<%= @htmlClass %>">
 					<td scope="row"><%= jb.company.company_name %></td>
@@ -34,11 +35,32 @@
 					<td scope="row"><%= jb.age_requierement %></td>
 					<td scope="row"><%= jb.workday_type %></td>
 					<td scope="row"><%= jb.schooling_level %></td>
-					<td scope="row"></td>
-					<td scope="row"></td>
-				</tr>
-				<% @htmlClass = "myTr" %>
-			<% end %>
-		</tbody>
-	</table>
+					<td scope="row">
+						<% # This block of code is kind of complicated. first we search each job applications on the job, and see if the logged in 
+							# student has applied to a job, if it has then we can delete that entry, next we check if the student has applied to jobs
+							# at all, if they have not then they can apply for the job, if they have we cicle through the jobs they have applied to
+							# if no jobs have the same id as the ones they have applied to then they can apply for the job
+						%>
+					<% jb.job_applications.each do |ja| %>
+						<% if ja.student_id == current_user.roleable.id and ja.job_id == jb.id %>
+							<%= link_to "Desaplicar del puesto", student_unapplied_job_application_path(ja), { method: :post } %>
+						<% end %>
+					<% end %>
+					<% if current_user.roleable.job_applications.empty? %>
+						<%= link_to "Aplicar al puesto", student_applied_job_application_path(jb), { method: :post }%>
+					<% else %>
+						<% current_user.roleable.job_applications.each do |sja| %>
+							<% if sja.job_id != jb.id %>
+								<%= link_to "Aplicar al puesto", student_applied_job_application_path(jb), { method: :post }%>
+							<% end %>
+						<% end %>
+					<% end %>
+					<% # end of complicated code, needs to fix a bug where if you apply to more than two jobs both options get displayed %>
+				</td>
+				<td scope="row"></td>
+			</tr>
+			<% @htmlClass = "myTr" %>
+		<% end %>
+	</tbody>
+</table>
 </div>

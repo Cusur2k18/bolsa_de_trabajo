@@ -1,5 +1,6 @@
 <h2>Areas de vacantes</h2>
 <div class="container">
+	<%= render "admins_dashboard/partials/dashboard-nav" %>
 	<% if @job_types.empty? %>
 		<div class="alert alert-warning">
 			<p>No se ha agregado ninguna clasificacion de vacante</p>
@@ -26,5 +27,6 @@
 			</tbody>
 		</table>
 	<% end %>
+	<%= link_to "Regresar", admin_dashboard_path, class: 'btn btn-info'%>
 </div>
 

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 	devise_scope :user do
 		get 'students/sign_up' => 'student_registrations#new'
 		post 'students/sign_up' => 'student_registrations#create'
-		
+
 		get 'companies/sign_up' => 'company_registrations#new'
 		post 'companies/sign_up' => 'company_registrations#create'
 
@@ -26,14 +26,17 @@ Rails.application.routes.draw do
 
 	# users routes
 	resources :students
+	# routes for companies, companies have custom routes for the admin to validate or invalidate a company
 	resources :companies do
 		member do
 			post :validate
 			post :unvalidate
 		end
 	end
+
 	resources :admins, only: [ :index, :edit, :update, :delete ]
-	
+
+
 	resources :job_types
 	resources :educations
 	resources :phone_numbers
@@ -43,4 +46,14 @@ Rails.application.routes.draw do
 	resources :academic_awards
 	resources :courses
 	resources :languages
+
+
+	# route for Job_Applications, only custom routes here.
+	resources :job_applications, only: [ :index, :show ] do
+		member do
+			post :student_applied
+			post :student_unapplied
+			post :company_hired
+		end
+	end
 end
