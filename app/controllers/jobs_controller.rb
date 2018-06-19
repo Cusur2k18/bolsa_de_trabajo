@@ -31,6 +31,13 @@ class JobsController < ApplicationController
 
 	def show
 		@job = Job.find(params[:id])
+		if is_owner(@job)
+			@job
+			@jobTypes = ""
+		else
+			flash[:alert] = "No se ha podido acceder a esta vacante"
+			redirect_to jobs_path
+		end
 	end
 
 
