@@ -1,0 +1,73 @@
+<h2><%= @job.name %></h2>
+
+<div class="container">
+	<%= render "companies_dashboard/partials/dashboard-nav" %>
+	<form class="form-group" action="">
+		<label class="dashboard-item-title" for="">Nombre de la vacante</label>
+		<input type="text" class="form-control" placeholder="<%= @job.name %>" readonly disabled>
+
+		<label class="dashboard-item-title" for="">Tipo de jornada</label>
+		<input type="text" class="form-control" placeholder="<%= @job.workday_type %>" readonly disabled>
+
+		<label class="dashboard-item-title" for="">Tipo de contrato</label>
+		<input type="text" class="form-control" placeholder="<%= @job.contract_type %>" readonly disabled>
+
+		<label class="dashboard-item-title" for="">Hora de inicio de la jornada</label>
+		<input type="text" class="form-control" placeholder="<%= @job.workday_schedule_start %>" readonly disabled>
+
+		<label class="dashboard-item-title" for="">Hora de fin de la jornada</label>
+		<input type="text" class="form-control" placeholder="<%= @job.workday_schedule_end %>" readonly disabled>
+
+		<label class="dashboard-item-title" for="">Salario</label>
+		<input type="text" class="form-control" placeholder="<%= @job.salary %>" readonly disabled>
+
+		<label class="dashboard-item-title" for="">Edad minima</label>
+		<input type="text" class="form-control" placeholder="<%= @job.age_requierement %>" readonly disabled>
+
+		<label class="dashboard-item-title" for="">Genero</label>
+		<input type="text" class="form-control" placeholder="<%= @job.gender %>" readonly disabled>
+
+		<label class="dashboard-item-title" for="">Nivel educativo</label>
+		<input type="text" class="form-control" placeholder="<%= @job.schooling_level %>" readonly disabled>
+
+		<label class="dashboard-item-title" for="">Experiencia laboral</label>
+		<input type="text" class="form-control" placeholder="<%= @job.work_experience %>" readonly disabled>
+
+		<label class="dashboard-item-title" for="">Conocimientos especiales</label>
+		<input type="text" class="form-control" placeholder="<%= @job.specialized_knowledge %>" readonly disabled>
+
+		<label class="dashboard-item-title" for="">Aptitudes</label>
+		<input type="text" class="form-control" placeholder="<%= @job.aptitudes %>" readonly disabled>
+
+		<label class="dashboard-item-title" for="">Duracion del trabajo</label>
+		<input type="text" class="form-control" placeholder="<%= @job.job_duration %>" readonly disabled>
+	</form>
+
+	<h4>Categorias de la vacante</h4>
+	<ul>
+		<% @job.job_types.each do |jt| %>
+			<li><%= jt.area %></li>
+		<% end %>
+	</ul>
+</form>
+
+<h4>Egresados que han aplicado</h4>
+<form class="form-group" action="">
+	<% @job.job_applications.each do |ja| %>
+		<label class="dashboard-item-title" for="">Nombre</label>
+		<input type="text" class="form-control" placeholder="<%= ja.student.first_name %> <%= ja.student.last_name %> <%= ja.student.last_m_name %>" readonly disabled>
+
+		<label class="dashboard-item-title" for="">Correo Electronico</label>
+		<input type="text" class="form-control" placeholder="<%= ja.student.user.email %>" readonly disabled>
+
+		<label class="dashboard-item-title" for="">Descargar curriculum</label> <br>
+		<%= link_to "Descargar curriculum en PDF", student_path(ja.student_id, format: "pdf"), class: 'btn btn-info', target: :_blank %>
+		<br>
+
+		<label class="dashboard-item-title" for="">Contratar a <%= ja.student.first_name %></label> <br>
+		<%= link_to "Contratar", company_hired_job_application_path(ja), { method: :post } %>
+		<br>
+	<% end %>
+</form>
+
+</div>

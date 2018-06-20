@@ -35,12 +35,13 @@ class CompanyPdf < Prawn::Document
 		stroke_horizontal_rule
 		move_down 10
 		@company.jobs.each do |jb|
-			text "Nombre: #{jb.name}"
+			text "Nombre: #{jb.name}", style: :bold
 			text "Salario: $#{jb.salary}"
 			text "Categorias: "
 			jb.job_types.each do |jt|
 				text "•#{jt.area}"
 			end
+			move_down 10
 		end
 	end
 
@@ -56,13 +57,13 @@ class CompanyPdf < Prawn::Document
 	def address_data
 		move_down 10
 		text "#{@company.user.address.city} #{@company.user.address.state}"
-		text "Domicilio: #{@company.user.address.street}, Num exterior: #{@company.user.address.street_address}, Num interior: #{@company.user.address.apartment_address} C.P. #{@company.user.address.zip_code}"
+		text "Domicilio: #{@company.user.address.street}, Num exterior: #{@company.user.address.street_address}, Num interior: #{@company.user.address.apartment_number} C.P. #{@company.user.address.zip_code}"
 	end
 
 	def phone_number_data
 		move_down 10
 		@company.user.phone_numbers.each do |pn|
-			text "Numero de celular:  #{pn.cellphone_number}, \nNumero de celular:  #{pn.home_phone_number}"
+			text "Numero de celular:  #{pn.cell_phone_number}, \nNumero de celular:  #{pn.home_phone_number}"
 		end
 	end
 end

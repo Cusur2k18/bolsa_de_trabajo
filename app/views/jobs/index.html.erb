@@ -22,6 +22,7 @@
 							<% end %>
 						</td>
 						<td scope="row">
+							<%= link_to "Detalles", job_path(jb), class: 'btn btn-success' %>
 							<%= link_to "Editar", edit_job_path(jb), class: 'btn btn-info' %>
 							<%= link_to "Borrar", job_path(jb), method: :delete, class: 'btn btn-danger', data: { confirm: "Esta seguro de que quiere borrar esta entrada?" } %> 
 						</td>
