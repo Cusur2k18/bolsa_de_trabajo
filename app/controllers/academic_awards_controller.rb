@@ -87,6 +87,26 @@ class AcademicAwardsController < ApplicationController
 		end
 	end
 
+	def get_first_time_setup
+		if is_student
+			@award = AcademicAward.new
+		else
+			redirect_to root_path
+		end
+	end
+
+	def post_first_time_setup
+		@award = AcademicAward.new(academic_awards_params)
+		@user = current_user.roleable	
+		@user.academic_awards << @award
+		if @award.save
+			redirect_to courses_first_time_setup_path
+		else
+			flash[:alert] = "Algo salio mal a la hora de guardar la entrada, verifique los datos ingresados"
+			redirect_to academic_awards_first_time_setup_path 
+		end
+	end
+
 	private
 	def is_student
 		if current_user.roleable_type == "Student"

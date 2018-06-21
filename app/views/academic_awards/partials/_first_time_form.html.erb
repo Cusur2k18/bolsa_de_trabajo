@@ -1,8 +1,8 @@
-<%= simple_form_for @award do |aw| %>
+<%= simple_form_for @award, :url => academic_awards_first_time_setup_path, :method => :post do |aw| %>
 	<%= aw.input :name, label: "Nombre del premio" %>
 	<%= aw.input :description, label: "Breve descripción del premio (E.j: Primer lugar...)" %>
 	<%= aw.input :issuing_organism, label: "Organización expide el premio" %>
 	<%= aw.input :award_date, label: "Fecha de entrega"%>
 	<%= aw.button :submit, class: 'btn btn-success' %>
-	<%= link_to "Regresar", academic_awards_path, class: 'btn btn-info' %>
+	<%= link_to "Saltar este paso", courses_first_time_setup_path, class: 'btn btn-info' %>
 <% end %>

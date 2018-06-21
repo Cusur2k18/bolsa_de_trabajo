@@ -11,7 +11,7 @@ class JobsController < ApplicationController
 		if current_user.roleable.is_validated
 			@job = Job.new
 		else
-			flash[:notice] = "Su empresa necesita estar validada primero, contáctese con el administrador del sitio para realizar el trámite de validación"
+			flash[:notice] = 'Su empresa necesita estar validada primero, contáctese con el administrador del sitio para realizar el trámite de validación enviando un correo electrónico a: clara.rivera@cusur.udg.mx'
 			redirect_to jobs_path
 		end
 	end
@@ -75,6 +75,7 @@ class JobsController < ApplicationController
 			redirect_to jobs_path
 		end
 	end
+
 
 	private
 	def is_company

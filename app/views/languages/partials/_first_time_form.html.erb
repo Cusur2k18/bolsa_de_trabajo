@@ -1,0 +1,8 @@
+<%= simple_form_for @language, :url => languages_first_time_setup_path, :method => :post do |lg| %>
+	<%= lg.input :name, label: "Idioma"%>
+	<%= lg.input :language_level, label: "Nivel de dominio" %>
+	<%= lg.input :has_certificate, as: :radio_buttons, collection: Language.has_certificates.keys, checked: Language.has_certificates[:No], label: "¿Se tiene certificado?"%>
+	<div id="has-certificate"><%= lg.input :issuing_organism, label: "Organismo que lo expide"%></div>
+	<%= lg.button :submit, class: 'btn btn-success' %>
+	<%= link_to "Saltar este paso", student_dashboard_path, class: 'btn btn-info' %>
+<% end %>

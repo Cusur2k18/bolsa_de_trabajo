@@ -71,10 +71,34 @@ class FormerJobsController < ApplicationController
 		end
 	end
 
+	def get_first_time_setup
+		if is_student
+			@former_job = FormerJob.new
+		else
+			redirect_to root_path
+		end
+	end
+
+	def post_first_time_setup
+		if is_student
+			@former_job = FormerJob.new(former_jobs_params)
+			@user = current_user.roleable
+			@user.former_jobs << @former_job
+			if @former_job.save
+				redirect_to academic_awards_first_time_setup_path
+			else
+				flash[:notice] = "No se pudo guardar la entrada, verifica que todos los datos ingresados sean correctos"
+				redirect_to former_jobs_get_first_time_setup_path
+			end
+		else
+			redirect_to root_path
+		end
+	end
+
 	private
 
 	def is_student
-		if current_user.roleable == "Student"
+		if current_user.roleable_type == "Student"
 			true
 		else
 			false

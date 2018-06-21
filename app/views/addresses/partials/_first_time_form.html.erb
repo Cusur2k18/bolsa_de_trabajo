@@ -1,0 +1,10 @@
+<%= simple_form_for @address, :url => addresses_first_time_setup_path, :method => :post do |addr| %>
+	<%= addr.input :state, label: t('addresses.state') %>
+	<%= addr.input :city, label: t('addresses.city') %>
+	<%= addr.input :zip_code, label: t('addresses.zip_code') %>
+	<%= addr.input :street, label: t('addresses.street') %>
+	<%= addr.input :street_address, label: t('addresses.street_address') %>
+	<%= addr.input :apartment_number, label: t('addresses.apartment_address') %>
+	<%= addr.button :submit, class: 'btn btn-success' %>
+	<%= link_to 'Saltar este paso', phone_numbers_first_time_setup_path, class: 'btn btn-info' %>
+<% end %>
