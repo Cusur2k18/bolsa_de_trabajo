@@ -9,10 +9,17 @@
 		<% end %>
 	<% end %>
 	<% if current_user.address.nil? %>
-		<p class="alert">
-		En las siguientes pasos se van a agregar todos los datos necesarios para construir tu curriculum, si no quieres llenar los datos en éste momento
-		puedes dar click en "Saltar éste paso" para las siguientes páginas.
-		</p>
+		<% if current_user.roleable_type == "Student" %>
+			<p class="info">
+			En las siguientes pasos se van a agregar todos los datos necesarios para construir tu curriculum, si no quieres llenar los datos en éste momento
+			puedes dar click en "Saltar éste paso" para las siguientes páginas.
+			</p>
+		<% else %>
+			<p class="info">
+			En las siguientes pasos se van a agregar todos los datos necesarios para completar el registro de la empresa, si no quieres llenar los datos en éste momento
+			puedes dar click en "Saltar éste paso" para las siguientes páginas, y agregar los datos necesarios más tarde.
+			</p>
+		<% end %>
 		<%= render "errors/errors", object: @address %>
 		<%= render "addresses/partials/first_time_form" %>
 	<% else %>

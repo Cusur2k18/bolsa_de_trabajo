@@ -52,8 +52,6 @@ Rails.application.routes.draw do
 	post 'addresses/first_time_setup' => 'addresses#post_first_time_setup'
 	resources :addresses 
 
-	get 'jobs/first_time_setup' => 'jobs#get_first_time_setup'
-	post 'jobs/first_time_setup' => 'jobs#post_first_time_setup'
 	resources :jobs
 
 	get 'former_jobs/first_time_setup' => 'former_jobs#get_first_time_setup'

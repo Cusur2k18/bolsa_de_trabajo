@@ -2,5 +2,9 @@
 	<%= phone.input :cell_phone_number, label: "Numero de celular" %>
 	<%= phone.input :home_phone_number, label: "Numero de casa"  %>
 	<%= phone.button :submit %>
-	<%= link_to "Saltar este paso", educations_first_time_setup_path, class: 'btn btn-info' %>
+	<% if current_user.roleable_type == "Student" %>
+		<%= link_to "Saltar este paso", educations_first_time_setup_path, class: 'btn btn-info' %>
+	<% else %>
+		<%= link_to "Saltar este paso", companies_dashboard_path, class: 'btn btn-info' %>
+	<% end %>
 <% end %>

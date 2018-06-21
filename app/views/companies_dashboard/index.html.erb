@@ -3,6 +3,11 @@
 		<h2>Bienvenido a la empresa <%= @company.company_name %>, <%= current_user.roleable.contact_first_name %></h2>
 		<%= render "companies_dashboard/partials/dashboard-nav" %>
 		<%= render "companies_dashboard/partials/show_company_data" %>
+		<% if @company.is_validated %>
+			<p>Su cuenta esta validada, ya puedes agregar vacantes.</p>
+		<% else %>
+			<p>Su cuenta no esta validada, contacta el administrador del sitio <a href="mailto:clara.rivera@cusur.udg.mx">clara.rivera@cusur.udg.mx</a> para la validación de la misma.</p>
+		<% end %>
 		<%= link_to "Descargar información en PDF", company_path(@company.id, format: "pdf"), class: 'btn btn-info', target: :_blank %>
 	<% else %>
 		<%= render "errors/permission_denied" %>

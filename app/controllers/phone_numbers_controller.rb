@@ -62,7 +62,7 @@ class PhoneNumbersController < ApplicationController
 			if current_user.roleable_type == "Student"
 				redirect_to educations_first_time_setup_path
 			else
-				redirect_to jobs_first_time_setup_path
+				redirect_to companies_dashboard_path 
 			end
 
 		else
