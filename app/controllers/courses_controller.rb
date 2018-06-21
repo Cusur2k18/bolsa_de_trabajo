@@ -64,6 +64,26 @@ class CoursesController < ApplicationController
 		end
 	end
 
+	def get_first_time_setup
+		if is_student
+			@course = Course.new
+		else
+			redirect_to root_path
+		end
+	end
+
+	def post_first_time_setup
+		@course  = Course.new(courses_params)
+		@user  = current_user.roleable
+		@user.courses << @course
+		if @course.save
+			redirect_to languages_first_time_setup_path
+		else
+			flash[:alert] = "Algo salio mal a la hora de guardar la entrada, verifique los datos ingresados"
+			render :get_first_time_setup
+		end
+	end
+
 	private
 	def courses_params
 		params.require(:course).permit(:name, :description, :issuing_organism, :start_date, :end_date)

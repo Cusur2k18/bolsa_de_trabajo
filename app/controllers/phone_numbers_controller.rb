@@ -50,6 +50,26 @@ class PhoneNumbersController < ApplicationController
 
 	end
 
+	def get_first_time_setup
+		@phone_number = PhoneNumber.new
+	end
+
+	def post_first_time_setup
+		@phone_number = PhoneNumber.new(phone_numbers_params)
+		@user = current_user
+		@user.phone_numbers << @phone_number
+		if @phone_number.save
+			if current_user.roleable_type == "Student"
+				redirect_to educations_first_time_setup_path
+			else
+				redirect_to jobs_first_time_setup_path
+			end
+
+		else
+			flash[:alert] = "Algo salio mal a la hora de guardar la entrada, verifique los datos ingresados"
+			redirect_to phone_numbers_first_time_setup_path
+		end
+	end
 	private
 
 	def phone_numbers_params

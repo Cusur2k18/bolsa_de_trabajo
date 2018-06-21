@@ -63,6 +63,6 @@ class StudentRegistrationsController < Devise::RegistrationsController
 	end
 
 	def after_sign_up_path_for(resource)
-		student_dashboard_path || super
+		addresses_first_time_setup_path || super
 	end
 end

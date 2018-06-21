@@ -1,0 +1,32 @@
+<h2>Domicilio</h2>
+<div class="container render-form">
+
+	<% if current_user.roleable_type == "Student" %>
+		<% if current_user.address.nil? %>
+			<div class="alert alert-info">
+				<p>Por favor ingresar la dirección en la que se le pueda localizar más fácilmente.</p>
+			</div>
+		<% end %>
+	<% end %>
+	<% if current_user.address.nil? %>
+		<p class="alert">
+		En las siguientes pasos se van a agregar todos los datos necesarios para construir tu curriculum, si no quieres llenar los datos en éste momento
+		puedes dar click en "Saltar éste paso" para las siguientes páginas.
+		</p>
+		<%= render "errors/errors", object: @address %>
+		<%= render "addresses/partials/first_time_form" %>
+	<% else %>
+		<div class="alert alert-warning">
+			<p class="center"><%= t('addresses.index.warnings.can_not_add_more_addresses') %></p>
+			<p class="center">
+			<%= link_to t('addresses.index.actions.edit'), addresses_path, class: 'btn btn-success' %>
+			<% if current_user.roleable_type == "Student" %>
+				<%= link_to t('addresses.go_back'), :back, class: 'btn btn-info' %>
+			<% else %>
+				<%= link_to t('addresses.go_back'), :back, class: 'btn btn-info' %>
+				</p>
+			<% end %>
+		</div>
+
+	<% end %>
+</div>

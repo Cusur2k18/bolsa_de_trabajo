@@ -75,6 +75,25 @@ class EducationsController < ApplicationController
 		end
 	end
 
+	def get_first_time_setup
+		if is_student
+			@education = Education.new
+		else
+			redirect_to root_path
+		end
+	end
+
+	def post_first_time_setup
+		@student = current_user.roleable
+		@education = Education.new(educations_params)
+		@student.educations << @education
+		if @education.save
+			redirect_to former_jobs_first_time_setup_path
+		else
+			redirect_to educations_first_time_setup_path 
+		end
+	end
+
 	private
 
 	def educations_params

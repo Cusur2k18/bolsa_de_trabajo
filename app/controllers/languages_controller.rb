@@ -6,7 +6,11 @@ class LanguagesController < ApplicationController
 	end
 
 	def new
-		@language = Language.new
+		if is_student
+			@language = Language.new
+		else
+			redirect_to root_path
+		end
 	end
 
 	def create
@@ -62,6 +66,28 @@ class LanguagesController < ApplicationController
 		else
 			flash[:notice] = "No puedes borrar una entrada que no es de tu propiedad" 
 			redirect_to languages_path
+		end
+	end
+
+	def get_first_time_setup
+		if is_student
+			@language = Language.new
+		else
+			redirect_to root_path
+		end
+	end
+
+	def post_first_time_setup
+		@language = Language.new(languages_params)
+		@student = current_user.roleable
+		@student.languages << @language
+
+		if @language.save
+			flash[:notice] = "Se ha configurado correctamente tu información, bienvenido a tu perfil."
+			redirect_to student_dashboard_path
+		else
+			flash[:alert] = "Algo salio mal al tratar de insertar el idioma, verifique que los datos sean correctos"
+			render :get_first_time_setup
 		end
 	end
 

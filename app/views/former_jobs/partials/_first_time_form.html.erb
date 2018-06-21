@@ -1,4 +1,4 @@
-<%= simple_form_for @former_job do |fj| %>
+<%= simple_form_for @former_job, :url => former_jobs_first_time_setup_path, :method => :post do |fj| %>
 	<%= fj.input :enterprise_name , label: "Nombre de la empresa" %>
 	<%= fj.input :phone_number, label: "Número telefónico de la empresa" %>
 	<%= fj.input :address, label: "Domicilio de la empresa" %>
@@ -9,5 +9,5 @@
 	<%= fj.input :activities, label: "Actividades que desempeñó" %>
 	<%= fj.input :is_current_job, collection: FormerJob.is_current_jobs.keys, include_blank: false, label: "¿Empleo actual?" %>
 	<%= fj.button :submit, class: 'btn btn-success' %>
-	<%= link_to "Regresar", former_jobs_path, class: 'btn btn-info' %>
+	<%= link_to "Saltar este paso", academic_awards_first_time_setup_path, class: 'btn btn-info' %>
 <% end %>
