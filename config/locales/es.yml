@@ -207,14 +207,14 @@ es:
         companies: "Beneficios para empresas registradas"
         registered_students:
             main_text: "Entre los beneficios que se brindan para los estudiantes estan: "
-            reason_1: "Completar su perfil profesional"
-            reason_2: "Encontrar empresas nacionales e internacionales facilmente"
-            reason_3: "Encuentra trabajo de manera facil y rapida"
+            reason_1: "Completar su perfil profesional."
+            reason_2: "Encontrar empresas nacionales e internacionales fácilmente."
+            reason_3: "Encuentra trabajo de manera fácil y rápida."
         registered_companies: 
-            main_text: "Los beneficios para las empresas registradas son: "
-            reason_1: "Encontrar candidatos para un puesto rapidamente"
-            reason_2: " "
-            reason_3: " "
+            main_text: "Algunos de los beneficios para las empresas registradas son: "
+            reason_1: "Encontrar candidatos para un puesto rápidamente."
+            reason_2: "Vinculación con profesionistas calificados."
+            reason_3: "Reducción en tiempo y costo de recluetamiento y búsqueda de personal."
 
     phone_numbers:
         new:
@@ -236,8 +236,8 @@ es:
                 delete: "En verdad quiere borrar este numero telefonico?"
 
     description:
-        title: "Descripcion del proyecto"
-        project: "El Centro Universitario del Sur como parte de la Red Universitaria de la Universidad de Guadalajara está comprometido con sus egresados para apoyarlos a entrar al sector productivo de una manera existosa, a través de vinculación con empresas líderes en sus ramas y de ésta forma contribuir con su desarollo profesional"
+        title: "Descripción del proyecto"
+        project: "El Centro Universitario del Sur como parte de la Red Universitaria de la Universidad de Guadalajara está comprometido con sus egresados para apoyarlos a entrar al sector productivo de una manera existosa, a través de vinculación con empresas líderes en su ramo y de esta forma contribuir con su desarollo profesional."
     
     link_text:
         sign_in: "Ingresar"

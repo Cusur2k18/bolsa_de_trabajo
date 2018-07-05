@@ -1,7 +1,11 @@
 <h2>Registrar administrador</h2>
 <%= form_for User.new, url: admins_sign_up_path do |f| %>
 	<%= render "errors/errors", object: @admin%>
-	<div class="container small-form">
+	<div class="container">
+		<% if user_signed_in? %>
+			<%= render "admins_dashboard/partials/dashboard-nav" %>
+		<% end %>
+
 		<div class="centered_form">
 			<div class="form-group">
 				<%= label_tag :name, "Nombre" %><br />

@@ -23,8 +23,8 @@
 }
 .udg-logo{
 	display: block;
-	max-width: 40%;
-	max-height: 40%;
+	max-width: 60%;
+	max-height: 60%;
 	height: auto;
 	filter: grayscale(100%);
 }
@@ -76,9 +76,19 @@
 
 .nav-dashboard {
 	margin-bottom: 15px;
+	border: solid 1px;
 }
 .nav-dashboard > ul > li > a {
-	color: #d14242
+	color: #3ea2c9;
+}
+.nav-dashboard > ul {
+	background-color: #ededed;
+}
+.nav-tabs li:hover a {
+	border: none;
+	background: none;
+	background-color: white;
+	margin: 0 !important;
 }
 
 .footer {

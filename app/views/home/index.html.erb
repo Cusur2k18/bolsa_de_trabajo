@@ -2,29 +2,32 @@
 
 <br>
 
-<div class="center container">
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3><%= t('description.title') %></h3>
-		</div>
-		<div class="panel-body">
-			<p class="center">
-			<%= t('description.project') %>
-			</p>
-		</div>
+<div class="container">
+	<div>
+		<p class="left bold description">
+		<%= t('description.project') %>
+		</p>
 	</div>
-	<div class="col-md-5">
+	<div class="col-md-5 col-xs-5">
 		<div class="panel panel-default ">
 
 			<div class="panel-heading">
 				<h3><%= t('benefits.students')%></h3>
 			</div>
 
-			<div class="panel-body ">
+			<div class="panel-body">
 				<p class="center"><%= t('benefits.registered_students.main_text') %></p>
-				<p class="center"><%= t('benefits.registered_students.reason_1') %></p>
-				<p class="center"><%= t('benefits.registered_students.reason_2') %></p>
-				<p class="center"><%= t('benefits.registered_students.reason_3') %></p>
+				<ul>
+					<li class="left">
+					<%= t('benefits.registered_students.reason_1') %>
+					</li>
+					<li class="left">
+					<%= t('benefits.registered_students.reason_2') %>
+					</li>
+					<li class="left">
+					<%= t('benefits.registered_students.reason_3') %>
+					</li>
+				</ul>
 			</div>
 
 			<% if !user_signed_in? %>
@@ -37,7 +40,7 @@
 
 		</div>
 	</div>
-	<div class="col-md-5 col-md-offset-2">
+	<div class="col-md-5 col-md-offset-2 col-xs-5">
 		<div class="panel panel-default ">
 
 			<div class="panel-heading">
@@ -46,9 +49,11 @@
 
 			<div class="panel-body ">
 				<p class="center"><%= t('benefits.registered_companies.main_text') %></p>
-				<p class="center"><%= t('benefits.registered_companies.reason_1') %></p>
-				<p class="center"><%= t('benefits.registered_companies.reason_2') %></p>
-				<p class="center"><%= t('benefits.registered_companies.reason_3') %></p>
+				<ul>
+					<li class="left"><%= t('benefits.registered_companies.reason_1') %></li>
+					<li class="left"><%= t('benefits.registered_companies.reason_2') %></li>
+					<li class="left"><%= t('benefits.registered_companies.reason_3') %></li>
+				</ul>
 			</div>
 
 			<% if !user_signed_in? %>
@@ -59,12 +64,4 @@
 			<% end %>
 		</div>
 	</div>
-
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
