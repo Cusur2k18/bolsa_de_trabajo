@@ -27,7 +27,10 @@ class StudentsController < ApplicationController
 		@student = Student.find(params[:id])
 		respond_to do |format|
 			format.html do
-				redirect_to root_path
+				if  !is_admin
+					redirect_to root_path
+				end
+				@student
 			end
 			format.pdf do
 				pdf = StudentPdf.new(@student)
