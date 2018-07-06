@@ -2,6 +2,7 @@
 
 <div class="container">
 	<%= render "companies_dashboard/partials/dashboard-nav" %>
+	
 	<form class="form-group" action="">
 		<label class="dashboard-item-title" for="">Nombre de la vacante</label>
 		<input type="text" class="form-control" placeholder="<%= @job.name %>" readonly disabled>
@@ -54,19 +55,22 @@
 <h4>Egresados que han aplicado</h4>
 <form class="form-group" action="">
 	<% @job.job_applications.each do |ja| %>
-		<label class="dashboard-item-title" for="">Nombre</label>
-		<input type="text" class="form-control" placeholder="<%= ja.student.first_name %> <%= ja.student.last_name %> <%= ja.student.last_m_name %>" readonly disabled>
-
-		<label class="dashboard-item-title" for="">Correo Electronico</label>
-		<input type="text" class="form-control" placeholder="<%= ja.student.user.email %>" readonly disabled>
-
-		<label class="dashboard-item-title" for="">Descargar curriculum</label> <br>
-		<%= link_to "Descargar curriculum en PDF", student_path(ja.student_id, format: "pdf"), class: 'btn btn-info', target: :_blank %>
-		<br>
-
-		<label class="dashboard-item-title" for="">Contratar a <%= ja.student.first_name %></label> <br>
-		<%= link_to "Contratar", company_hired_job_application_path(ja), { method: :post } %>
-		<br>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nombre del aplicante. </th>
+					<th>Descargar curriculum.</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><%=ja.student.first_name%></td>
+					<td><%= link_to "Descargar curriculum en PDF", student_path(ja.student_id, format: "pdf"), class: 'btn btn-info', target: :_blank  %></td>
+					<td><%= link_to "Crear entrevista", company_hired_job_application_path(ja), { method: :post, class: 'btn btn-success' } %></td>
+				</tr>
+			</tbody>
+		</table>
 	<% end %>
 </form>
 

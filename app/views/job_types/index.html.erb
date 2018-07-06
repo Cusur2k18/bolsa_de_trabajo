@@ -7,12 +7,11 @@
 			<p><%= link_to "Agregar area de vacante", new_job_type_path, class: 'btn btn-success' %></p>
 		</div>
 	<% else %>
-		<p><%= link_to "Agregar area de vacante", new_job_type_path, class: 'btn btn-success' %></p>
 		<table class="table">
 			<thead>
 				<tr scope="col">
-					<td>Nombre</td>
-					<td>Acciones</td>
+					<td class="bold">Nombre</td>
+					<td class="bold">Acciones</td>
 				</tr>
 			</thead>
 			<tbody>
@@ -28,6 +27,7 @@
 			</tbody>
 		</table>
 	<% end %>
+	<%= link_to "Agregar area de vacante", new_job_type_path, class: 'btn btn-success' %>
 	<%= link_to "Regresar", admin_dashboard_path, class: 'btn btn-info'%>
 </div>
 

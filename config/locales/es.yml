@@ -218,22 +218,22 @@ es:
 
     phone_numbers:
         new:
-            add_phone_number: "Agregar numero telefonico"
+            add_phone_number: "Agregar número telefónico"
         description: "Tipo de telefono"
-        phone_number: "Numero de telefono"
+        phone_number: "Número de telefono"
         index:
-            title: "Mis numeros telefonicos"
-            phone_numbers: "Numero de celular"
-            description: "Numero de casa"
+            title: "Mis numeros telefónicos"
+            phone_numbers: "Número de celular"
+            description: "Número fijo"
             actions:
                 title: "Acciones"
                 edit: "Editar"
                 delete: "Borrar"
                 go_back: "Regresar"
-                create: "Agregar numero telefonico?"
+                create: "¿Agregar número telefónico?"
             warnings:
-                no_phone_numbers_body: "No existe ningun numero telefonico"
-                delete: "En verdad quiere borrar este numero telefonico?"
+                no_phone_numbers_body: "No existe ningun número telefónico"
+                delete: "¿En verdad quiere borrar este número telefónico?"
 
     description:
         title: "Descripción del proyecto"
@@ -278,10 +278,10 @@ es:
         go_back: "Regresar"
         street: "Calle"
         new:
-            address: "Agregar direccion"
+            address: "Agregar domicilio."
         index:
-            add_address: "Agregar direccion"
-            title: "Mi direccion"
+            add_address: "Agregar domicilio."
+            title: "Mi domicilio."
             state: "Estado"
             city: "Ciudad"
             zip_code: "Codigo postal"
@@ -290,17 +290,17 @@ es:
             apartment_number: "Numero interior"
             actions:
                 title: "Acciones"
-                edit: "Editar direccion"
-                delete: "Borrar direccion"
+                edit: "Editar domicilio."
+                delete: "Borrar domicilio."
             warnings:
-                no_address: "No haz agregado ninguna direccion"
-                can_not_add_more_addresses: "Solo puedes tener una direccion"
-                delete: "En verdad desea borrar su direccion?"
+                no_address: "No haz agregado ningún domicilio."
+                can_not_add_more_addresses: "Solo puedes tener un domicilio."
+                delete: "¿En verdad desea borrar su domicilio?"
 
     companies_dashboard:
         index:
-            add_address: "Agregar direccion"
-            see_address: "Ver mi direccion"
+            add_address: "Agregar domicilio."
+            see_address: "Ver mi domicilio."
             title: "Bienvenido a su empresa "
             edit_company_data: "Editar datos generales"
             edit_email_data: "Editar correo y contraseña"
@@ -315,8 +315,8 @@ es:
             my_list_of_jobs: "Lista de vacantes"
 
     student_dashboard:
-        add_address: "Agregar direccion"
-        see_address: "Ver mi direccion"
+        add_address: "Agregar domicilio."
+        see_address: "Ver mi domicilio."
         edit_personal_data: "Editar datos personales"
         edit_email_data: "Editar email y contraseña"
         new_education: "Agregar carrera"

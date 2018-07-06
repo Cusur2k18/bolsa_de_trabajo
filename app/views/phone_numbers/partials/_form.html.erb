@@ -1,6 +1,6 @@
 <%= simple_form_for @phone_number do |phone| %>
-	<%= phone.input :cell_phone_number, label: "Numero de celular" %>
-	<%= phone.input :home_phone_number, label: "Numero de casa"  %>
-	<%= phone.button :submit %>
+	<%= phone.input :cell_phone_number, label: "Número de celular." %>
+	<%= phone.input :home_phone_number, label: "Número fijo."  %>
+	<%= phone.button :submit, class: 'btn btn-success' %>
 	<%= link_to "Regresar", :back, class: 'btn btn-info' %>
 <% end %>
