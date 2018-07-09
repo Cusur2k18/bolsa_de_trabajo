@@ -1,4 +1,4 @@
-$ ->
+ready = ->
 	selectedFilter = $('#filter')
 	selectedFilter.change(->
 		classToShow = ''
@@ -16,4 +16,7 @@ $ ->
 			$(selectedValue).show()
 			console.log(selectedValue)
 	)
+
+$(document).ready(ready)
+$(document).on('turbolinks:load', ready)
 
