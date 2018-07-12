@@ -67,7 +67,7 @@
 				<tr>
 					<td><%=ja.student.first_name%></td>
 					<td><%= link_to "Descargar curriculum en PDF", student_path(ja.student_id, format: "pdf"), class: 'btn btn-info', target: :_blank  %></td>
-					<td><%= link_to "Crear entrevista", company_hired_job_application_path(ja), { method: :post, class: 'btn btn-success' } %></td>
+					<td><%= link_to "Crear entrevista", new_interview_path(ja.job_id, ja.student_id), class: 'btn btn-success'  %></td>
 				</tr>
 			</tbody>
 		</table>

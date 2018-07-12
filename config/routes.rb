@@ -70,6 +70,10 @@ Rails.application.routes.draw do
 	post 'languages/first_time_setup' => 'languages#post_first_time_setup'
 	resources :languages
 
+	resources :interviews, only: [:index, :show, :destroy ] 
+	get 'intreviews/new/:jid/job/:sid/student' => 'interviews#new', as: :new_interview
+	post 'interviews/:jid/job/:sid/student' => 'interviews#create', as: :create_interview
+
 	# routes for Job_Applications, only custom routes here.
 	resources :job_applications, only: [ :index, :show ] do
 		member do

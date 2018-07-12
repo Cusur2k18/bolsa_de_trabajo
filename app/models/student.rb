@@ -3,6 +3,7 @@ class Student < ApplicationRecord
 	has_one :user, as: :roleable
 	has_many :educations, dependent: :destroy
 	has_many :job_applications
+	has_many :interviews
 	has_many :former_jobs
 	has_many :academic_awards
 	has_many :languages

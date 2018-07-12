@@ -1,0 +1,8 @@
+<%= simple_form_for @interview, :url => create_interview_path, method: :post do |iv| %>
+	<%= iv.input :date, label: "Fecha de entrevista: "%>
+	<%= iv.input :hour, label: "Hora de entrevista: "%>
+	<%= iv.input :status, as: :hidden, input_html: { value: 'Pendiente' }%>
+	<%= iv.button :submit, class: 'btn btn-success'  %>
+	<%= link_to "Regresar", interviews_path, class: 'btn btn-info' %>
+<% end %>
+
