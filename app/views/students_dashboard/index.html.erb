@@ -3,6 +3,9 @@
 	<div class="container">
 		<%= render "students_dashboard/partials/dashboard-nav" %>
 		<%= render "students_dashboard/partials/show_personal_data" %>
+		<% if !@student.interviews.empty? %>
+			<%= render "students_dashboard/partials/pending_interviews" %>
+		<% end %>
 		<%= link_to "Descargar mi curriculum en PDF", student_path(@student.id, format: "pdf"), class: 'btn btn-info', target: :_blank %>
 		<% if @student.state == "contratado_por_bolsa_de_trabajo" %>
 			<h4>Haz sido contratado por medio bolsa de trabajo</h4>

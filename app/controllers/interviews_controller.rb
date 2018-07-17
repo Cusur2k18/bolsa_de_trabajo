@@ -1,9 +1,13 @@
 class InterviewsController < ApplicationController
 	def index
-		@interviews = current_user.roleable.jobs
+		@jobs = current_user.roleable.jobs
+		@counter = 1
+
 	end
 
 	def new
+		@hour_c = hour_collection
+		@minute_c = minute_collection
 		@interview = Interview.new
 	end
 
@@ -13,6 +17,7 @@ class InterviewsController < ApplicationController
 		@student = Student.find(params[:sid])
 		@interview.student_id = @student.id
 		@interview.job_id = @job.id
+		@interview.status = "Pendiente"
 		if @interview.save
 			flash[:notice] = "Se ha creado la entrevista correctamente."
 			redirect_to interviews_path
@@ -62,7 +67,27 @@ class InterviewsController < ApplicationController
 	private
 
 	def interviews_params
-		params.require(:interview).permit(:date, :hour, :student_id, :job_id)
+		params.require(:interview).permit(:date, :hour, :minute, :timezone, :student_id, :job_id)
+	end
+
+	def hour_collection
+		hour = []
+		counter = 1
+		while counter < 24
+			hour << counter
+			counter = counter+1
+		end
+		hour
+	end
+
+	def minute_collection
+		minute = []
+		counter = 1
+		while counter < 60
+			minute << counter
+			counter = counter+1
+		end
+		minute
 	end
 
 	def is_owner(interview)

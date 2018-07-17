@@ -17,6 +17,4 @@ ready = ->
 			console.log(selectedValue)
 	)
 
-$(document).ready(ready)
 $(document).on('turbolinks:load', ready)
-

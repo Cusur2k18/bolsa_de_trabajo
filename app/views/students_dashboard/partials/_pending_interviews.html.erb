@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+	<div class="panel-heading trigger">
+		<p class="interviews-title">Mis entrevistas pendientes: </p>
+	</div>
+	<div class="panel-body toggleable">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Empresa entrevistadora.</th>
+					<th>Nombre de la vacante.</th>
+					<th>Fecha de la entrevista.</th>
+					<th>Hora de la entrevista.</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @student.interviews.each do | inte | %>
+					<tr>
+						<td scope="row"><%= inte.job.company.company_name %></td>
+						<td scope="row"><%= inte.job.name %></td>
+						<td scope="row"><%= inte.date %></td>
+						<td scope="row"><%= sprintf '%02d', inte.hour.to_i %>:<%= sprintf '%02d', inte.minute.to_i %> <%= inte.timezone %></td>  
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
