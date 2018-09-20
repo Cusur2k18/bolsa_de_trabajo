@@ -191,11 +191,4 @@ ActiveRecord::Schema.define(version: 20180614220712) do
     t.index ["roleable_id"], name: "index_users_on_roleable_id"
   end
 
-  create_table "work_types", force: :cascade do |t|
-    t.integer "working_area"
-    t.integer "job_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 end
