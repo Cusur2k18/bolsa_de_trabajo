@@ -1,50 +1,11 @@
 <h2>Entrevistas</h2>
-<div class="container footer_margin">
-<%= render "companies_dashboard/partials/dashboard-nav" %>
-	<% if current_user.roleable.jobs.empty? %>
-		<div class="alert alert-warning">	
-			<p class="bold center">Su empresa aún no tiene vacantes registradas, registre una primero </p>
-		</div>
-		<%= link_to t('companies.registrations.edit.go_back'), companies_dashboard_path, class: 'btn btn-info' %>
-	<% else %>
-	<div>
-		<% @jobs.each do |jb| %>
-			<% if jb.interviews.empty? %>
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<p class="job-title">La vacante "<%= jb.name %>" no tiene entrevistas programadas.</p>
-					</div>
-				</div>
-			<% else %>
-				<div class="panel panel-default">
-					<div class="panel-heading button-width" id="<%= jb.id %>"><p class="job-title">Listado de entrevistas para vacante: "<%= jb.name %>" </p></div>
-					<div class="content-toggle panel-body job-<%= jb.id %>">
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Número de entrevista.</th>
-									<th>Alumno a entrevistar.</th>
-									<th>Fecha de entrevista.</th>
-									<th>Hora de entrevista.</th>
-								</tr>
-							</thead>
-							<tbody>
-								<% jb.interviews.each do |interview| %>
-									<tr>
-										<td scope="row"><%= @counter %></td>
-										<td scope="row"><%= interview.student.first_name %> <%= interview.student.last_name %> <%= interview.student.last_m_name %></td>
-										<td scope="row"><%= interview.date %></td>
-										<td scope="row"><%= sprintf '%02d', interview.hour.to_i %>:<%= sprintf '%02d', interview.minute.to_i %> <%= interview.timezone %></td>
-									</tr>
-									<% @counter = @counter+1 %>
-								<% end %>
-							</tbody>
-						</table>
-						<% @counter = 0 %>
-					</div>
-				</div>
-			<% end %>
-		<% end %>
+<% if current_user.roleable_type == "Company" %>
+	<%= render "interviews/partials/from_companies" %>
+<% elsif current_user.roleable_type == "Admin" %>
+	<%= render "interviews/partials/from_admin" %>
+<% else %>
+	<div class="alert alert-warning">
+		<p class="bold center">No tienes permiso de acceder a ésta página.</p>
 	</div>
-	<% end %>
-</div>
+	<%= link_to "Regresar", root_path, class: 'btn btn-info' %>
+<% end %>
