@@ -18,15 +18,16 @@
 @import "bootstrap";
 @import "font-awesome";
 
-.render-form{
-	margin-bottom: 10px;
-}
 .udg-logo{
 	display: block;
 	max-width: 60%;
 	max-height: 60%;
 	height: auto;
 	filter: grayscale(100%);
+}
+
+.smooth_corners_nav{
+	border-radius: 4px;
 }
 
 .flashes {
@@ -39,7 +40,9 @@
 .small-form{
 	width: 30%;
 }
-
+.footer_margin {
+	margin-bottom: 10px;
+}
 #bold-letters {
 	font-weight: bold;
 }

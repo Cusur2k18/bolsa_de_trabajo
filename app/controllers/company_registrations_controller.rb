@@ -4,6 +4,8 @@ class CompanyRegistrationsController < Devise::RegistrationsController
 		@user = User.new
 	end
 
+	# we have to create and build the company by hand here because of the custom sign up route and the polimorphic association
+	# the rest of the data such as email, password, etc for the user is handled by devise controllers
 	def create
 		build_resource(sign_up_params)
 		@company = Company.new

@@ -1,8 +1,11 @@
 class InterviewsController < ApplicationController
 	def index
-		@jobs = current_user.roleable.jobs
-		@counter = 1
-
+		if current_user.roleable_type == "Company"
+			@jobs = current_user.roleable.jobs
+			@counter = 1
+		else
+			@company = Company.all
+		end
 	end
 
 	def new

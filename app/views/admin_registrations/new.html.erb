@@ -1,7 +1,7 @@
 <h2>Registrar administrador</h2>
 <%= form_for User.new, url: admins_sign_up_path do |f| %>
 	<%= render "errors/errors", object: @admin%>
-	<div class="container">
+	<div class="container footer_margin">
 		<% if user_signed_in? %>
 			<%= render "admins_dashboard/partials/dashboard-nav" %>
 		<% end %>
@@ -47,6 +47,5 @@
 			</div>
 		</div>
 	</div>
-	<br >
 <% end %>
 

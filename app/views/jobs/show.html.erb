@@ -1,6 +1,6 @@
 <h2><%= @job.name %></h2>
 
-<div class="container">
+<div class="container footer_margin">
 	<%= render "companies_dashboard/partials/dashboard-nav" %>
 	
 	<form class="form-group" action="">
@@ -43,35 +43,64 @@
 		<label class="dashboard-item-title" for="">Duracion del trabajo</label>
 		<input type="text" class="form-control" placeholder="<%= @job.job_duration %>" readonly disabled>
 	</form>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<p class="job-title">Categorias de la vacante</p>
+		</div>
 
-	<h4>Categorias de la vacante</h4>
-	<ul>
-		<% @job.job_types.each do |jt| %>
-			<li><%= jt.area %></li>
-		<% end %>
-	</ul>
-</form>
+		<div class="panel-body">
+			<ul>
+				<% @job.job_types.each do |jt| %>
+					<li class="job-areas"><%= jt.area %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
 
-<h4>Egresados que han aplicado</h4>
-<form class="form-group" action="">
-	<% @job.job_applications.each do |ja| %>
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Nombre del aplicante. </th>
-					<th>Descargar curriculum.</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td><%=ja.student.first_name%></td>
-					<td><%= link_to "Descargar curriculum en PDF", student_path(ja.student_id, format: "pdf"), class: 'btn btn-info', target: :_blank  %></td>
-					<td><%= link_to "Crear entrevista", new_interview_path(ja.job_id, ja.student_id), class: 'btn btn-success'  %></td>
-				</tr>
-			</tbody>
-		</table>
-	<% end %>
-</form>
-
+<div class="panel panel-default">
+		<div class="panel panel-heading"><p class="job-title">Egresados que han aplicado</p></div>
+		<div class="panel-body">
+			<form class="form-group" action="">
+				<% if !@job.job_applications.empty? %>
+					<% @job.job_applications.each do |ja| %>
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Nombre del aplicante. </th>
+									<th>Acciones.</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<%
+										# There is a bug where if we create two or more interviews we see the create
+										# button again.
+										# Maybe if we get the interviews through the students we can fix it.
+									%>
+									<% if !Interview.where(job_id: @job.id).empty? %>
+										<% Interview.where(job_id: @job.id).each do |interv| %>
+											<% if interv.student_id == ja.student.id %>
+												<td><%= ja.student.first_name %></td>
+												<td><%= link_to "Descargar curriculum en PDF", student_path(ja.student_id, format: "pdf"), class: 'btn btn-info', target: :_blank  %></td>
+												<td><%= link_to "Contratar", company_hired_job_application_path(ja), { method: :post, class: 'btn btn-success'} %></td>
+											<% else %>
+												<td><%=ja.student.first_name%></td>
+												<td><%= link_to "Crear entrevista", new_interview_path(ja.job_id, ja.student_id), class: 'btn btn-success'  %></td>
+											<% end %>
+										<% end %>
+									<% else %>
+										<td><%=ja.student.first_name%></td>
+										<td><%= link_to "Crear entrevista", new_interview_path(ja.job_id, ja.student_id), class: 'btn btn-success'  %></td>
+									<% end %>
+								</tr>
+							</tbody>
+						</table>
+					<% end %>
+				<% else %>
+					<p class="job-title">Nadie ha aplicado a ésta vacante todavía</p>
+				<% end %>
+			</form>
+		</div>
+	</div>
 </div>

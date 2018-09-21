@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container footer_margin">
 	<% if current_user.roleable_type == "Company" and user_signed_in? %>
 		<h2>Bienvenido a la empresa <%= @company.company_name %>, <%= current_user.roleable.contact_first_name %></h2>
 		<%= render "companies_dashboard/partials/dashboard-nav" %>

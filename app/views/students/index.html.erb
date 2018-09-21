@@ -1,8 +1,11 @@
 <h2>Lista de egresados registrados</h2>
-<div class="container">
+<div class="container footer_margin">
 	<%= render "admins_dashboard/partials/dashboard-nav" %>
 	<% if @students.empty? %>
-		<p>No hay ningun egresado registrado</p>
+		<div class="alert alert-warning">
+			<p class="bold center">No hay ningun egresado registrado</p>
+		</div>
+
 	<% else %>
 		<table class="table">
 			<thead>

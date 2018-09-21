@@ -1,6 +1,6 @@
 <%= simple_form_for @job_type do |jt| %>
 	<%= jt.input :area, label: "Nombre del area de la vacante" %>
-	<%= jt.button :submit %>
+	<%= jt.button :submit, class: 'btn btn-success' %>
 
 	<%= link_to "Regresar", job_types_path, class: ' btn btn-info' %>
 <% end %>

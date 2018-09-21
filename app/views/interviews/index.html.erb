@@ -1,5 +1,12 @@
 <h2>Entrevistas</h2>
-<div class="container">
+<div class="container footer_margin">
+<%= render "companies_dashboard/partials/dashboard-nav" %>
+	<% if current_user.roleable.jobs.empty? %>
+		<div class="alert alert-warning">	
+			<p class="bold center">Su empresa aún no tiene vacantes registradas, registre una primero </p>
+		</div>
+		<%= link_to t('companies.registrations.edit.go_back'), companies_dashboard_path, class: 'btn btn-info' %>
+	<% else %>
 	<div>
 		<% @jobs.each do |jb| %>
 			<% if jb.interviews.empty? %>
@@ -39,4 +46,5 @@
 			<% end %>
 		<% end %>
 	</div>
+	<% end %>
 </div>

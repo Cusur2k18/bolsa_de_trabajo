@@ -1,6 +1,6 @@
 class JobTypesController < ApplicationController
 	before_action :authenticate_user!
-	# before_action :is_admin
+	# before_action :is_admin ~ this line is commentated because we are not sure if companies should be able to create JobTypes
 	def index
 		@job_types = JobType.all
 	end

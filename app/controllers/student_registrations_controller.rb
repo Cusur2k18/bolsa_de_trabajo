@@ -5,6 +5,8 @@ class StudentRegistrationsController < Devise::RegistrationsController
 		super
 	end
 
+	# this user aswell we create by hand because of the custom sign up method for the polimorphic association.
+	# the rest of the data such as email, password, etc for the user is handled by devise controllers
 	def create
 		build_resource(sign_up_params)
 

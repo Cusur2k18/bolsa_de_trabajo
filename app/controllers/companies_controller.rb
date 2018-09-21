@@ -36,6 +36,9 @@ class CompaniesController < ApplicationController
 		redirect_to companies_dashboard_path
 	end
 
+	# here we use the join method to generate the PDF.
+	# since we don't really need to show information from a company via a HTML page we redirect to the root of the app
+	# if we reach the PDF format of the route then it generates the PDF with the help of the CompanyPdf class.
 	def show
 		@company = Company.find(params[:id])
 		respond_to do |format|
