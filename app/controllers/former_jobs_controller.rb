@@ -3,7 +3,7 @@ class FormerJobsController < ApplicationController
 	before_action :is_student
 
 	def index
-		@former_jobs = FormerJob.all
+		@former_jobs = current_user.roleable.former_jobs.all
 	end
 
 	def new

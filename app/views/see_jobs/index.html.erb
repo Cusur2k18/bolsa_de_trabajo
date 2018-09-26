@@ -8,7 +8,7 @@
 	<% else %>
 	<table class="table">
 		<thead>
-			<tr scope+"col">
+			<tr scope="col">
 				<th>Nombre de la empresa</th>
 				<th>Nombre de la vacante</th>
 				<th>Salario</th>
@@ -50,15 +50,13 @@
 					<% if jb.job_applications.empty? %>
 						<%= link_to "Aplicar al puesto", student_applied_job_application_path(jb), { method: :post }%>
 					<% else %>
-					<% jb.job_applications.each do |ja| %>
-						<% if ja.student_id == current_user.roleable.id and ja.job_id == jb.id %>
-
-							<%= link_to "Desaplicar del puesto", student_unapplied_job_application_path(ja), { method: :post } %>
-						<% else %>
-
-							<%= link_to "Aplicar al puesto", student_applied_job_application_path(jb), { method: :post }%>
+						<% jb.job_applications.each do |ja| %>
+							<% if ja.student_id == current_user.roleable.id and ja.job_id == jb.id %>
+								<%= link_to "Desaplicar del puesto", student_unapplied_job_application_path(ja), { method: :post } %>
+							<% else %>
+								<%= link_to "Aplicar al puesto", student_applied_job_application_path(jb), { method: :post }%>
+							<% end %>
 						<% end %>
-					<% end %>
 					<% end %>
 					<%
 						# needs to fix a bug where if two or more student applied to the same job then it shows
