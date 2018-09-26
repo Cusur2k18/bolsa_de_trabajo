@@ -1,6 +1,6 @@
 <h2>Entrevistas</h2>
 <% if current_user.roleable_type == "Company" %>
-	<%= render "interviews/partials/from_companies" %>
+	<%= render "interviews/partials/from_company" %>
 <% elsif current_user.roleable_type == "Admin" %>
 	<%= render "interviews/partials/from_admin" %>
 <% else %>
