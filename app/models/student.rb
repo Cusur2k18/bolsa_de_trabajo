@@ -10,7 +10,7 @@ class Student < ApplicationRecord
 	has_many :courses
 
 	enum academic_level: [ :licenciatura, :maestria, :doctorado ]
-	enum state: [ :desempleado, :proceso, :contratado_por_bolsa_de_trabajo, :contratado_externamente ]
+	enum state: [ :'Sin empleo', :'En proceso', :'Contratado por bolsa de trabajo', :'Contratado externamente' ]
 	enum civil_status: [ :soltero, :casado, :viudo, :divorciado ]
 	enum genre: [ :masculino, :femenino ]
 

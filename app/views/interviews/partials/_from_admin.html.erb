@@ -8,7 +8,7 @@
 		<div class="content-toggle panel-body">
 			<% cm.jobs.each do |cj| %>
 				<% if cj.interviews.empty? %>
-					<p class="bold center">No se tiene programada ninguna para la vacante <%= cj.name %></p>
+					<p class="bold center">No se tiene programada ninguna entrevista para la vacante <%= cj.name %></p>
 				<% else %>
 				<div class="panel panel-default">
 					<div class="panel-heading button-width" id="<%= cj.id %>"><p class="job-title">Listado de entrevistas para vacante: "<%= cj.name %>" </p></div>

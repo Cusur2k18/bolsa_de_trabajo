@@ -3,8 +3,8 @@
 	<%= render "admins_dashboard/partials/dashboard-nav" %>
 	<% if @job_types.empty? %>
 		<div class="alert alert-warning">
-			<p>No se ha agregado ninguna clasificacion de vacante</p>
-			<p><%= link_to "Agregar area de vacante", new_job_type_path, class: 'btn btn-success' %></p>
+			<p>No se ha agregado ninguna carrera para la vacante</p>
+			<p><%= link_to "Agregar carrera de interés", new_job_type_path, class: 'btn btn-success' %></p>
 		</div>
 	<% else %>
 		<table class="table">
@@ -27,7 +27,7 @@
 			</tbody>
 		</table>
 	<% end %>
-	<%= link_to "Agregar area de vacante", new_job_type_path, class: 'btn btn-success' %>
+	<%= link_to "Agregar carrera de interés", new_job_type_path, class: 'btn btn-success' %>
 	<%= link_to "Regresar", admin_dashboard_path, class: 'btn btn-info'%>
 </div>
 
