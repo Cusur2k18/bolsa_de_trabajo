@@ -41,29 +41,13 @@
 					<td scope="row"><%= jb.workday_type %></td>
 					<td scope="row"><%= jb.schooling_level %></td>
 					<td scope="row">
-					<% 
-						# if the job doesn't have any applications then a student can apply for the job
-						# if the job has applications then we check if the current user logged in applied for it
-						# if they did then we show them the option to unapply
-						# if they didnt then they can apply for it
-					%>
-					<% if jb.job_applications.empty? %>
+					<% job_application_query = JobApplication.where(student_id: current_user.roleable.id, job_id: jb.id) %>
+					<% if job_application_query.empty? %>
 						<%= link_to "Aplicar al puesto", student_applied_job_application_path(jb), { method: :post }%>
 					<% else %>
-						<% jb.job_applications.each do |ja| %>
-							<% if ja.student_id == current_user.roleable.id and ja.job_id == jb.id %>
-								<%= link_to "Desaplicar del puesto", student_unapplied_job_application_path(ja), { method: :post } %>
-							<% else %>
-								<%= link_to "Aplicar al puesto", student_applied_job_application_path(jb), { method: :post }%>
-							<% end %>
-						<% end %>
+						<% ja = JobApplication.where(student_id: current_user.id, job_id: jb.id) %>
+						<%= link_to "Desaplicar del puesto", student_unapplied_job_application_path(ja), { method: :post } %>
 					<% end %>
-					<%
-						# needs to fix a bug where if two or more student applied to the same job then it shows
-						# Apply and unapply as many times as different students applied for them because the same
-						# job has several applications.
-					%>
-
 				</td>
 				<td scope="row"></td>
 			</tr>
