@@ -8,7 +8,7 @@ class AdminRegistrationsController < ApplicationController
 			@admin = Admin.new
 			@user = User.new
 		else 
-			if is_admin
+			if !current_user.nil? and is_admin
 				@admin = Admin.new
 				@user = User.new
 			else

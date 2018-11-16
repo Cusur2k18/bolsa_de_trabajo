@@ -9,10 +9,10 @@ class Student < ApplicationRecord
 	has_many :languages
 	has_many :courses
 
-	enum academic_level: [ :licenciatura, :maestria, :doctorado ]
+	enum academic_level: [ :'Licenciatura', :'Maestria', :'Doctorado' ]
 	enum state: [ :'Sin empleo', :'En proceso', :'Contratado por bolsa de trabajo', :'Contratado externamente' ]
-	enum civil_status: [ :soltero, :casado, :viudo, :divorciado ]
-	enum genre: [ :masculino, :femenino ]
+	enum civil_status: [ :'Soltero', :'Casado', :'Viudo', :'Divorciado' ]
+	enum genre: [ :'Masculino', :'Femenino', :'Prefiero no decirlo' ]
 
 	validates_presence_of :first_name, :last_name, :last_m_name,  :udg_code, :civil_status, :genre, :born_date, :academic_level
 	validates :terms_of_service, acceptance: { accept: 'yes' }

@@ -15,6 +15,7 @@
 				<th>Edad minima</th>
 				<th>Turno</th>
 				<th>Escolaridad minima</th>
+				<th>Areas </th>
 				<th>Acciones</th>
 				<th>Filtrar
 					<select id="filter"> 
@@ -41,11 +42,18 @@
 					<td scope="row"><%= jb.workday_type %></td>
 					<td scope="row"><%= jb.schooling_level %></td>
 					<td scope="row">
+						<% jb.job_types.each do |a| %>
+							<%= a.area %>
+						<% end %>
+					</td>
+					<td scope="row">
 					<% job_application_query = JobApplication.where(student_id: current_user.roleable.id, job_id: jb.id) %>
 					<% if job_application_query.empty? %>
 						<%= link_to "Aplicar al puesto", student_applied_job_application_path(jb), { method: :post }%>
 					<% else %>
-						<% ja = JobApplication.where(student_id: current_user.id, job_id: jb.id) %>
+						<% # Model.where returns an array so we get the array and then the first position of the array %>
+						<% # Since this query will always return an array with only 1 position, kind of a hack. may fix later %>
+						<% ja = job_application_query[0] %>
 						<%= link_to "Desaplicar del puesto", student_unapplied_job_application_path(ja), { method: :post } %>
 					<% end %>
 				</td>
