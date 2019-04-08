@@ -1,0 +1,13 @@
+<%= simple_form_for @interview, :url => create_interview_path, method: :post do |iv| %>
+	<%= iv.input :date, label: "Fecha de entrevista: "%>
+	<div class="form-inline">
+		<p class="bold">Hora de la entrevista (Hora, minutos, zona horaria): </p>
+		<%= iv.input :hour, collection: @hour_c, include_blank: false, include_hidden: false, label: "", class: 'col-md4 col-xs6'%> 
+		<%= iv.input :minute, collection: @minute_c, include_blank: false, include_hidden: false, label: " ", class: 'col-md4 col-xs6'%>
+		<%= iv.input :timezone, collection: Interview.timezones.keys, include_blank: false, include_hidden: false, label: " ", class: 'col-md4 col-xs6' %>
+	</div>
+	<br>
+	<%= iv.button :submit, class: 'btn btn-success'  %>
+	<%= link_to "Regresar", interviews_path, class: 'btn btn-info' %>
+<% end %>
+

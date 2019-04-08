@@ -10,8 +10,8 @@ es:
     activerecord:
         models:
             job_type:
-                one: "area de vacante"
-                other: "areas de vacante"
+                one: "carrera"
+                other: "carreras"
             address:
                 one: "direccion"
                 other: "direcciones"
@@ -335,6 +335,8 @@ es:
         last_m_name: "Apellido materno"
         udg_code: "Codigo UDG"
         password: "Contraseña"
+        genre: "Genero"
+        civil_status: "Estado civil"
         confirm_password: "Confirmar contraseña"
         password_length: " caracteres como minimo"
         shared:

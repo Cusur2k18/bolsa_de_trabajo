@@ -1,6 +1,6 @@
 <h2><%= t('companies.registrations.edit.title') %></h2>
 
-<div class="container">
+<div class="container footer_margin">
 	<%= render "companies_dashboard/partials/dashboard-nav" %>
 	<%= simple_form_for @company do |comp| %>
 		<%= comp.input :company_name , label: "Nombre de la empresa." %>
@@ -8,7 +8,7 @@
 		<%= comp.input :contact_last_name , label: "Apellido paterno de la persona encargada del registro." %>
 		<%= comp.input :contact_last_m_name , label: "Apellido materno de la persona encargada del registro." %>
 		<%= comp.input :contact_employement , label:  "Puesto de la persona encargada del registro." %>
-		<%= comp.button :submit %>
+		<%= comp.button :submit, class: 'btn btn-success' %>
 
 		<%= link_to t('companies.registrations.edit.go_back'), :back, class: 'btn btn-info' %>
 	<% end %>

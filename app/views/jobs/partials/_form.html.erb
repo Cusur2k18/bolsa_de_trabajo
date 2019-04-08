@@ -15,17 +15,19 @@
 	<%= jb.input :job_duration , label: t('companies.jobs.job_duration') %>
 
 	<div>
-		<p>
-		<%= jb.label "Categoria de la vacante" %>
-		</p>
-		<%= jb.collection_check_boxes :job_type_ids, JobType.all, :id, :area do |cb| %>
-			<div class="collection-check-box">
+		<p><%= jb.label "Categoria de la vacante" %></p>
+		<div class="collection-check-box">
+			<%= jb.collection_check_boxes :job_type_ids, JobType.all, :id, :area do |cb| %>
 				<%= cb.check_box %>
 				<%= cb.label %>
-			</div>
-		<% end %>
+				<br>
+			<% end %>
+		</div>
+		<div class="alert alert-warning">
+			<p class="bold">¿No encuentra una categoría para su vacante? Pongase en contacto con el administrador del siito.</p>
+		</div>
 	</div>
 
 	<%= jb.button :submit, class: 'btn btn-success'%>
-	<%= link_to "Regresar", :back, class: 'btn btn-info' %>
+	<%= link_to "Regresar", jobs_path, class: 'btn btn-info' %>
 <% end %>

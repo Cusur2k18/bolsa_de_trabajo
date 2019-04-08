@@ -1,8 +1,11 @@
 <h2>Lista de egresados registrados</h2>
-<div class="container">
+<div class="container footer_margin">
 	<%= render "admins_dashboard/partials/dashboard-nav" %>
 	<% if @students.empty? %>
-		<p>No hay ningun egresado registrado</p>
+		<div class="alert alert-warning">
+			<p class="bold center">No hay ningun egresado registrado</p>
+		</div>
+
 	<% else %>
 		<table class="table">
 			<thead>
@@ -22,8 +25,8 @@
 						<td scope="row"><%= st.first_name %></td>
 						<td scope="row"><%= st.last_name %></td>
 						<td scope="row"><%= st.last_m_name %></td>
-						<td scope="row"><%= st.udg_code %></td>
 						<td scope="row"><%= st.state %></td>
+						<td scope="row"><%= st.udg_code %></td>
 						<td scope="row"><%= st.user.email %></td>
 						<td scope="row">
 							<%= link_to "Descargar Curriculum en PDF", student_path(st, format: "pdf"), class: 'btn btn-info marg-bottom', target: :_blank%> 

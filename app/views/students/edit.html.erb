@@ -1,5 +1,5 @@
 <h2> <%= t('students.registrations.edit.title') %> </h2>
-<div class="container">
+<div class="container footer_margin">
 	<%= render "students_dashboard/partials/dashboard-nav" %>
 	<%= render "errors/errors", object: @student %>
 	<%= simple_form_for @student do |stu| %>

@@ -1,10 +1,14 @@
 class AdminRegistrationsController < ApplicationController
+
+
+	# if the app doesn't have any admins then we can create a new admin user without having to log in.
+	# if at least 1 admin exist though we need to be logged in as admin to create a new admin user
 	def new
 		if Admin.all.empty?
 			@admin = Admin.new
 			@user = User.new
 		else 
-			if is_admin
+			if !current_user.nil? and is_admin
 				@admin = Admin.new
 				@user = User.new
 			else

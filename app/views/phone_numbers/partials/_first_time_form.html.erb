@@ -1,7 +1,7 @@
 <%= simple_form_for @phone_number, :url => phone_numbers_first_time_setup_path, :method => :post do |phone| %>
 	<%= phone.input :cell_phone_number, label: "Numero de celular" %>
 	<%= phone.input :home_phone_number, label: "Numero de casa"  %>
-	<%= phone.button :submit %>
+	<%= phone.button :submit, class: 'btn btn-success' %>
 	<% if current_user.roleable_type == "Student" %>
 		<%= link_to "Saltar este paso", educations_first_time_setup_path, class: 'btn btn-info' %>
 	<% else %>

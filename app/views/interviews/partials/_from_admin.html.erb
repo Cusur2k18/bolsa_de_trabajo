@@ -1,0 +1,43 @@
+<div class="container">
+<%= render "admins_dashboard/partials/dashboard-nav" %>
+<% @company.each do |cm| %>
+	<div class="panel panel-default">
+		<div class="panel-heading button-width">
+			<p class="job-title">Empresa: <%= cm.company_name %></p>
+		</div>
+		<div class="content-toggle panel-body">
+			<% cm.jobs.each do |cj| %>
+				<% if cj.interviews.empty? %>
+					<p class="bold center">No se tiene programada ninguna entrevista para la vacante <%= cj.name %></p>
+				<% else %>
+				<div class="panel panel-default">
+					<div class="panel-heading button-width" id="<%= cj.id %>"><p class="job-title">Listado de entrevistas para vacante: "<%= cj.name %>" </p></div>
+					<div class="content-toggle panel-body job-<%= cj.id %>">
+						<table class="table">
+							<thead>
+							 	<tr>
+							  	<th>Nombre del egresado aplicante.</th>
+									<th>Nombre de la empresa.</th>
+									<th>Fecha de la entrevista.</th>
+									<th>Estado de la entrevista.</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<% cj.interviews.each do |ji| %>
+									<tr>
+											<td scope="row"><%= ji.student.first_name %> <%= ji.student.last_name %> <%= ji.student.last_m_name %></td>
+											<td scope="row"><%= ji.job.company.company_name %></td>
+											<td scope="row"><%= ji.date %></td>
+											<td scope="row"><%= ji.status %></td>
+									</tr>
+								<% end %>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+<% end %>

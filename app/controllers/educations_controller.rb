@@ -27,7 +27,7 @@ class EducationsController < ApplicationController
 		@education = Education.new(educations_params)
 		@student.educations << @education
 		if @education.save
-			redirect_to student_dashboard_path
+			redirect_to educations_path 
 		else
 			render :new
 		end
