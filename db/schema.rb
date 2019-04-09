@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180712233335) do
+ActiveRecord::Schema.define(version: 20190409031202) do
 
   create_table "academic_awards", force: :cascade do |t|
     t.string "name"
@@ -181,6 +181,10 @@ ActiveRecord::Schema.define(version: 20180712233335) do
     t.integer "civil_status"
     t.date "born_date"
     t.integer "academic_level"
+    t.string "curp", default: ""
+    t.boolean "travel_available", default: false
+    t.boolean "relocate_available", default: false
+    t.string "office_software", default: ""
   end
 
   create_table "users", force: :cascade do |t|

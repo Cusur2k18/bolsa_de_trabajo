@@ -7,6 +7,10 @@
 		<%= stu.input :last_name, label: t('students.registrations.edit.last_name')  %>
 		<%= stu.input :last_m_name, label: t('students.registrations.edit.last_m_name')  %>
 		<%= stu.input :state, label: t('students.registrations.edit.state'), collection: Student.states.keys, :selected => @student.state %>
+		<%= stu.input :curp, label: t('students.registrations.edit.curp')  %>
+		<%= stu.input :travel_available, label: t('students.registrations.edit.travel_available')  %>
+		<%= stu.input :relocate_available, label: t('students.registrations.edit.relocate_available')  %>
+		<%= stu.input :office_software, label: t('students.registrations.edit.office_software')  %>
 		<%= stu.input :udg_code, label: t('students.registrations.edit.udg_code'), disabled: true %>
 		<%= stu.button :submit, t('students.registrations.edit.update'), class: 'btn btn-success' %>
 		<%= link_to t('students.registrations.edit.go_back'), student_dashboard_path, class: 'btn btn-info' %>
