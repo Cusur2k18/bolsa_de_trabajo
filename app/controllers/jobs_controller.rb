@@ -5,6 +5,8 @@ class JobsController < ApplicationController
 	def index
 		@company = current_user.roleable
 		@jobs = Job.where(company_id: @company.id)
+		@htmlClass = "myTr"
+		@area = ""
 	end
 
 	def new
