@@ -402,6 +402,7 @@ es:
             salary: "Salario"
             age_requirement: "Edad minima"
             gender: "Genero"
+            civil_status: "Estado Civil"
             schooling_level: "Nivel educativo"
             work_experience: "Experiencia laboral"
             specialized_knowledge: "Conocimientos especiales"
