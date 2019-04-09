@@ -9,11 +9,14 @@
 	<table class="table">
 		<thead>
 			<tr scope="col">
-				<th>Nombre de la empresa</th>
-				<th>Nombre de la vacante</th>
+				<th>Empresa</th>
+				<th>Vacante</th>
+				<th>Contrato</th>
+				<th>Jornada Laboral</th>
+				<th>Experiencia Minima</th>
+				<th>Género</th>
 				<th>Salario</th>
 				<th>Edad minima</th>
-				<th>Turno</th>
 				<th>Escolaridad minima</th>
 				<th>Areas </th>
 				<th>Acciones</th>
@@ -35,11 +38,18 @@
 					<% @htmlClass = @htmlClass + " " + @area %>
 				<% end %>
 				<tr class="<%= @htmlClass %>">
-					<td scope="row"><%= jb.company.company_name %></td>
+					<td scope="row" align="center">
+						<%= jb.company.company_name %>
+						<br />
+						<small><b>(<%= jb.company.user.address.city %>, <%= jb.company.user.address.state %>)</b></small>
+					</td>
 					<td scope="row"><%= jb.name %></td>
+					<td scope="row"><%= jb.contract_type %></td>
+					<td scope="row"><%= jb.workday_type %></td>
+					<td scope="row"><%= jb.work_experience %></td>
+					<td scope="row"><%= jb.gender %></td>
 					<td scope="row"><%= jb.salary %></td>
 					<td scope="row"><%= jb.age_requierement %></td>
-					<td scope="row"><%= jb.workday_type %></td>
 					<td scope="row"><%= jb.schooling_level %></td>
 					<td scope="row">
 						<% jb.job_types.each do |a| %>
