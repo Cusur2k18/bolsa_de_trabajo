@@ -73,7 +73,7 @@
 					<% job_interview_query = Interview.where(student_id: current_user.roleable.id, job_id: jb.id) %>
 					<% if !job_interview_query.empty? && !job_application_query.empty? %>
 						<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#interview-modal-<%= jb.id %>">
-							Ver entrevista
+							Ver datos de entrevista
 						</button>
 
 						<% interview = job_interview_query[0] %>
@@ -91,7 +91,8 @@
 										<ul class="list-group list-group-flush">
 											<li class="list-group-item"><b>Estatus de la entrevista:</b> <%= interview.status %></li>
 											<li class="list-group-item"><b>Fecha:</b> <%= I18n.localize(interview.date, :format => :short) %></li>
-											<li class="list-group-item"><b>Hora:</b> <%= interview.hour %>:<%= interview.minute %> (<%= interview.timezone %>)</li>
+											<li class="list-group-item"><b>Hora:</b> <%= sprintf '%02d', interview.hour.to_i %>:<%= sprintf '%02d', interview.minute.to_i %> (<%= interview.timezone %>)</li>
+											<li class="list-group-item"><b>Lugar:</b> <%= interview.place %></li>
 										</ul>
 									</div>
 									<div class="modal-footer">
