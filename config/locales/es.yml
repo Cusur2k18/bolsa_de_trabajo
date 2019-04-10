@@ -249,6 +249,9 @@ es:
             - :month
             - :year
         month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
+        day_names: [Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado]
+        formats: 
+            short: '%A %d de %B %Y'
 
     devise:
         failure:
