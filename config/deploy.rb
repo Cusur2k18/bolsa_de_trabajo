@@ -4,11 +4,11 @@ server '148.202.119.52', port: 22, roles: [:web, :app, :db], primary: true
 
 #Server config
 set :application, "bolsa_de_trabajo"
-set :repo_url, "git@github.com:AtMiraz/bolsa_de_trabajo.git"
+set :repo_url, "git@github.com:Cusur2k18/bolsa_de_trabajo.git"
 set :user, 'bolsadetrabajo'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
-set :branch, :interviews
+set :branch, :master
 #Other configs
 
 set :pty,             true
