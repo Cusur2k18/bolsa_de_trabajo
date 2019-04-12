@@ -5,6 +5,8 @@ class JobsController < ApplicationController
 	def index
 		@company = current_user.roleable
 		@jobs = Job.where(company_id: @company.id)
+		@htmlClass = "myTr"
+		@area = ""
 	end
 
 	def new
@@ -96,6 +98,6 @@ class JobsController < ApplicationController
 	end
 
 	def jobs_params
-		params.require(:job).permit( :workday_schedule_start, :workday_schedule_end, :contract_type, :salary, :name, :age_requierement, :gender, :schooling_level, :work_experience, :specialized_knowledge, :aptitudes, :job_duration, :workday_type, job_type_ids: [])
+		params.require(:job).permit( :workday_schedule_start, :workday_schedule_end, :contract_type, :salary, :name, :age_requierement, :gender, :civil_status, :schooling_level, :work_experience, :specialized_knowledge, :aptitudes, :job_duration, :workday_type, job_type_ids: [])
 	end
 end

@@ -6,6 +6,8 @@
 		<%= iv.input :minute, collection: @minute_c, include_blank: false, include_hidden: false, label: " ", class: 'col-md4 col-xs6'%>
 		<%= iv.input :timezone, collection: Interview.timezones.keys, include_blank: false, include_hidden: false, label: " ", class: 'col-md4 col-xs6' %>
 	</div>
+	<br>	
+	<%= iv.input :place, label: "Lugar de entrevista: "%>
 	<br>
 	<%= iv.button :submit, class: 'btn btn-success'  %>
 	<%= link_to "Regresar", interviews_path, class: 'btn btn-info' %>

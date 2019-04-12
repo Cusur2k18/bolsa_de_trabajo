@@ -72,7 +72,7 @@ class InterviewsController < ApplicationController
 	private
 
 	def interviews_params
-		params.require(:interview).permit(:date, :hour, :minute, :timezone, :student_id, :job_id)
+		params.require(:interview).permit(:date, :hour, :minute, :timezone, :place, :student_id, :job_id)
 	end
 
 	def hour_collection

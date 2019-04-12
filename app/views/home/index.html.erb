@@ -4,15 +4,16 @@
 
 <div class="container">
 	<div>
-		<p class="left bold description">
+		<p class="center bold description">
 		<%= t('description.project') %>
 		</p>
 	</div>
-	<div class="col-md-5 col-xs-5">
+	<div class="col-md-5 col-xs-6">
 		<div class="panel panel-default ">
 
 			<div class="panel-heading">
-				<h3><%= t('benefits.students')%></h3>
+				<h3 class="index-text"><%= t('benefits.students')%></h3>
+				<%= image_tag 'egresados.jpg', class: 'company-benefits' %>
 			</div>
 
 			<div class="panel-body">
@@ -40,11 +41,12 @@
 
 		</div>
 	</div>
-	<div class="col-md-5 col-md-offset-2 col-xs-5">
+	<div class="col-md-5 col-md-offset-2 col-xs-6">
 		<div class="panel panel-default ">
 
 			<div class="panel-heading">
-				<h3><%= t('benefits.companies')%></h3>
+				<h3 class="index-text"><%= t('benefits.companies')%></h3>
+				<%= image_tag 'company.jpg', class: 'company-benefits' %>
 			</div>
 
 			<div class="panel-body ">

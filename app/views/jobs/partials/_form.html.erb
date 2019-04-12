@@ -8,6 +8,7 @@
 	<%= jb.input :salary , label: t('companies.jobs.salary') %>
 	<%= jb.input :age_requierement , label: t('companies.jobs.age_requirement') %>
 	<%= jb.input :gender, collection: Job.genders.keys, include_blank: false, label: t('companies.jobs.gender') %>
+	<%= jb.input :civil_status, collection: Job.civil_statuses.keys, include_blank: false, label: t('companies.jobs.civil_status') %>
 	<%= jb.input :schooling_level , label: t('companies.jobs.schooling_level') %>
 	<%= jb.input :work_experience , label: t('companies.jobs.work_experience') %>
 	<%= jb.input :specialized_knowledge , label: t('companies.jobs.specialized_knowledge') %>

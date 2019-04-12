@@ -1,15 +1,15 @@
 class Student < ApplicationRecord
 
-	has_one :user, as: :roleable
+	has_one :user, as: :roleable, dependent: :destroy
 	has_many :educations, dependent: :destroy
-	has_many :job_applications
-	has_many :interviews
-	has_many :former_jobs
-	has_many :academic_awards
-	has_many :languages
-	has_many :courses
+	has_many :job_applications, dependent: :destroy
+	has_many :interviews, dependent: :destroy
+	has_many :former_jobs, dependent: :destroy
+	has_many :academic_awards, dependent: :destroy
+	has_many :languages, dependent: :destroy
+	has_many :courses, dependent: :destroy
 
-	enum academic_level: [ :'Licenciatura', :'Maestria', :'Doctorado' ]
+	enum academic_level: [ :'Licenciatura', :'Maestría', :'Doctorado' ]
 	enum state: [ :'Sin empleo', :'En proceso', :'Contratado por bolsa de trabajo', :'Contratado externamente' ]
 	enum civil_status: [ :'Soltero', :'Casado', :'Viudo', :'Divorciado' ]
 	enum genre: [ :'Masculino', :'Femenino', :'Prefiero no decirlo' ]

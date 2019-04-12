@@ -7,10 +7,15 @@
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 		<%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic', media: 'all', 'data-turbolinks-track' => true %>
-		<%= favicon_link_tag 'favicon.png' %>
+		<%= favicon_link_tag 'favicon.ico' %>
 	</head>
 
 	<body>
+		<div class="cusudg-branding">
+			<div class="container">
+				<%= image_tag 'udg-cusur_blanco.png', class: 'udg-cusur-logo' %>
+			</div>
+		</div>
 		<% if user_signed_in? %>
 			<% if current_user.roleable_type == "Student" %>
 				<%= render "layouts/partials/auth_st_nav" %>

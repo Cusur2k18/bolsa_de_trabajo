@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180712233335) do
+ActiveRecord::Schema.define(version: 20190410012646) do
 
   create_table "academic_awards", force: :cascade do |t|
     t.string "name"
@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 20180712233335) do
     t.integer "hour"
     t.integer "minute"
     t.integer "timezone"
+    t.string "place"
   end
 
   create_table "job_applications", force: :cascade do |t|
@@ -149,6 +150,7 @@ ActiveRecord::Schema.define(version: 20180712233335) do
     t.integer "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "civil_status"
   end
 
   create_table "languages", force: :cascade do |t|
@@ -181,6 +183,10 @@ ActiveRecord::Schema.define(version: 20180712233335) do
     t.integer "civil_status"
     t.date "born_date"
     t.integer "academic_level"
+    t.string "curp", default: ""
+    t.boolean "travel_available", default: false
+    t.boolean "relocate_available", default: false
+    t.string "office_software", default: ""
   end
 
   create_table "users", force: :cascade do |t|

@@ -13,6 +13,18 @@
 		<label class="dashboard-item-title"> Código UDG </label>
 		<input type="text" class="form-control" placeholder="<%= @student.udg_code%>" readonly disabled>
 
+		<label class="dashboard-item-title"> CURP </label>
+		<input type="text" class="form-control" placeholder="<%= @student.curp%>" readonly disabled>
+
+		<label class="dashboard-item-title"> Disposición para viajar </label>
+		<input type="text" class="form-control" placeholder="<%= @student.travel_available? ? 'Si' : 'No' %>" readonly disabled>
+
+		<label class="dashboard-item-title"> Disposición para cambio de residencia </label>
+		<input type="text" class="form-control" placeholder="<%= @student.relocate_available? ? 'Si' : 'No' %>" readonly disabled>
+
+		<label class="dashboard-item-title"> Programas q se manejen (ofimática) </label>
+		<input type="text" class="form-control" placeholder="<%= @student.office_software%>" readonly disabled>
+
 		<label class="dashboard-item-title"> Estado de empleo </label>
 		<input type="text" class="form-control" placeholder="<%= @student.state%>" readonly disabled>
 	</div>

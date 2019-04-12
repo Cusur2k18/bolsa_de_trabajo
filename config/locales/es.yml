@@ -249,6 +249,9 @@ es:
             - :month
             - :year
         month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
+        day_names: [Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado]
+        formats: 
+            short: '%A %d de %B %Y'
 
     devise:
         failure:
@@ -354,6 +357,10 @@ es:
                 last_m_name: "Apellido materno"
                 udg_code: "Codigo UDG"
                 state: "Estado"
+                curp: "Curp"
+                travel_available: "¿Disposición para viajar?"
+                relocate_available: "¿Disposición para cambio de residencia?"
+                office_software: "Experiencia ofimática"
                 title: "Editar sus datos"
                 we_need_your_current_password_to_confirm_your_changes: "Ingresa tu contraseña para guardar cambios"
                 leave_blank_if_you_don_t_want_to_change_it: "Déja éste espacio en blanco si no quieres cambiar tu contraseña"
@@ -398,6 +405,7 @@ es:
             salary: "Salario"
             age_requirement: "Edad minima"
             gender: "Genero"
+            civil_status: "Estado Civil"
             schooling_level: "Nivel educativo"
             work_experience: "Experiencia laboral"
             specialized_knowledge: "Conocimientos especiales"
