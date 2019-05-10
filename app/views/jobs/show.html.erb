@@ -14,10 +14,10 @@
 		<input type="text" class="form-control" placeholder="<%= @job.contract_type %>" readonly disabled>
 
 		<label class="dashboard-item-title" for="">Hora de inicio de la jornada</label>
-		<input type="text" class="form-control" placeholder="<%= @job.workday_schedule_start %>" readonly disabled>
+		<input type="text" class="form-control" placeholder="<%= @job.workday_schedule_start.strftime('%I:%M %p') %>" readonly disabled>
 
 		<label class="dashboard-item-title" for="">Hora de fin de la jornada</label>
-		<input type="text" class="form-control" placeholder="<%= @job.workday_schedule_end %>" readonly disabled>
+		<input type="text" class="form-control" placeholder="<%= @job.workday_schedule_end.strftime('%I:%M %p') %>" readonly disabled>
 
 		<label class="dashboard-item-title" for="">Salario</label>
 		<input type="text" class="form-control" placeholder="<%= @job.salary %>" readonly disabled>
